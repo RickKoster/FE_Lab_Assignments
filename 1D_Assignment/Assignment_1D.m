@@ -2,9 +2,6 @@ clear all
 close all
 
 %%Finite Element 1D Assignment
-%
-%
-%
 
 %% Parameters
 
@@ -13,14 +10,15 @@ int = [0,1]; %Interval
 lambda = 1;
 D = .1;
 
-%% Solve BVP
+%% Mesh & Topology
 
-% u = SolveBVP(N_elem, int, lambda, D);
+mesh = GenerateMesh(int,N_elem);
+elmat = GenerateTopology(N_elem); %1D topology!!
 
 %% Assemble Matrix & Vector
 
-S = AssembleMatrix( N_elem, int, lambda, D);
-f = AssembleVector( N_elem, int, lambda, D);
+S = AssembleMatrix( N_elem, lambda, D, mesh, elmat);
+f = AssembleVector( N_elem, mesh, elmat);
 
 %% Calculate u
 x = linspace(int(1),int(2),N_elem);
@@ -30,36 +28,21 @@ plot(x,u);
 
 
 %% Assignment 13
+% For this assigment change the function in functionBVP.m to 'f = sin(20*x)'
+
 figure 
 hold on
 
-for N_elem = [10, 20, 40, 80, 160]
-    S = AssembleMatrix( N_elem, int, lambda, D);
-    f = AssembleVector( N_elem, int, lambda, D);
+for N_elem = [10 20 40 80 100 160]
+    mesh = GenerateMesh(int,N_elem);
+    elmat = GenerateTopology(N_elem);
+    S = AssembleMatrix( N_elem, lambda, D, mesh, elmat);
+    f = AssembleVector( N_elem, mesh, elmat);
 
     x = linspace(int(1),int(2),N_elem);
 
     u = S\f;
     plot(x,u);
 end
-
-    
-
-%% Mesh & Topology
-
-%  mesh = GenerateMesh(int,N_elem);
-%  elmat = GenerateTopology(N_elem); %1D topology!!
-
-%% Calculate Element Matrix
-%overkill for this 1D problem with elements of equal length!
-
-
-% [ S, element_length, slope ] = GenerateElementMatrix(3, elmat, mesh);
-
-% for i = 1:n
-%     for j = 1:n
-%         S = GenerateElementMatrix(k, top, mesh)
-%     end
-% end
 
 
