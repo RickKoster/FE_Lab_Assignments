@@ -1,8 +1,9 @@
 function [f] = functionBVP(x)
 
-% n = 40;
-% f = sin(n*x);
 
+% f = sin(20*x);
+
+% f = x;
 f = 1;
 
 end

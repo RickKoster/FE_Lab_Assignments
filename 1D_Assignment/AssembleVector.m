@@ -1,5 +1,5 @@
 function [ f ] = AssembleVector( N_elem, int, lambda, D )
-%UNTITLED5 Summary of this function goes here
+%AssembleVector Assembles vector f from element vector f_ek
 %   Detailed explanation goes here
 
 f = zeros(N_elem,1);

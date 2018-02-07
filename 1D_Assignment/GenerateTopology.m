@@ -1,7 +1,6 @@
 function [ elmat ] = GenerateTopology( N_elem )
 %GenerateTopology Creates the topology for a 1D problem given mesh 'x'.
 %   Detailed explanation goes here
-% global N_elem
 
 elmat = zeros(N_elem,2);
 

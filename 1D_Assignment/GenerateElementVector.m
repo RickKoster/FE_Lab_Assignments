@@ -1,5 +1,5 @@
 function [ felem ] = GenerateElementVector( i, elmat, int, N_elem )
-%UNTITLED3 Summary of this function goes here
+%GenerateElementVector Creates element vector f_ek
 %   Detailed explanation goes here
 
 

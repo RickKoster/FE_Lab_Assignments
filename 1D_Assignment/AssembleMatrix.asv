@@ -1,5 +1,5 @@
 function [ S ] = AssembleMatrix( N_elem, int, lambda, D)
-%AssembleMatrix Assembles matrix S from element matrix S_ek
+%UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
 elmat = GenerateTopology(N_elem);
