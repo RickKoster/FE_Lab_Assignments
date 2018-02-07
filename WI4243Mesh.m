@@ -33,5 +33,6 @@ elmat = t(1:3,:);
 elmat = elmat';
 elmatbnd = e(1:2,:);
 elmatbnd = elmatbnd';
-
+h
 topology = 3; topologybnd = 2;
+    

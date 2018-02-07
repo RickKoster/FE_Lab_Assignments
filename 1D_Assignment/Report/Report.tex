@@ -1,0 +1,133 @@
+\documentclass{report}
+
+\usepackage{amsmath}
+\usepackage{blindtext}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+
+\title{\Huge Finite Elements}
+\author{Rick Koster \\ Ruben Termaat}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+
+\chapter{1D-case}
+\section{Assignment 1}
+
+For the domain of $x = [0,1]  $ the following formulas are given:
+
+
+\begin{align}
+\begin{split}
+-D\triangle u + \lambda u = f(x),
+\\
+-D\frac{du}{dx}(0) = 0 ,
+\\
+-D\frac{du}{dx}(1) = 0
+\end{split}
+\end{align}
+
+\vspace{5mm}
+
+Here $ \triangle$ equals the $\nabla \cdot \nabla$ operator. In order to find the Weakform of the given equations of (1.1), we first multiply both sides by $\phi$ and integrate both sides over the domain $\omega$.
+
+\begin{equation}
+	 \int_{\Omega} \phi(-D\triangle u + \lambda u )d\Omega = \int_{\Omega} \phi f(x) d\Omega 
+\end{equation}	
+
+Now by rewriting and then using partial integration the following equation can be found:
+
+\begin{equation}
+ \int_{\Omega} (-D\nabla\cdot(\phi\nabla u) + D\nabla\phi\nabla u +\phi \lambda u) d\Omega = \int_{\Omega} \phi f(x) d\Omega 
+\end{equation}
+
+Applying Gauss on the first term:
+
+
+\begin{equation}
+ \int_{\Omega} -D \vec{n}\cdot(\phi \nabla u) d\tau + \int_{\Omega}  (D\nabla\phi\cdot\nabla u +\phi\lambda u )d\Omega = \int_{\Omega} \phi f(x) d\Omega 
+\end{equation}
+
+Using the boundary conditions from formula (1) we find that the integral over the boundary equals to 0 and we find the following Weakform:
+
+\begin{equation}
+\int_{\Omega}  (D\nabla\phi\cdot\nabla u +\phi\lambda u )d\omega = \int_{\Omega} \phi f(x) d\Omega 
+\end{equation}
+
+
+\section{Assignment 2}
+
+The next step is to apply the Galerkin equations to the found weakform, where u is replaced by $ \sum_{j=1}^{n}c_i\phi_j $ and  $\phi(x)=\phi(x)_i with i = [1,..,n]$.
+
+\begin{equation}
+	\sum_{j=1}^{n}c_i\int_{0}^{1} (D\nabla\phi_i\cdot\nabla\phi_j +\lambda\phi_i\phi_j )d\Omega = \int_{0}^{1} \phi_i f(x) d\Omega
+\end{equation}
+
+Which is of the form of $ S\vec{c} = \vec{f} $
+
+
+\section{Assignment 3}
+Write a matlab routine, called GenerateMesh.m that gener-
+ates an equidistant distribution of meshpoints over the interval [0; 1], where $x_1 = 0% and $x_n = 1$ and $h = \frac{1}{n-1}$ . 
+
+You may use x = linspace(0,1,n). 
+Further, we need to know which vertices belong to a certain element i.
+
+\section{Assignment 4}
+
+
+\section{Assignment 5}
+Now the found Galerkin equations can be used to compute $ S_{ij}$  the element matric, over a generic line element $ e_i$.
+
+\begin{equation}
+S\vec{c}=	\sum_{j=1}^{n}c_i\int_{0}^{1} (D\nabla\phi_i\cdot\nabla\phi_j +\lambda\phi_i\phi_j )d\Omega
+\end{equation}
+
+Now to solve S we solve the following equation, over the internal line element.
+
+\begin{equation}
+S^{e_i}_{ij} = -D\int_{e_k}\nabla\phi_i\cdot\nabla\phi_j d\Omega+\lambda\int_{e_k}\phi_i\phi_j dx
+\end{equation}
+
+\section{Assignment 6}
+
+
+\section{Assignment 7}
+
+
+\section{Assignment 8}
+Again using the found Galerkin Equations(1.6) in order to compute the element vector $f_i$ over a generic line-element.
+
+\begin{equation}
+f^{e_n}_i = \int_{e_n}\phi_i f dx
+\end{equation}
+
+\begin{equation}
+		f^{e_n}_i =\frac{\lvert x_k-x_{k-1}\lvert}{(1+1+0)!}f(\vec{x}) =\frac{\lvert x_k-x_{k-1}\lvert}{2}
+	\begin{bmatrix} f^{e_n}_{k-1}\\ f^{e_n}_{k}
+\end{bmatrix}
+\end{equation}
+
+
+\section{Assignment 9}
+
+
+\section{Assignment 10}
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+	
