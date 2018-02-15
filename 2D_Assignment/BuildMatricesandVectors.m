@@ -104,9 +104,9 @@ else
         for ind1 = 1:topologybnd
             for ind2 = 1:topologybnd
                 if elmatbnd(i,ind1) == elmatbnd(i,ind2)
-                    Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) - 2*BMelem(ind1,ind2);
+                    Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) + 2*BMelem(ind1,ind2);
                 else
-                    Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) - BMelem(ind1,ind2);
+                    Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
                 end;
             end
         end;
@@ -185,9 +185,9 @@ else
         for ind1 = 1:topologybnd
             for ind2 = 1:topologybnd
                 if elmatbnd(i,ind1) == elmatbnd(i,ind2)
-                    Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) - 2*BMelem(ind1,ind2);
+                    Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) + 2*BMelem(ind1,ind2);
                 else
-                    Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) - BMelem(ind1,ind2);
+                    Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
                 end;
             end
         end;

@@ -76,11 +76,11 @@ else
     switch direction
         case 1 % x direction
             for index1 = 1:topology
-                        felem(index1) = felem(index1) + (abs(Delta)/6)*beta(index1)*(u(elmat(i,ind1)));
+                        felem(index1) = felem(index1) + (k/mu)*(abs(Delta)/6)*beta(index1)*(u(elmat(i,1))+u(elmat(i,2))+u(elmat(i,3)));
             end
         case 2 % y direction
             for index1 = 1:topology
-                        felem(index1) = felem(index1) + (abs(Delta)/6)*gamma(index1)*(u(elmat(i,ind1)));
+                        felem(index1) = felem(index1) + (k/mu)*(abs(Delta)/6)*gamma(index1)*(u(elmat(i,1))+u(elmat(i,2))+u(elmat(i,3)));
             end
     end
 end

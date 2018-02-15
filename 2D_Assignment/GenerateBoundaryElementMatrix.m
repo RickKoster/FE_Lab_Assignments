@@ -13,6 +13,7 @@ for index1=1:topologybnd
         if ~exist('u', 'var')
             BMelem(index1,index1) = K*lek/2;  % NC used! not HB!!
         else
-            BMelem(index1,index1) = (k/(mu*K))*lek/6;
+            
+            BMelem(index1,index1) = -(k/(mu*K))*lek/6;
         end
 end;
