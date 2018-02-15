@@ -10,5 +10,9 @@ end;
 lek = sqrt((xc(2)-xc(1))^2 + (yc(2)-yc(1))^2);
 
 for index1=1:topologybnd
-		BMelem(index1,index1) = K*lek/2;  % NC used! not HB!!
+        if ~exist('u', 'var')
+            BMelem(index1,index1) = K*lek/2;  % NC used! not HB!!
+        else
+            BMelem(index1,index1) = (k/(mu*K))*lek/6;
+        end
 end;

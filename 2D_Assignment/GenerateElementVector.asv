@@ -14,7 +14,7 @@ for index1=1:topology
 	yc(index1) = y(elmat(i,index1));
 end;
 
-Delta = det([1 xc(1) yc(1);1 xc(2) yc(2);1 xc(3) yc(3)]);
+Delta = det([1 xc(1) yc(1);1 xc(2) yc(2);1 xc(3) yc(3)])/2;
 
 B_mat = [1 xc(1) yc(1);1 xc(2) yc(2);1 xc(3) yc(3)] \  eye(3);
 
@@ -47,26 +47,39 @@ felem = zeros(1,topology);
 % %         end
 %     end
 % end
-
-for N = 1:N_wells
-    for index3 = 1:topology
-        phi_p(index3) = alpha(index3) + beta(index3)*xp(N) + gamma(1)*yp(N);
-    end
-        
-    if (phi_p(1) <= 1) && (phi_p(1) >= 0) && (phi_p(2) <= 1) && (phi_p(2) >= 0) && (phi_p(3) <= 1) && (phi_p(3) >= 0);
-        for index1 = 1:topology
-            felem(index1) = felem(index1) + -Qp*(1-abs(beta(index1))*abs(xc(index1)-xp(index1))-abs(gamma(index1))*abs(yc(index1)-yp(index1))) ;
-            
+if ~exist('u','var')
+    for N = 1:N_wells
+        for index3 = 1:topology
+            phi_p(index3) = alpha(index3) + beta(index3)*xp(N) + gamma(index3)*yp(N);
         end
-        
-    N_Test = N_Test + 1;
-% Components of f are zero except for those elements with a well! So no
-% other contributions!
-%     else        
-%         for index1 = 1:topology
-%         global_index = elmat(N,index1);
-%         
-%         
-%         end
+
+        if (phi_p(1) <= 1) && (phi_p(1) >= 0) && (phi_p(2) <= 1) && (phi_p(2) >= 0) && (phi_p(3) <= 1) && (phi_p(3) >= 0);
+            for index1 = 1:topology
+                felem(index1) = felem(index1) + Qp*(1-abs(beta(index1))*abs(xc(index1)-xp(index1))-abs(gamma(index1))*abs(yc(index1)-yp(index1))) ;
+
+            end
+
+        N_Test = N_Test + 1;
+    % Components of f are zero except for those elements with a well! So no
+    % other contributions!
+    %     else        
+    %         for index1 = 1:topology
+    %         global_index = elmat(N,index1);
+    %         
+    %         
+    %         end
+        end
+    end
+else
+    switch direction
+        case 1 % x direction
+            for index1 = 1:topology
+                        felem(index1) = felem(index1) + (abs(Delta)/6)*beta(index1)*(u(elmat(i,ind1)));
+            end
+        case 2 % y direction
+            for index1 = 1:topology
+                        felem(index1) = felem(index1) + (abs(Delta)/6)*gamma(index1)*(u(elmat(i,ind1)));
+            end
     end
 end
+

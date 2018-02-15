@@ -35,6 +35,10 @@ gamma = B_mat(3,1:3);
 
 for index1 = 1:topology
 	for index2 = 1:topology
-		Selem(index1,index2) = abs(Delta)/2*(k/mu)*(beta(index1)*beta(index2)+gamma(index1)*gamma(index2));
+        if ~exist('u','var')
+            Selem(index1,index2) = abs(Delta)/2*(k/mu)*(beta(index1)*beta(index2)+gamma(index1)*gamma(index2));
+        else
+            Selem(index1,index2) = abs(Delta)/24;
+        end
 	end;
 end;
