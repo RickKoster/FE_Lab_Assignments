@@ -1,11 +1,22 @@
 \contentsline {chapter}{\numberline {1}1D-case}{2}
-\contentsline {section}{\numberline {1.1}Assignment 1}{2}
-\contentsline {section}{\numberline {1.2}Assignment 2}{3}
-\contentsline {section}{\numberline {1.3}Assignment 3}{3}
-\contentsline {section}{\numberline {1.4}Assignment 4}{3}
-\contentsline {section}{\numberline {1.5}Assignment 5}{3}
-\contentsline {section}{\numberline {1.6}Assignment 6}{3}
-\contentsline {section}{\numberline {1.7}assignment 7}{3}
-\contentsline {section}{\numberline {1.8}Assignment 8}{3}
-\contentsline {section}{\numberline {1.9}Assignment 9}{4}
-\contentsline {section}{\numberline {1.10}Assignment 10}{4}
+\contentsline {section}{\numberline {1.1}Boundary value problem 1D}{2}
+\contentsline {section}{\numberline {1.2}Element matrix}{3}
+\contentsline {section}{\numberline {1.3}Element vector}{3}
+\contentsline {section}{\numberline {1.4}Boundary value problem 1D MATLAB routine}{3}
+\contentsline {subsection}{\numberline {1.4.1}mesh and elmat code}{3}
+\contentsline {subsection}{\numberline {1.4.2}Element matrix}{3}
+\contentsline {subsection}{\numberline {1.4.3}Assemble matrix S}{4}
+\contentsline {subsection}{\numberline {1.4.4}Element vector MATLAB routine}{4}
+\contentsline {subsection}{\numberline {1.4.5}Computing S and f}{5}
+\contentsline {section}{\numberline {1.5}Main program}{5}
+\contentsline {section}{\numberline {1.6}Solution for u}{5}
+\contentsline {section}{\numberline {1.7}Experiment}{5}
+\contentsline {chapter}{\numberline {2}2D-case}{6}
+\contentsline {section}{\numberline {2.1}Boundary value problem 2D}{7}
+\contentsline {section}{\numberline {2.2}Element matrix and element vector}{7}
+\contentsline {section}{\numberline {2.3}Boundary matrix and boundary vector}{8}
+\contentsline {section}{\numberline {2.4}Assignment 6}{8}
+\contentsline {section}{\numberline {2.5}Assignment 7}{8}
+\contentsline {section}{\numberline {2.6}Assignment 8}{8}
+\contentsline {section}{\numberline {2.7}Assignment 9}{8}
+\contentsline {section}{\numberline {2.8}Assignment 10}{8}
