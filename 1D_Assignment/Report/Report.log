@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.5)  22 FEB 2018 18:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.5)  22 FEB 2018 20:01
 entering extended mode
 **./Report.tex
 (Report.tex
@@ -644,27 +644,27 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
 
-Overfull \hbox (148.25127pt too wide) in paragraph at lines 178--179
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (46.25023pt too wide) in paragraph at lines 178--179
+[][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (148.25127pt too wide) in paragraph at lines 180--181
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (46.25023pt too wide) in paragraph at lines 181--182
+[][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.24986pt too wide) in paragraph at lines 205--206
+Overfull \hbox (10.24986pt too wide) in paragraph at lines 207--208
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
 
@@ -672,35 +672,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--226
 <1Df1.jpg, id=29, 562.1pt x 421.575pt>
 File: 1Df1.jpg Graphic file (type jpg)
 <use 1Df1.jpg>
-Package pdftex.def Info: 1Df1.jpg  used on input line 302. on input line 302.
+Package pdftex.def Info: 1Df1.jpg  used on input line 304. on input line 304.
 Package pdftex.def Info: Requested size: 426.79134pt x 320.09155pt on input lin
-e 302.
+e 304.
 <1Dfx.jpg, id=30, 562.1pt x 421.575pt>
 File: 1Dfx.jpg Graphic file (type jpg)
 <use 1Dfx.jpg>
-Package pdftex.def Info: 1Dfx.jpg  used on input line 312. on input line 312.
+Package pdftex.def Info: 1Dfx.jpg  used on input line 314. on input line 314.
 Package pdftex.def Info: Requested size: 426.79134pt x 320.09155pt on input lin
-e 312.
- [5 <./1Df1.jpg>]
-<1Dfsinx.jpg, id=34, 562.1pt x 421.575pt>
+e 314.
+ [5 <./1Df1.jpg>] [6 <./1Dfx.jpg>]
+<1Dfsinx.jpg, id=38, 562.1pt x 421.575pt>
 File: 1Dfsinx.jpg Graphic file (type jpg)
 <use 1Dfsinx.jpg>
-Package pdftex.def Info: 1Dfsinx.jpg  used on input line 360. on input line 360
+Package pdftex.def Info: 1Dfsinx.jpg  used on input line 365. on input line 365
 .
 Package pdftex.def Info: Requested size: 426.79134pt x 320.09155pt on input lin
-e 360.
- [6 <./1Dfx.jpg>] [7 <./1Dfsinx.jpg>]
+e 365.
+ [7 <./1Dfsinx.jpg>]
 Chapter 2.
 [8
 
 ] [9]
-Overfull \hbox (1.3708pt too wide) in paragraph at lines 535--535
+Overfull \hbox (1.3708pt too wide) in paragraph at lines 549--549
 []\OT1/cmr/m/n/10 nite-element code (Gen-er-a-teEle-ment-Ma-trix, GenerateEle-m
 entVector, Gen-er-ate-Bound-aryEle-ment-Ma-trix,
  []
 
 
-Overfull \hbox (9.3847pt too wide) in paragraph at lines 543--544
+Overfull \hbox (9.3847pt too wide) in paragraph at lines 557--558
 []\OT1/cmr/m/n/10 les Gen-er-a-teEle-ment-Ma-trix, Gen-er-a-teEle-mentVec-tor, 
 Gener- ate-Bound-aryEle-ment-Ma-trix, Gen-er-ate-Bound-
  []
@@ -717,7 +717,7 @@ Here is how much of TeX's memory you used:
  8151 multiletter control sequences out of 15000+200000
  10235 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,32p,797b,1516s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,13n,32p,923b,1518s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
@@ -729,7 +729,7 @@ cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on Report.pdf (11 pages, 226295 bytes).
+Output written on Report.pdf (11 pages, 227882 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

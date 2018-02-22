@@ -175,9 +175,11 @@ Now that the base MATLAB codes are made the element matrix and element vector co
 	for m = 1:2
 		for n = 1:2
 			if m == n
-				Selem(m,n) = element_length*((-1)^(abs(m-n))*D*slope^2 + (2)*lambda/6);
+				Selem(m,n) = element_length*((-1)^(abs(m-n))*D*slope^2
+				+ (2)*lambda/6);
 			else
-				Selem(m,n) = element_length*((-1)^(abs(m-n))*D*slope^2 + (1)*lambda/6);
+				Selem(m,n) = element_length*((-1)^(abs(m-n))*D*slope^2
+				+ (1)*lambda/6);
 			end
 			end
 	
@@ -315,11 +317,12 @@ The final step is to use the main program to solve $Su= \vec{f}$. Previously the
 
 
 
-
+\vfill
 \section{Experiment}
 
 The next step is to see what happens when changing f(x) to $f(x)=sin(20x)$ and to see the difference for several values for n ($n=10,20,30,40,80,160)$ 
-	
+
+\vspace{5mm}
 \begin{lstlisting}
 	function [f] = functionBVP(x)
 		f = sin(20*x);
@@ -353,6 +356,8 @@ The next step is to see what happens when changing f(x) to $f(x)=sin(20x)$ and t
 	hold off
 \end{lstlisting}
 
+\newpage
+
 Figure 1.3
 
 \begin{figure}[ht!]
@@ -364,7 +369,8 @@ Figure 1.3
 
 \chapter{2D-case}
 
-We consider a square reservoir (a porous medium) with several wells where water is extracted. This is an important application in countries like Bangladesh where fresh water is extracted from the subsurface. Far away from the reservoir, the water pressure is equal to the hydrostatic pressure. Since we are not able to consider an infinite domain, we use a mixed boundary condition which models the transfer of water over the boundary to locations far away. To this extent, we consider a square domain with length 2 in meter, that is $\Omega= (-1; 1) x (-1; 1)$ with its boundary $d\Omega$. In this assignment, we consider a steady-state equilibrium determined by Darcy's Law for fluid velocity, given by
+
+The obvious next step after solving a 1 dimensional boundary value problem BVP is to addept the 1D solutions and code to a 2 dimensional boundary value problem. To do this a real life problem is going to be used to solve. In 3rd world countries one of the big issues is the supply of fresh water. One way is to do this is to take square reservoirs, which is a porous medium, with several wells where water is extracted from the subsurface. The water pressure is equal to the hydrostatic pressure. As this is not on an infinite domain, mixed boundary conditions are used. These boundary conditions represent a model for the transfer of the water over the boundary to locations far away. To this extent, a square domain is considered with length 2 in meter: $\Omega= (-1; 1) x (-1; 1)$ with boundary $d\Omega$. Darcy's law for fluid determins the steady state equilibrium of this BVP, given by equation(2.1) :
 
 \begin{equation}
 \vec{v}=-\frac{k}{\mu}\nabla p
@@ -372,15 +378,14 @@ We consider a square reservoir (a porous medium) with several wells where water 
 \medskip
 
 where p, k, $\mu$ and v, respectively denote the 
-fluid pressure, permeability of the porous medium, viscosity of water and the fluid flow velocity. Since we only consider a plane section of the reservoir in this assignment, the effect of gravity is not important. Next to Darcy's Law, we consider incompressibility, where
-the extraction wells are treated as point sinks (this assumption can be justified by the fact that the well diameter is much smaller than the dimensions of the
-porous medium), that extract at the same rate in each direction, hence
+fluid pressure, permeability of the porous medium, viscosity of water and the fluid flow velocity. In this BVP the effect of gravity will not play a part as the problem is looked at in 2D. An accompanying assumption is incompressibility, so the extraction wells are treated as point sinks. This assumption can be made as the well its diameter is much smaller than the dimensions of the square reservoir. The extraction wells extract at the same rate in each direction, leading to the following boundary conditions(2.2).
+
 
 \begin{equation}
 	\nabla\cdot\vec{v}=-\sum_{p=1}^{n_{well}}Q_p\delta(x-x_p)=0,(x,y) \epsilon\Omega 
 \end{equation}
 
-where $Q_p$ denotes the water extraction rate by well k, which is located at xp. We use the convention x = (x; y) to represent the spatial coordinates. Further,  represents the Dirac Delta Distribution, which is characterized by
+where $Q_p$ denotes the water extraction rate by well k, which is located at $x_p$. Here $x$ equals $(x;y)$, the spatial coordinates.  We use the convention x = (x; y) to represent the spatial coordinates. The dirac Delta Distribution is characterized by equation(2.3).
 
 \begin{equation}
 	\begin{cases} 
@@ -389,14 +394,15 @@ where $Q_p$ denotes the water extraction rate by well k, which is located at xp.
 \end{equation}
 
 \medskip
-Next to the above partial differential equation, we consider the boundary condition 
+
+For this BVP the following boundary condition is considered: 
 
 \begin{equation}
 	\vec{v}\cdot\vec{n}=K(p-p^H), \, (x,y)\, \epsilon\,  \partial\Omega
 \end{equation}
 \bigskip
 
-Here K denotes the transfer rate coefficient of the hormon between the boundary of the domain and its surroundings, and pH represents the hydrostatic pressure. For the computations, we use the following values:
+Here $k$ denotes the transfer rate coefficient of the hormon between the boundary of the domain and its surroundings. The constant $p^H$ represents the hydrostatic pressure. In order to solve this BVP the values needed for all the constants are given in table (2.1).
 
 
 \begin{table}[ht]
@@ -418,7 +424,7 @@ Here K denotes the transfer rate coefficient of the hormon between the boundary 
 \end{table}
 \bigskip
 
-We consider six wells, located at:
+In this BVP six wells are considered, which are located at:
 
 
 \begin{equation}
@@ -525,23 +531,36 @@ The boundary matrix $S^{b_l}_{ij}$ and boundary vector $f^{b_l}_i$ can be found 
 
 \section{Assignment 6}
 
-%In order to solve the problem, you need to determine whether each internal element (triangle) contains a cell. We will determine whether cell with index p, with position xp, is in the element ek with vertices xk1, xk2 and xk3. We do so by testing the following criterion: j(xp; xk2; xk3)j + j(xk1; xp; xk3)j + j(xk1; xk2; xp)j :
+To solve the BVP in 2D one of the aspects that need to be determined are whether each internal element contains a cell. This is done by determining whether cell with index $p$ and position $x_p$ is contained within element $e_k$ with vertices $x_{k1}$, $x_{k2}$ and $x_{k3}$. This is done according the following criterion:
 
+\begin{equation}
+|\delta(x_p,x_{k2},x_{k3})|+|\delta(x_{k1},x_p,x_{k3})|+|\delta(x_{k1},x_{x2},x_p):
+	\begin{cases} 
+	=|e_k|,\, x_p\, \in, \vec{e_k}\\ 
+	>|e_k|,\, x_p\, \notin\,\vec{e_k}
+	\end{cases} 
+\end{equation}
 
-
-%Here (xp; xq; xr) denotes the triangle with vertices xp, xq and xr, and j(xk1; xk2; xk3)j denotes its area. Further, ek = (xk1; xk2; xk3) represents the triangular element k with vertices xk1, xk2 and xk3 and ek includes the boundaries of element ek. Express the area of the triangles in terms of the nodal points (Hint: Use the determinant as in Chapter 6 of the book.). To implement the above criterion whether a cell is within an element, use a tolerance of eps in matlab because of possible rounding errors. Remark: As an alternative to the above procedure, you may also consider the barycentric coordinates, which are the linear basis functions k1, k2 and k3, and see whether their values are in the interval [0; 1] for xp, then, xp is within the triangular element ek.
+In the criterion $\delta(x_p,x_q,x_r)$ denotes the triangle with vertices $x_p$, $x_q$ and $x_r$, where $|\delta(x_{k1},x_{k2},x_{k3})$ denote its area. The triangular element $k$ is given by $e_k=\delta(x_{k1},x_{k2},x_{k3})$ with vertices  $x_1$, $x_2$ and $x_3$ and $\vec{e_k}$ includes the boundary of element $e_k$. To solve this BVP a certan tolerance has to be accounted for in the Matlab code.
 
 \section{Assignment 7}
-Program the nite-element code (GenerateElementMatrix, GenerateEle-mentVector, GenerateBoundaryElementMatrix, GenerateBoundaryElementVector), and evaluate the solution. Use mesh renement to evaluate the quality of the solution. Plot your solution in terms of contour plot and a three-dimensional surface plot.
+
+Similiar as with the 1D BVP, code is writen in order to generate the element matrix, element vector, boundary element matrix and boundary element vector. 
+
+
 
 
 \section{Assignment 8}
 
-Use Darcy's Law, equation (1), to compute the velocities in both directions, by writing both components of equation (1) in a weak form, and by
-subsequent derivation of the Galerkin equations. Implement this where you solve the resulting systems of linear equations:
-Mvx = Cxp; Mvy = Cyp; (6)
-to get vx and vy. Note that the les Give a plot of the components by adjusting the les GenerateElementMatrix, GenerateElementVector, Gener-
-ateBoundaryElementMatrix, GenerateBoundaryElementVector, and now also BuildMatricesandVectors. In the le WI4243Post, you can add gure(4); quiver(x,y,vx',vy'); axis([-1 1 -1 1]);
+Now Darcy's law is used to compute the velocity in both directions, using the found WF(equation (2.13)) and the Galerkin equations. This is done by implementing these equations in the resulting system of linear equations(2. ):
+
+\begin{equation}
+ M\vec{v_x}=C_x\vec{p},\,\,\, M\vec{v_y}=C_y\vec{p}
+\end{equation}
+
+In order to find $\vec{v_x}$ and $\vec{v_y}$
+
+%In the le WI4243Post, you can add gure(4); quiver(x,y,vx',vy'); axis([-1 1 -1 1]);
 
 \section{Assignment 9}
 

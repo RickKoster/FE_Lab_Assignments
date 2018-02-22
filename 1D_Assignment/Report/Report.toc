@@ -10,11 +10,11 @@
 \contentsline {subsection}{\numberline {1.4.5}Computing S and f}{5}
 \contentsline {section}{\numberline {1.5}Main program}{5}
 \contentsline {section}{\numberline {1.6}Solution for u}{5}
-\contentsline {section}{\numberline {1.7}Experiment}{5}
+\contentsline {section}{\numberline {1.7}Experiment}{6}
 \contentsline {chapter}{\numberline {2}2D-case}{8}
-\contentsline {section}{\numberline {2.1}Boundary value problem 2D}{8}
+\contentsline {section}{\numberline {2.1}Boundary value problem 2D}{9}
 \contentsline {section}{\numberline {2.2}Element matrix and element vector}{9}
-\contentsline {section}{\numberline {2.3}Boundary matrix and boundary vector}{9}
+\contentsline {section}{\numberline {2.3}Boundary matrix and boundary vector}{10}
 \contentsline {section}{\numberline {2.4}Assignment 6}{10}
 \contentsline {section}{\numberline {2.5}Assignment 7}{10}
 \contentsline {section}{\numberline {2.6}Assignment 8}{10}
