@@ -1,16 +1,17 @@
-\documentclass{report}
+\documentclass[a4paper]{report}
 \usepackage{amsmath}
 \usepackage{blindtext}
 \usepackage{blindtext}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{appendix}
 
 
 %for MATLAB code:
 \usepackage{listings}
 
 \usepackage{geometry}
-\geometry{legalpaper, margin=1in}
+\geometry{a4paper, margin=1in}
 
 
 \begin{document}
@@ -566,8 +567,92 @@ In order to find $\vec{v_x}$ and $\vec{v_y}$
 
 %Perform various simulations where you let the transfer coecient K range between 0.00001 and 10000. Show the contour plots, and give the values of the minimal pressure (which is important from an engineering point of view). Explain your results.
 
+
 \section{Assignment 10}
+
 What happens if K = 0? Explain the results.
+
+
+
+\newpage
+
+\appendix
+
+\begin{appendices}
+\chapter{1D-case full script}
+
+
+\begin{lstlisting}
+clear all
+close all
+
+%%Finite Element 1D
+%% Parameters
+
+N_elem = 100; %Number of elements
+int = [0,1]; %Interval
+lambda = 1;
+D = .1;
+
+%% Mesh & Topology
+
+mesh = GenerateMesh(int,N_elem);
+elmat = GenerateTopology(N_elem); %1D topology!!
+
+%% Assemble Matrix & Vector
+
+S = AssembleMatrix( N_elem, lambda, D, mesh, elmat);
+f = AssembleVector( N_elem, mesh, elmat);
+
+%% Calculate u
+x = linspace(int(1),int(2),N_elem);
+
+u = S\f;
+
+hold on
+plot(x,u); 
+legend('N=100')
+title('Solution for u')
+xlabel('x')
+ylabel('u')
+ax.box='on'
+hold off
+
+
+% For this part change the function in functionBVP.m to 'f = sin(20*x)'
+
+figure 
+hold on
+
+for N_elem = [10 20 40 80 100 160]
+	mesh = GenerateMesh(int,N_elem);
+	elmat = GenerateTopology(N_elem);
+	S = AssembleMatrix( N_elem, lambda, D, mesh, elmat);
+	f = AssembleVector( N_elem, mesh, elmat);
+
+	x = linspace(int(1),int(2),N_elem);
+
+	u = S\f;
+	plot(x,u);
+
+
+end
+
+legend('N=10','N=20','N=40','N= 80','N=100','N=160')
+title('Solution for u')
+xlabel('x')
+ylabel('u')
+ax.box='on'
+hold off
+\chapter{2D-case full script}
+
+
+
+
+\end{lstlisting}
+
+\chapter{2D-case full script}
+\end{appendices}
 
 \end{document}
 

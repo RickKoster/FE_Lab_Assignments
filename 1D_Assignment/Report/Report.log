@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.5)  22 FEB 2018 20:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.5)  23 FEB 2018 13:04
 entering extended mode
 **./Report.tex
 (Report.tex
@@ -447,24 +447,30 @@ File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\appendix\appendix.sty"
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count118
+\c@@ppsavesec=\count119
+\c@@ppsaveapp=\count120
+)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
-\lst@mode=\count118
+\lst@mode=\count121
 \lst@gtempboxa=\box28
 \lst@token=\toks22
-\lst@length=\count119
+\lst@length=\count122
 \lst@currlwidth=\dimen114
-\lst@column=\count120
-\lst@pos=\count121
+\lst@column=\count123
+\lst@pos=\count124
 \lst@lostspace=\dimen115
 \lst@width=\dimen116
-\lst@newlines=\count122
-\lst@lineno=\count123
+\lst@newlines=\count125
+\lst@lineno=\count126
 \lst@maxwidth=\dimen117
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count124
-\lst@skipnumbers=\count125
+\c@lstnumber=\count127
+\lst@skipnumbers=\count128
 \lst@framebox=\box29
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
@@ -485,9 +491,9 @@ Package ifvtex Info: VTeX not detected.
 ("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count126
-\Gm@cntv=\count127
-\c@Gm@tempcnt=\count128
+\Gm@cnth=\count129
+\Gm@cntv=\count130
+\c@Gm@tempcnt=\count131
 \Gm@bindingoffset=\dimen118
 \Gm@wd@mp=\dimen119
 \Gm@odd@mp=\dimen120
@@ -508,30 +514,30 @@ LaTeX Warning: Label `overflow' multiply defined.
 )
 \openout1 = `Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
  ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count129
+\scratchcounter=\count132
 \scratchdimen=\dimen126
 \scratchbox=\box30
-\nofMPsegments=\count130
-\nofMParguments=\count131
+\nofMPsegments=\count133
+\nofMParguments=\count134
 \everyMPshowfont=\toks24
-\MPscratchCnt=\count132
+\MPscratchCnt=\count135
 \MPscratchDim=\dimen127
-\MPnumerator=\count133
-\makeMPintoPDFobject=\count134
+\MPnumerator=\count136
+\makeMPintoPDFobject=\count137
 \everyMPtoPDFconversion=\toks25
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -581,22 +587,22 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count135
+\c@lstlisting=\count138
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: legalpaper
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
-* v-part:(T,H,B)=(72.26999pt, 867.24002pt, 72.26999pt)
-* \paperwidth=614.295pt
-* \paperheight=1011.78pt
-* \textwidth=469.75502pt
-* \textheight=867.24002pt
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
 * \oddsidemargin=0.0pt
 * \evensidemargin=0.0pt
 * \topmargin=-37.0pt
@@ -604,7 +610,7 @@ G,.JBIG2,.JB2,.eps]
 * \headsep=25.0pt
 * \topskip=10.0pt
 * \footskip=30.0pt
-* \marginparwidth=65.0pt
+* \marginparwidth=57.0pt
 * \marginparsep=11.0pt
 * \columnsep=10.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
@@ -631,93 +637,93 @@ Chapter 1.
 [2
 
 ]
-Overfull \hbox (4.2498pt too wide) in paragraph at lines 145--147
+Overfull \hbox (21.03693pt too wide) in paragraph at lines 146--148
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 178.
+Overfull \hbox (15.03687pt too wide) in paragraph at lines 160--161
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
 
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 179.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 179.
 
-Overfull \hbox (46.25023pt too wide) in paragraph at lines 178--179
+Overfull \hbox (63.03735pt too wide) in paragraph at lines 179--180
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (46.25023pt too wide) in paragraph at lines 181--182
+Overfull \hbox (63.03735pt too wide) in paragraph at lines 182--183
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.24986pt too wide) in paragraph at lines 207--208
+Overfull \hbox (27.03699pt too wide) in paragraph at lines 208--209
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
-
- []
-
 [4]
-<1Df1.jpg, id=29, 562.1pt x 421.575pt>
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
+
+ []
+
+[5]
+<1Df1.jpg, id=32, 562.1pt x 421.575pt>
 File: 1Df1.jpg Graphic file (type jpg)
 <use 1Df1.jpg>
-Package pdftex.def Info: 1Df1.jpg  used on input line 304. on input line 304.
+Package pdftex.def Info: 1Df1.jpg  used on input line 305. on input line 305.
 Package pdftex.def Info: Requested size: 426.79134pt x 320.09155pt on input lin
-e 304.
-<1Dfx.jpg, id=30, 562.1pt x 421.575pt>
+e 305.
+<1Dfx.jpg, id=33, 562.1pt x 421.575pt>
 File: 1Dfx.jpg Graphic file (type jpg)
 <use 1Dfx.jpg>
-Package pdftex.def Info: 1Dfx.jpg  used on input line 314. on input line 314.
+Package pdftex.def Info: 1Dfx.jpg  used on input line 315. on input line 315.
 Package pdftex.def Info: Requested size: 426.79134pt x 320.09155pt on input lin
-e 314.
- [5 <./1Df1.jpg>] [6 <./1Dfx.jpg>]
-<1Dfsinx.jpg, id=38, 562.1pt x 421.575pt>
+e 315.
+ [6 <./1Df1.jpg>] [7 <./1Dfx.jpg>] [8]
+<1Dfsinx.jpg, id=44, 562.1pt x 421.575pt>
 File: 1Dfsinx.jpg Graphic file (type jpg)
 <use 1Dfsinx.jpg>
-Package pdftex.def Info: 1Dfsinx.jpg  used on input line 365. on input line 365
+Package pdftex.def Info: 1Dfsinx.jpg  used on input line 366. on input line 366
 .
 Package pdftex.def Info: Requested size: 426.79134pt x 320.09155pt on input lin
-e 365.
- [7 <./1Dfsinx.jpg>]
+e 366.
+ [9 <./1Dfsinx.jpg>]
 Chapter 2.
-[8
+[10
 
-] [9]
-Overfull \hbox (1.3708pt too wide) in paragraph at lines 549--549
-[]\OT1/cmr/m/n/10 nite-element code (Gen-er-a-teEle-ment-Ma-trix, GenerateEle-m
-entVector, Gen-er-ate-Bound-aryEle-ment-Ma-trix,
- []
+] [11] [12] [13]
+Appendix A.
+[14
 
+] [15]
+Appendix B.
+[16
 
-Overfull \hbox (9.3847pt too wide) in paragraph at lines 557--558
-[]\OT1/cmr/m/n/10 les Gen-er-a-teEle-ment-Ma-trix, Gen-er-a-teEle-mentVec-tor, 
-Gener- ate-Bound-aryEle-ment-Ma-trix, Gen-er-ate-Bound-
- []
-
-[10] (Report.aux)
+] (Report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4666 strings out of 493312
- 61696 string characters out of 3138900
- 158293 words of memory out of 3000000
- 8151 multiletter control sequences out of 15000+200000
+ 4764 strings out of 493312
+ 63126 string characters out of 3138900
+ 153623 words of memory out of 3000000
+ 8246 multiletter control sequences out of 15000+200000
  10235 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,32p,923b,1518s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,13n,32p,923b,1560s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
@@ -729,9 +735,9 @@ cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on Report.pdf (11 pages, 227882 bytes).
+Output written on Report.pdf (17 pages, 237951 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
+ 108 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
