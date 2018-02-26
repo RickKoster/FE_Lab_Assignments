@@ -1,4 +1,7 @@
+hold on
 figure(2);
+ax.BoxStyle = 'full';
+hold off
 trisurf(elmat,x,y,u)
 figure(3);
 trisurf(elmat,x,y,u);

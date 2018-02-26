@@ -34,7 +34,7 @@
 		Ruben Termaat\\
 		\today
 		\vfill
-		\includegraphics[width=15cm]{1Dfsinx.jpg}
+		\includegraphics[width=15cm]{3Dv.jpg}
 		\vfill
 	
 \end{titlepage}
@@ -215,10 +215,11 @@ Now that the base MATLAB codes are made the element matrix and element vector co
 
 \bigskip
 
-To generate a n-by-n matrix S, the sum over the connections of the vertices in each element matrix, over all elements has to be calculated. The following code computes this matrix.
+
 
 
 \subsection{Assemble matrix S}
+To generate a n-by-n matrix S, the sum over the connections of the vertices in each element matrix, over all elements has to be calculated. The following code computes this matrix:
 
 \begin{lstlisting}
 	function [ S ] = AssembleMatrix( N_elem, int, lambda, D)
@@ -407,14 +408,14 @@ fluid pressure, permeability of the porous medium, viscosity of water and the fl
 
 
 \begin{equation}
-	\nabla\cdot\vec{v}=-\sum_{p=1}^{n_{well}}Q_p\delta(x-x_p)=0,(x,y) \epsilon\Omega 
+	\nabla\cdot\vec{v}=-\sum_{p=1}^{n_{well}}Q_p\delta(\phi(\vec{x}-\phi(\vec{x}_p)=0,(x,y) \epsilon\Omega 
 \end{equation}
 
 where $Q_p$ denotes the water extraction rate by well k, which is located at $x_p$. Here $x$ equals $(x;y)$, the spatial coordinates.  We use the convention x = (x; y) to represent the spatial coordinates. The dirac Delta Distribution is characterized by equation(2.3).
 
 \begin{equation}
 	\begin{cases} 
-		\delta(x) = 0,x \neq 0 \\ \int_{\Omega}\delta(x)d\Omega = 1,$  where $\Omega $  contains the origin.$
+		\delta(\vec{x}) = 0,\vec{x} \neq 0 \\ \int_{\Omega}\delta(\vec{x})d\Omega = 1,$  where $\Omega $  contains the origin.$
 	\end{cases} 
 \end{equation}
 
@@ -466,7 +467,7 @@ The first step to solving these equations using finite elements is to find to fi
 BVP:
 \begin{equation}
 	\begin{cases}
-		-\frac{k}{\mu}\triangle\vec{p}=-\sum_{p=1}^{n_{well}}Q_p\delta(x-x_p)=0,\, \, (x,y) \, \epsilon \, \Omega\\
+		-\frac{k}{\mu}\triangle\vec{p}=-\sum_{p=1}^{n_{well}}Q_p\delta(\vec{x}-\vec{x}_p)=0,\, \, (x,y) \, \epsilon \, \Omega\\
 		-\frac{k}{\mu}\nabla\vec{p}\cdot\vec{n}=-\frac{k}{\mu}\frac{dp}{dn} =K(p-p^H), \, (x,y)\,  \epsilon  \, \partial\Omega
 	\end{cases}
 \end{equation}
@@ -500,7 +501,7 @@ Switching the integral and summation on the right side of equation(2.9) and simp
 The right side of equation(2.10) can be simplied using the boundary conditions (equation(2.6)) and the following property into equation(2.12): 
 
 \begin{equation}
-	\int_{\Omega}\delta(x)f(x)d\Omega \, = \, f(0)	
+	\int_{\Omega}\delta(\vec{x})f(\vec{x})d\Omega \, = \, f(0)	
 \end{equation}
 
 
@@ -534,7 +535,7 @@ Equation(2.14) now is of the form $S\vec{c}=\vec{f}$ and like with the 1D proble
 First the galerkin equation is seperated in its element and boundary components. The element matrix $S^{e_k}_{ij}$ and the element vector $f^{e_k}_i$ are given in equations (2.15) and 2.16 respectively.
 
 \begin{equation}
-	S^{e_k}_{ij} = \int_{e_k}\frac{k}{\mu}\nabla\phi_i\cdot\nabla \phi_j d\Omega
+	S^{e_k}_{ij} = \int_{e_k}\frac{k}{\mu}\nabla\phi_i\cdot\nabla \phi_j d\Omega = (\beta_i\beta_j+\gamma_i\gamma_j)\frac{k}{\mu}\frac{\lvert\triangle e_k\rvert}{2}
 \end{equation}
 
 \begin{equation}
@@ -547,15 +548,15 @@ First the galerkin equation is seperated in its element and boundary components.
 The boundary matrix $S^{b_l}_{ij}$ and boundary vector $f^{b_l}_i$ can be found in the following equations:
 
 \begin{equation}
-	S^{be_l}_{ij} = \int_{b_l} K\phi_i \phi_j dx
+	S^{be_l}_{ij} = \int_{b_l} K\phi_i \phi_j dx = K\frac{\lvert be_l\rvert}{6}(1+\delta_{ij})
 \end{equation}
 
 \begin{equation}
-	f^{be_l}_i = Kp^H\int_{b_l}\phi_i dx
+	f^{be_l}_i = Kp^H\int_{b_l}\phi_i dx = K p^H \frac{\lvert be_l\rvert}{2}
 \end{equation}
 
 
-\section{Assignment 6}
+\section{Cells within an internal element}
 
 To solve the BVP in 2D one of the aspects that need to be determined are whether each internal element contains a cell. This is done by determining whether cell with index $p$ and position $x_p$ is contained within element $e_k$ with vertices $x_{k1}$, $x_{k2}$ and $x_{k3}$. This is done according the following criterion:
 
@@ -569,21 +570,9 @@ To solve the BVP in 2D one of the aspects that need to be determined are whether
 
 In the criterion $\delta(x_p,x_q,x_r)$ denotes the triangle with vertices $x_p$, $x_q$ and $x_r$, where $|\delta(x_{k1},x_{k2},x_{k3})$ denote its area. The triangular element $k$ is given by $e_k=\delta(x_{k1},x_{k2},x_{k3})$ with vertices  $x_1$, $x_2$ and $x_3$ and $\vec{e_k}$ includes the boundary of element $e_k$. To solve this BVP a certan tolerance has to be accounted for in the Matlab code.
 
-\section{Assignment 7}
+\section{Generating MATLAB code}
 
-Similiar as with the 1D BVP, code is writen in order to generate the element matrix, element vector, boundary element matrix and boundary element vector. 
-
-
-
-
-
-
-
-
-
-
-
-
+Similar as with the 1D BVP, code is written in order to generate a mesh, element matrix, element vector, boundary element matrix and boundary element vector. These codes can be found in appendix B.1 through B.6. 
 
 
 
@@ -591,19 +580,13 @@ Similiar as with the 1D BVP, code is writen in order to generate the element mat
 
 \section{Assignment 8}
 
-Now Darcy's law is used to compute the velocity in both directions, using the found WF(equation (2.13)) and the Galerkin equations. This is done by implementing these equations in the resulting system of linear equations(2. ):
+Now Darcy's law is used to compute the velocity in both directions, by implementing the found WF(equation (2.13)) and the Galerkin equations in the resulting system of linear equations(2.20).
 
 \begin{equation}
  M\vec{v_x}=C_x\vec{p},\,\,\, M\vec{v_y}=C_y\vec{p}
 \end{equation}
 
-In order to find $\vec{v_x}$ and $\vec{v_y}$
-
-%In the le WI4243Post, you can add gure(4); quiver(x,y,vx',vy'); axis([-1 1 -1 1]);
-
-
-
-
+In order to find $\vec{v_x}$ and $\vec{v_y}$ equations(2.20) need to be solved. First writing out the x and y parts of the velocity gives:
 
 \begin{equation}
 \vec{v}=-\frac{k}{\mu}\nabla p
@@ -618,11 +601,13 @@ In order to find $\vec{v_x}$ and $\vec{v_y}$
 \vec{v}_y=-\frac{k}{\mu}\frac{dp}{dy}
 \end{equation}
 
+Equation(2.24) shows the relation between $\vec{v}$ and pressure p.
 
 \begin{equation}
-\vec{v}\cdot\vec{n}=k(p-p^H\text{ on })d\Omega
+\vec{v}\cdot\vec{n}=k(p-p^H)\text{ on }d\Omega
 \end{equation}
 
+This relation is used to rewrite equations(2.22 and 2.23):
 
 \begin{equation}
 v_x(x=-1)=-k(p-p^H)
@@ -643,70 +628,78 @@ v_y(y=-1)=-k(p-p^H)
 v_y(y=1)=k(p-p^H)
 \end{equation}
 
+The Galerkin approach is used again to solve the equations by approximating $v_x$.
 
 \begin{equation}
 v_x \approx v^{(n)}_x=\sum_{j=1}^{n}c_j \phi_j
 \end{equation}
 
-$\phi(\vec{x})=\phi (\vec{x})_i$
+Here $\phi(\vec{x})=\phi (\vec{x})_i$. Filling equations(2.29) and $\phi(\vec{x})_i$ in the exuations for $v_x$ 
+
+
 \begin{equation}
 \int_{\Omega}\phi v_x d\Omega=-\frac{k}{\mu}\int_{\Omega}\phi\frac{dp}{dx}d\Omega
 \end{equation}
 
-
+Partial integration is applied on the right side term.
 \begin{equation}
 \int_{\Omega}\phi v_x d\Omega=  -\frac{k}{\mu}\{\int_{\Omega}\frac{d}{dx}(\phi p)-p\frac{d\phi}{x}d\Omega\}
 \end{equation}
 
+Rewriting the integral:
 
 \begin{equation}
  \int_{\Omega}-\frac{k}{\mu}\frac{d\phi p}{dx}dxdy=\int_{-1}^{1}=-\frac{k}{\mu}[\phi p]dy
 \end{equation}
 
-
+Evaluating the right side of equation(2.31) by filling in the previous conditions for specific points (1,1) and (-1,-1):
 \begin{equation}
 =\int_{-1}^{1}-\frac{k}{\mu}(\phi(x=1,y)p(x=1,y))-\frac{k}{\mu}(\phi(x=-1)p(x=-1,y))dy
 \end{equation}
 
+Simplifying the equation:
 
 \begin{equation}
 =\int_{d\Omega_3}-\frac{k}{\mu}\phi pdy+\int_{d\Omega_1}\frac{k}{\mu}\phi pdy
 \end{equation}
 
-
+Now the total combined equation found is:
 \begin{equation}
 \int_{\Omega}\phi v_x = -\frac{k}{\mu}\{\int_{\Omega}\frac{d}{dx}(\phi p)-p\frac{d\phi}{dx}d\Omega\}
 \end{equation}
 
 
-find $v_x$ stationary
+Find $v_x$ stationary:
 
 \begin{equation}
 \int_{\Omega}\phi v_x = \frac{k}{\mu}\{\int_{d\Omega_3}-\phi pdy+\int_{d\Omega_1}\phi pdy+\int_{\Omega}p\frac{\phi_i}{dx}d\Omega\}
 \end{equation}
 
 
-Galerkin equations
+Again applying the Galerkin equations to (2.36) the following conditions are found(2.38).
+
 \begin{equation}
-\phi(\vec{x})=\phi(\vec{x})_i \,\,\,v_x\approx v^{(n)}_x = \sum_{j=1}^{n}c_j\phi(\vec{x})_j
+\phi(\vec{x})=\phi(\vec{x})_i \hspace{1cm}v_x\approx v^{(n)}_x = \sum_{j=1}^{n}c_j\phi(\vec{x})_j
 \end{equation}
 
 
-\begin{equation*}
+\begin{equation}
 \text{on}\,
 \begin{cases}
 d\Omega_3:\, -v_x=k(p-p^H) \,\rightarrow\, p=-\frac{v_x}{k}+p^H\\
 d\Omega_1:\,\,\,\,\, v_x=k(p-p^H) \,\rightarrow\, p=\frac{v_x}{k}+p^H
 \end{cases}
-\end{equation*}
+\end{equation}
 
+Now writing the equation where $v_x$ is filled in so that an equation is found that depends on $p$. 
 
 \begin{equation}
 	\int_{\Omega}\phi v_x d\Omega + \int_{d\Omega_3}-\frac{k}{\mu}\frac{1}{k}\phi v_xdy + \int_{d\Omega_1}-\frac{k}{\mu}\frac{1}{k}\phi v_x dy 
 	= \int_{d\Omega_3}-\frac{k}{\mu}\phi p^H dy +\int_{d\Omega_1}\frac{k}{\mu}\phi p^H dy + \int_{\Omega}\frac{k}{\mu}p\frac{d\phi}{dx}d\Omega
 \end{equation}
 
-$\phi(\vec{x})=\phi(\vec{x})_i$  $v_x\approx \sum_{j=1}^{n}c_j\phi(\vec{x})_j$  $\phi(\vec{x})=\alpha_i+\beta_i x+\gamma_i y$
+For the right side of equation(2.39) the galerkin equations are filled in to find a 
+$\phi(\vec{x})=\phi(\vec{x})_i$\,\,\,\,  $v_x\approx \sum_{j=1}^{n}c_j\phi(\vec{x})_j$  \,\,\,\,$\phi(\vec{x})=\alpha_i+\beta_i x+\gamma_i y$
 
 \begin{equation}
 \sum_{j=1}^{n}c_j
@@ -718,6 +711,9 @@ $\phi(\vec{x})=\phi(\vec{x})_i$  $v_x\approx \sum_{j=1}^{n}c_j\phi(\vec{x})_j$  
 \{\int_{d\Omega_3}-\frac{k}{\mu}\phi_i p^H dy +\int_{d\Omega_1}\frac{k}{\mu}\phi_i p^H dy + \int_{\Omega}\frac{k}{\mu}p\frac{d\phi_i}{dx}d\Omega\}
 \end{equation}
 
+
+
+Applying Newton-Cotes theorem and ~ , the element matrix(2.42), boundary element matrix(2.43), element vector(2.44) and boundary element vector(2.45) is found.
 
 \begin{equation}
 S^{e_k}_{ij}=\int_{e_k}\phi_i\phi_j = \frac{\lvert\triangle_{ek}\rvert}{24}
@@ -734,9 +730,42 @@ f^{e_n}_{i} = \int_{e_n}\frac{k}{\mu}p\beta_i d\Omega = \frac{k}{\mu}\beta_i\sum
 \begin{equation}
 f^{be_l}_{i}=\int_{be_l}\pm \frac{k}{\mu}\phi_ip^H dy = \pm \frac{k}{\mu}p^H \frac{\lvert be_l\rvert}{2}
 \end{equation}
+
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=150mm]{meshgrid2D.jpg}
+	\caption{caption
+ \label{overflow}}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=150mm]{2Dvarrows.jpg}
+	\caption{caption
+	\label{overflow}}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=150mm]{2Dvheat.jpg}
+	\caption{caption
+	\label{overflow}}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=150mm]{3Dv.jpg}
+	\caption{caption
+	\label{overflow}}
+\end{figure}
+
 \section{Assignment 9}
 
-%Perform various simulations where you let the transfer coecient K range between 0.00001 and 10000. Show the contour plots, and give the values of the minimal pressure (which is important from an engineering point of view). Explain your results.
+%Perform various simulations where you let the transfer coeficient K range between 0.00001 and 10000. Show the contour plots, and give the values of the minimal pressure (which is important from an engineering point of view). Explain your results.
+
+
+
 
 
 \section{Assignment 10}
@@ -822,7 +851,480 @@ hold off
 
 \end{lstlisting}
 
-\chapter{2D-case full script}
+\chapter{2D-case}
+
+
+\section{Generate mesh}
+\begin{lstlisting}
+clear all
+
+Geometry = 'squareg'; 
+
+DiffCoeff = 1;
+h_transfer = 1;
+u_inf = 1;
+
+
+% Geometry = 'squareg'; % gives square [-1,1] x [-1,1]
+% Geometry = 'circleg'; % gives unit circle centered at origin
+% Geometry = 'lshapeg'; % gives L-shape
+
+[p,e,t] = initmesh(Geometry);
+[p,e,t] = refinemesh(Geometry,p,e,t); % gives gridrefinement
+[p,e,t] = refinemesh(Geometry,p,e,t); % gives second gridrefinement
+%[p,e,t] = refinemesh(Geometry,p,e,t); % gives third gridrefinement
+pdemesh(p,e,t); % plots the geometry and mesh
+
+x = p(1,:); y = p(2,:);
+n = length(p(1,:));
+
+elmat = t(1:3,:);
+elmat = elmat';
+elmatbnd = e(1:2,:);
+elmatbnd = elmatbnd';
+% h
+topology = 3; topologybnd = 2;
+\end{lstlisting}
+
+
+
+
+\section{Generate element matrix}
+\begin{lstlisting}
+clear xc
+clear yc
+clear Selem
+
+for index1 = 1:topology
+xc(index1) = x(elmat(i,index1));
+yc(index1) = y(elmat(i,index1));
+end;
+
+Delta = det([1 xc(1) yc(1);1 xc(2) yc(2);1 xc(3) yc(3)]);
+B_mat = [1 xc(1) yc(1);1 xc(2) yc(2);1 xc(3) yc(3)] \  eye(3);
+
+alpha = B_mat(1,1:3);
+beta  = B_mat(2,1:3);
+gamma = B_mat(3,1:3);
+
+for index1 = 1:topology
+for index2 = 1:topology
+if ~exist('u','var')
+Selem(index1,index2) =
+abs(Delta)/2*(k/mu)*(beta(index1)*beta(index2)+gamma(index1)*gamma(index2));
+else
+Selem(index1,index2) = abs(Delta)/24;
+end
+end;
+end;
+\end{lstlisting}
+
+\section{Generate element vector}
+\begin{lstlisting}
+clear xc
+clear yc
+clear felem
+
+for index1=1:topology
+xc(index1) = x(elmat(i,index1));
+yc(index1) = y(elmat(i,index1));
+end;
+
+Delta = det([1 xc(1) yc(1);1 xc(2) yc(2);1 xc(3) yc(3)]);
+B_mat = [1 xc(1) yc(1);1 xc(2) yc(2);1 xc(3) yc(3)] \  eye(3);
+
+alpha = B_mat(1,1:3);
+beta  = B_mat(2,1:3);
+gamma = B_mat(3,1:3);
+
+felem = zeros(1,topology);
+
+% for N = 1:N_wells
+%     Delta_23 = det([1 xp(N) yp(N);1 xc(2) yc(2);1 xc(3) yc(3)]);
+%     Delta_13 = det([1 xc(1) yc(1);1 xp(N) yp(N);1 xc(3) yc(3)]);
+%     Delta_12 = det([1 xc(1) yc(1);1 xc(2) yc(2);1 xp(N) yp(N)]);
+%     
+%     if Delta + epsilon1*Delta >= abs(Delta_23) + abs(Delta_13) 
++ abs(Delta_12) || Delta - epsilon1*Delta >= abs(Delta_23)
++ abs(Delta_13) + abs(Delta_12) ;
+%         N_Test = N_Test + 1;
+%         for index1 = 1:topology
+%             felem(index1) = felem(index1) +
+			-Qp*(1-abs(beta(index1))*abs(xc(index1)-
+			xp(index1))-abs(gamma(index1))*abs(yc(index1)-yp(index1)));
+%             
+%         end
+%         
+%     i
+% % Components of f are zero except for those elements with a well! So no
+% % other contributions!
+% %     else        
+% %         for index1 = 1:topology
+% %         global_index = elmat(N,index1);
+% %         
+% %         
+% %         end
+%     end
+% end
+if ~exist('u','var')
+for N = 1:N_wells
+for index3 = 1:topology
+phi_p(index3) = alpha(index3) + beta(index3)*xp(N) 
++ gamma(index3)*yp(N);
+end
+
+if (phi_p(1) <= 1) && (phi_p(1) >= 0) && (phi_p(2) <= 1) && (phi_p(2) 
+>= 0) && (phi_p(3) <= 1) && (phi_p(3) >= 0);
+for index1 = 1:topology
+phi_p
+felem(index1) = felem(index1) +
+-Qp*phi_p(index1); %*(1-abs(beta(index1))*abs(xc(index1)
+-xp(index1))-abs(gamma(index1))*abs(yc(index1)-yp(index1))) ;
+felem
+end
+i
+
+N_Test = N_Test + 1;
+% Components of f are zero except for those elements with a well! So no
+% other contributions!
+%     else        
+%         for index1 = 1:topology
+%         global_index = elmat(N,index1);
+%         
+%         
+%         end
+end
+end
+else
+switch direction
+case 1 % x direction
+for index1 = 1:topology
+felem(index1) = felem(index1) +
+(k/mu)*(abs(Delta)/6)*beta(index1)*(u(elmat(i,1))+u(elmat(i,2))+u(elmat(i,3)));
+end
+
+case 2 % y direction
+for index1 = 1:topology
+felem(index1) = felem(index1) +
+(k/mu)*(abs(Delta)/6)*gamma(index1)*(u(elmat(i,1))+u(elmat(i,2))+u(elmat(i,3)));
+end
+end
+end
+\end{lstlisting}
+
+
+
+
+
+\section{Generate Boundary matrix}
+
+\begin{lstlisting}
+clear xc
+clear yc
+clear BMelem
+
+for index1=1:topologybnd
+xc(index1) = x(elmatbnd(i,index1));
+yc(index1) = y(elmatbnd(i,index1));
+end;
+
+lek = sqrt((xc(2)-xc(1))^2 + (yc(2)-yc(1))^2);
+
+for index1=1:topologybnd
+if ~exist('u', 'var')
+BMelem(index1,index1) = K*lek/2;  % NC used! not HB!!
+else
+
+BMelem(index1,index1) = -(k/(mu*K))*lek/6;
+end
+end;
+\end{lstlisting}
+
+
+
+\section{Generate boundary element vector:}
+
+\begin{lstlisting}
+clear xc
+clear yc
+clear bfelem
+
+for index1 = 1:topologybnd
+xc(index1) = x(elmatbnd(i,index1));
+yc(index1) = y(elmatbnd(i,index1));
+end;
+
+lek = sqrt((xc(2)-xc(1))^2+(yc(2)-yc(1))^2);
+
+if ~exist('u','var')
+for index1 = 1:topologybnd
+bfelem(index1) = K*pH*lek/2*u_inf;   %what is u_inf?
+end;
+else
+for index1 = 1:topologybnd
+bfelem(index1) = ((k*pH)/mu)*lek/2*u_inf;   %what is u_inf?
+%         bfelem(index1) = -(k/mu)*lek/6*u(elmat(i,ind1));
+end
+end
+\end{lstlisting}
+
+\section{Buildmatrices and vectors}
+
+\begin{lstlisting}
+% This routine constructs the large matrices and vector.
+% The element matrices and vectors are also dealt with.
+% First the internal element contributions
+% First Initialisation of large discretisation matrix, right-hand side vector
+
+% Treatment of the internal (triangular) elements
+
+if ~exist('u', 'var')  
+
+S 		= sparse(n,n); % stiffness matrix
+
+f 		= zeros(n,1); % right-hand side vector
+
+for i = 1:length(elmat(:,1)) % for all internal elements
+GenerateElementMatrix; % Selem	
+for ind1 = 1:topology
+for ind2 = 1:topology
+S(elmat(i,ind1),elmat(i,ind2))	= S(elmat(i,ind1),elmat(i,ind2)) + Selem(ind1,ind2);
+end;
+end;
+
+GenerateElementVector; % felem
+for ind1 = 1:topology
+f(elmat(i,ind1)) = f(elmat(i,ind1)) + felem(ind1);
+end;
+end;
+
+% Next the boundary contributions
+
+for i = 1:length(elmatbnd(:,1)); % for all boundary elements extension of mass matrix M and element vector f
+GenerateBoundaryElementMatrix; % BMelem
+for ind1 = 1:topologybnd
+for ind2 = 1:topologybnd
+S(elmatbnd(i,ind1),elmatbnd(i,ind2)) = S(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
+end;
+end;
+GenerateBoundaryElementVector; % bfelem   
+for ind1 = 1:topologybnd
+f(elmatbnd(i,ind1)) = f(elmatbnd(i,ind1)) + bfelem(ind1);
+end;
+end;
+
+else
+
+Sx 		= sparse(n,n); % stiffness matrix
+
+fx 		= zeros(n,1); % right-hand side vector
+
+left_nodes = find(p(1,:) == -1); 
+top_nodes = find(p(2,:) == 1);
+right_nodes = find(p(1,:) == 1);
+bottom_nodes = find(p(2,:) == -1);
+
+bnd1_nodes = ismember(elmatbnd,left_nodes);
+bnd1 = find(bnd1_nodes(:,1) == 1 & bnd1_nodes(:,2) == 1);
+
+bnd2_nodes = ismember(elmatbnd,top_nodes);
+bnd2 = find(bnd2_nodes(:,1) == 1 & bnd2_nodes(:,2) == 1);
+
+bnd3_nodes = ismember(elmatbnd,right_nodes);
+bnd3 = find(bnd3_nodes(:,1) == 1 & bnd3_nodes(:,2) == 1);
+
+bnd4_nodes = ismember(elmatbnd,bottom_nodes);
+bnd4 = find(bnd4_nodes(:,1) == 1 & bnd4_nodes(:,2) == 1);
+
+
+direction = 1;
+
+for i = 1:length(elmat(:,1)) % for all internal elements
+GenerateElementMatrix; % Selem	
+for ind1 = 1:topology
+for ind2 = 1:topology
+if elmat(i,ind1) == elmat(i,ind2)
+Sx(elmat(i,ind1),elmat(i,ind2))	= Sx(elmat(i,ind1),elmat(i,ind2)) + 2*Selem(ind1,ind2);
+else
+Sx(elmat(i,ind1),elmat(i,ind2))	= Sx(elmat(i,ind1),elmat(i,ind2)) + Selem(ind1,ind2);
+end
+end;
+end;
+GenerateElementVector; % felem
+for ind1 = 1:topology
+fx(elmat(i,ind1)) = fx(elmat(i,ind1)) + felem(ind1);
+end;
+end;
+
+% Next the boundary contributions
+
+
+
+for j = 1:length(bnd1); % left boundary
+i = bnd1(j);
+GenerateBoundaryElementMatrix; % BMelem
+for ind1 = 1:topologybnd
+for ind2 = 1:topologybnd
+if elmatbnd(i,ind1) == elmatbnd(i,ind2)
+Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) + 2*BMelem(ind1,ind2);
+else
+Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
+end;
+end
+end;
+GenerateBoundaryElementVector; % bfelem   
+for ind1 = 1:topologybnd
+fx(elmatbnd(i,ind1)) = fx(elmatbnd(i,ind1)) + bfelem(ind1);
+end;
+end;
+
+for j = 1:length(bnd3); % right boundary
+i = bnd3(j);
+GenerateBoundaryElementMatrix; % BMelem
+for ind1 = 1:topologybnd
+for ind2 = 1:topologybnd
+if elmatbnd(i,ind1) == elmatbnd(i,ind2)
+Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) + 2*BMelem(ind1,ind2);
+else
+Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
+end;
+end
+end;
+GenerateBoundaryElementVector; % bfelem   
+for ind1 = 1:topologybnd
+fx(elmatbnd(i,ind1)) = fx(elmatbnd(i,ind1)) - bfelem(ind1);
+end;
+end;
+
+direction = 2;
+
+Sy 		= sparse(n,n); % stiffness matrix
+
+fy 		= zeros(n,1); % right-hand side vector
+
+for i = 1:length(elmat(:,1)) % for all internal elements
+GenerateElementMatrix; % Selem	
+for ind1 = 1:topology
+for ind2 = 1:topology
+if elmat(i,ind1) == elmat(i,ind2)
+Sy(elmat(i,ind1),elmat(i,ind2))	= Sy(elmat(i,ind1),elmat(i,ind2)) + 2*Selem(ind1,ind2);
+else
+Sy(elmat(i,ind1),elmat(i,ind2))	= Sy(elmat(i,ind1),elmat(i,ind2)) + Selem(ind1,ind2);
+end
+end;
+end;
+GenerateElementVector; % felem
+for ind1 = 1:topology
+fy(elmat(i,ind1)) = fy(elmat(i,ind1)) + felem(ind1);
+end;
+end;
+
+% Next the boundary contributions
+
+
+
+for j = 1:length(bnd2); % left boundary
+i = bnd2(j);
+GenerateBoundaryElementMatrix; % BMelem
+for ind1 = 1:topologybnd
+for ind2 = 1:topologybnd
+if elmatbnd(i,ind1) == elmatbnd(i,ind2)
+Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) + 2*BMelem(ind1,ind2);
+else
+Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
+end;
+end
+end;
+GenerateBoundaryElementVector; % bfelem   
+for ind1 = 1:topologybnd
+fy(elmatbnd(i,ind1)) = fy(elmatbnd(i,ind1)) - bfelem(ind1);
+end;
+end;
+
+for j = 1:length(bnd4); % right boundary
+i = bnd4(j);
+GenerateBoundaryElementMatrix; % BMelem
+for ind1 = 1:topologybnd
+for ind2 = 1:topologybnd
+if elmatbnd(i,ind1) == elmatbnd(i,ind2)
+Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) + 2*BMelem(ind1,ind2);
+else
+Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
+end;
+end
+end;
+GenerateBoundaryElementVector; % bfelem   
+for ind1 = 1:topologybnd
+fy(elmatbnd(i,ind1)) = fy(elmatbnd(i,ind1)) + bfelem(ind1);
+end;
+end;
+end
+
+\end{lstlisting}
+
+\section{Compute u and $v_x$/$v_y$}
+
+
+\begin{lstlisting}
+% Construction of linear problem
+
+BuildMatricesandVectors;
+
+% Solution of linear problem
+
+u = S \ f;
+
+BuildMatricesandVectors;
+
+vx = Sx \ fx;
+vy = Sy \ fy;
+\end{lstlisting}
+
+\section{Full script}
+\begin{lstlisting}
+close all
+clear all
+
+%% 2D Assignment
+% Lab Assignment 7
+
+%% Create Mesh
+WI4243Mesh
+
+%% Parameters
+
+Qp = 50;            % [m^2/s]
+k = 10^-7;          % [m^2]
+mu = 1.002*10^-3;   % [Pa*s]
+K = 10000;             % [m/s]
+pH = 10^6;          % [Pa]
+N_wells = 6;        % number of wells
+
+epsilon1 = 0.03;
+N_Test = 0;
+%% Coordinates of wells
+
+for i = 1:N_wells-1;
+xp(i) = 0.6*cos((2*pi)*(i-1)/(N_wells-1));
+yp(i) = 0.6*sin((2*pi)*(i-1)/(N_wells-1));
+end
+
+xp(N_wells) = 0;
+yp(N_wells) = 0;
+clear i;
+
+
+%% Compute Problem
+WI4243Comp
+
+%% Post
+WI4243Post
+
+%% Velocity part
+
+
+\end{lstlisting}
+
 \end{appendices}
 
 \end{document}
