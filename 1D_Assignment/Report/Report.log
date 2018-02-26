@@ -1,12 +1,16 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.5)  23 FEB 2018 13:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.24)  25 FEB 2018 23:58
 entering extended mode
 **./Report.tex
 (Report.tex
 LaTeX2e <2017-04-15>
-Babel <3.15> and hyphenation patterns for 75 language(s) loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
+Babel <3.17> and hyphenation patterns for 75 language(s) loaded.
+
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\repor
+t.cls"
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size1
+0.clo"
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -22,24 +26,30 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\am
+smath.sty"
 Package: amsmath 2017/09/02 v2.17a AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\am
+stext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\am
+sgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks14
 \ex@=\dimen103
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\am
+sbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen104
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\am
+sopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count88
@@ -80,10 +90,12 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\blindtext\blindtext.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\blindtext\
+blindtext.sty"
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\xspace.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\xspa
+ce.sty"
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
 \c@blindtext=\count100
@@ -105,19 +117,22 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 \c@blind@pangramcount=\count116
 \c@blind@pangrammax=\count117
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\input
+enc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks19
 \inpenc@posthook=\toks20
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.
+def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc
+.dfu"
 File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -358,7 +373,8 @@ File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ot1en
+c.dfu"
 File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -399,7 +415,8 @@ File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omsen
+c.dfu"
 File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -423,37 +440,73 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\g
+raphicx.sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\k
+eyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks21
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\g
+raphics.sty"
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\t
+rig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-c
+fg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
-File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-d
+ef\pdftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\appendix\appendix.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\appendix\a
+ppendix.sty"
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
 \c@@pps=\count118
 \c@@ppsavesec=\count119
 \c@@ppsaveapp=\count120
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fonte
+nc.sty"
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc
+.def"
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xco
+lor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-c
+fg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\l
+istings.sty"
 \lst@mode=\count121
 \lst@gtempboxa=\box28
 \lst@token=\toks22
@@ -467,28 +520,34 @@ Package: appendix 2009/09/02 v1.2b extra appendix facilities
 \lst@lineno=\count126
 \lst@maxwidth=\dimen117
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\l
+stmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count127
 \lst@skipnumbers=\count128
 \lst@framebox=\box29
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\l
+istings.cfg"
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\g
+eometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek
+\ifpdf.sty"
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek
+\ifvtex.sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\
+ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count129
@@ -504,7 +563,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen125
 \Gm@dimlist=\toks23
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg")) (Report.aux
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\g
+eometry.cfg")) (Report.aux
 
 LaTeX Warning: Label `overflow' multiply defined.
 
@@ -514,19 +574,21 @@ LaTeX Warning: Label `overflow' multiply defined.
 )
 \openout1 = `Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
- ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\sup
+p-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count132
 \scratchdimen=\dimen126
@@ -539,31 +601,41 @@ LaTeX Font Info:    ... okay on input line 17.
 \MPnumerator=\count136
 \makeMPintoPDFobject=\count137
 \everyMPtoPDFconversion=\toks25
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+)
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\e
+pstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek
+\infwarerr.sty"
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\g
+rfext.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek
+\kvdefinekeys.sty"
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek
+\ltxcmds.sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )))
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\k
+voptions.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek
+\kvsetkeys.sty"
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek
+\etexcmds.sty"
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek
+\ifluatex.sty"
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -572,8 +644,9 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek
+\pdftexcmds.sty"
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -623,93 +696,98 @@ G,.JBIG2,.JB2,.eps]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+<1Dfsinx.jpg, id=1, 562.1pt x 421.575pt>
+File: 1Dfsinx.jpg Graphic file (type jpg)
+<use 1Dfsinx.jpg>
+Package pdftex.def Info: 1Dfsinx.jpg  used on input line 37.
+(pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
 [1
 
-{C:/Users/Ruben/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(Report.toc)
+{C:/Users/Ruben Termaat/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./1
+Dfsinx.jpg>] [1
+
+] (Report.toc)
 \tf@toc=\write3
 \openout3 = `Report.toc'.
 
- [1
+ [2
+
 
 ]
 Chapter 1.
-[2
+[3
 
 ]
-Overfull \hbox (21.03693pt too wide) in paragraph at lines 146--148
+Overfull \hbox (20.92pt too wide) in paragraph at lines 170--172
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[3]
-Overfull \hbox (15.03687pt too wide) in paragraph at lines 160--161
+[4]
+Overfull \hbox (14.92142pt too wide) in paragraph at lines 184--185
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 179.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 203.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+
+("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscm
+r.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 179.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 203.
 
-Overfull \hbox (63.03735pt too wide) in paragraph at lines 179--180
+Overfull \hbox (62.91006pt too wide) in paragraph at lines 203--204
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (63.03735pt too wide) in paragraph at lines 182--183
+Overfull \hbox (62.91006pt too wide) in paragraph at lines 206--207
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (27.03699pt too wide) in paragraph at lines 208--209
+Overfull \hbox (26.91858pt too wide) in paragraph at lines 232--233
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 222--223
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
-
- []
-
 [5]
-<1Df1.jpg, id=32, 562.1pt x 421.575pt>
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
+
+ []
+
+[6]
+<1Df1.jpg, id=40, 562.1pt x 421.575pt>
 File: 1Df1.jpg Graphic file (type jpg)
 <use 1Df1.jpg>
-Package pdftex.def Info: 1Df1.jpg  used on input line 305. on input line 305.
-Package pdftex.def Info: Requested size: 426.79134pt x 320.09155pt on input lin
-e 305.
-<1Dfx.jpg, id=33, 562.1pt x 421.575pt>
+Package pdftex.def Info: 1Df1.jpg  used on input line 329.
+(pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
+<1Dfx.jpg, id=41, 562.1pt x 421.575pt>
 File: 1Dfx.jpg Graphic file (type jpg)
 <use 1Dfx.jpg>
-Package pdftex.def Info: 1Dfx.jpg  used on input line 315. on input line 315.
-Package pdftex.def Info: Requested size: 426.79134pt x 320.09155pt on input lin
-e 315.
- [6 <./1Df1.jpg>] [7 <./1Dfx.jpg>] [8]
-<1Dfsinx.jpg, id=44, 562.1pt x 421.575pt>
+Package pdftex.def Info: 1Dfx.jpg  used on input line 339.
+(pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
+ [7 <./1Df1.jpg>] [8 <./1Dfx.jpg>] [9]
 File: 1Dfsinx.jpg Graphic file (type jpg)
 <use 1Dfsinx.jpg>
-Package pdftex.def Info: 1Dfsinx.jpg  used on input line 366. on input line 366
-.
-Package pdftex.def Info: Requested size: 426.79134pt x 320.09155pt on input lin
-e 366.
- [9 <./1Dfsinx.jpg>]
+Package pdftex.def Info: 1Dfsinx.jpg  used on input line 390.
+(pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
+ [10]
 Chapter 2.
-[10
+[11
 
-] [11] [12] [13]
+] [12] [13] [14] [15]
 Appendix A.
-[14
-
-] [15]
-Appendix B.
 [16
+
+] [17]
+Appendix B.
+[18
 
 ] (Report.aux)
 
@@ -717,27 +795,36 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4764 strings out of 493312
- 63126 string characters out of 3138900
- 153623 words of memory out of 3000000
- 8246 multiletter control sequences out of 15000+200000
- 10235 words of font info for 37 fonts, out of 3000000 for 9000
+ 5426 strings out of 493303
+ 72821 string characters out of 3126302
+ 165351 words of memory out of 3000000
+ 8901 multiletter control sequences out of 15000+200000
+ 13346 words of font info for 28 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,32p,923b,1560s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on Report.pdf (17 pages, 237951 bytes).
+ 41i,13n,35p,923b,1574s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Ruben Termaat\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
+\dpi600\ecbx1200.pk> <C:\Users\Ruben Termaat\AppData\Local\MiKTeX\2.9\fonts\pk\
+ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Ruben Termaat\AppData\Local\Mi
+KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk> <C:\Users\Ruben Termaa
+t\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\
+Users\Ruben Termaat\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
+\ecbx2488.pk> <C:\Users\Ruben Termaat\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
+jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Ruben Termaat\AppData\Local\MiKTeX\2.
+9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2488.pk><C:/Users/Ruben Termaat/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users
+/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmmi10.pfb><C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Ruben Termaat/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Ruben Termaat/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Use
+rs/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr5.pfb><C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr7.pfb><C:/Users/Ruben Termaat/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Ruben Termaat/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on Report.pdf (19 pages, 270894 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
+ 350 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
