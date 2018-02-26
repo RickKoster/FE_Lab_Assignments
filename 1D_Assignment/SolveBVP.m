@@ -6,7 +6,7 @@ S = AssembleMatrix( N_elem, int, lambda, D);
 f = AssembleVector( N_elem, int, lambda, D);
 
 %% Calculate u
-x = linspace(int(1),int(2),100);
+x = linspace(int(1),int(2),N_elem);
 
 u = S\f;
 plot(x,u); 
