@@ -12,12 +12,11 @@ WI4243Mesh
 Qp = 50;            % [m^2/s]
 k = 10^-7;          % [m^2]
 mu = 1.002*10^-3;   % [Pa*s]
-K = 10000;             % [m/s]
+K = 1;             % [m/s]
 pH = 10^6;          % [Pa]
 N_wells = 6;        % number of wells
 
-epsilon1 = 0.03;
-N_Test = 0;
+% N_Test = 0; % used to check how many elements contain a well
 %% Coordinates of wells
 
 for i = 1:N_wells-1;
@@ -28,9 +27,6 @@ end
 xp(N_wells) = 0;
 yp(N_wells) = 0;
 clear i;
-
-
-
 %%
 
 %% Compute Problem
@@ -39,8 +35,9 @@ WI4243Comp
 %% Post
 WI4243Post
 
-%% Velocity part
+%% 
 
+Pressure_minimum = min(u)
 
-
-
+max(vy)
+max(vx)
