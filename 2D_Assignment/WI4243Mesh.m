@@ -19,12 +19,13 @@ u_inf = 1;
 
 [p,e,t] = refinemesh(Geometry,p,e,t); % gives gridrefinement
 
-[p,e,t] = refinemesh(Geometry,p,e,t); % gives second gridrefinement
+%[p,e,t] = refinemesh(Geometry,p,e,t); % gives second gridrefinement
 
 %[p,e,t] = refinemesh(Geometry,p,e,t); % gives third gridrefinement
 
 pdemesh(p,e,t); % plots the geometry and mesh
-
+xlabel('x');
+ylabel('y');
 x = p(1,:); y = p(2,:);
 
 n = length(p(1,:));

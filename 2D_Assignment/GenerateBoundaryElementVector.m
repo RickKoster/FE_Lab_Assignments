@@ -15,8 +15,7 @@ if ~exist('u','var')
     end;
 else
     for index1 = 1:topologybnd
-            bfelem(index1) = ((k*pH)/mu)*lek/2*u_inf;   %what is u_inf?
-%         bfelem(index1) = -(k/mu)*lek/6*u(elmat(i,ind1));
+            bfelem(index1) = ((k*pH)/mu)*lek/2*u_inf;   
     end;
 end
 

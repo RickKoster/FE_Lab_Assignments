@@ -15,7 +15,7 @@
 % Treatment of the internal (triangular) elements
 %
 
-if ~exist('u', 'var')  
+if ~exist('u', 'var')  % first find the pressure, then the velocity using u (pressure)
     
     S 		= sparse(n,n); % stiffness matrix
 
@@ -49,7 +49,7 @@ if ~exist('u', 'var')
         end;
     end;
     
-else
+else    % Calculation of vx and vy separately
     
     
     
@@ -57,25 +57,29 @@ else
 
     fx 		= zeros(n,1); % right-hand side vector
     
-    left_nodes = find(p(1,:) == -1); 
-    top_nodes = find(p(2,:) == 1);
-    right_nodes = find(p(1,:) == 1);
-    bottom_nodes = find(p(2,:) == -1);
+    left_nodes = find(p(1,:) == -1);    % nodes along x == -1
+    top_nodes = find(p(2,:) == 1);      % nodes along y == 1
+    right_nodes = find(p(1,:) == 1);    % nodes along x == 1
+    bottom_nodes = find(p(2,:) == -1);  % nodes along y == -1
     
+    % partial boundary 1 along x=-1
     bnd1_nodes = ismember(elmatbnd,left_nodes);
-    bnd1 = find(bnd1_nodes(:,1) == 1 & bnd1_nodes(:,2) == 1);
-    
+    bnd1 = find(bnd1_nodes(:,1) == 1 & bnd1_nodes(:,2) == 1);   
+    % partial boundary 2 along y=1
     bnd2_nodes = ismember(elmatbnd,top_nodes);
-    bnd2 = find(bnd2_nodes(:,1) == 1 & bnd2_nodes(:,2) == 1);
-    
+    bnd2 = find(bnd2_nodes(:,1) == 1 & bnd2_nodes(:,2) == 1);   
+    % partial boundary 3 along x=1
     bnd3_nodes = ismember(elmatbnd,right_nodes);
-    bnd3 = find(bnd3_nodes(:,1) == 1 & bnd3_nodes(:,2) == 1);
-    
+    bnd3 = find(bnd3_nodes(:,1) == 1 & bnd3_nodes(:,2) == 1);   
+    % partial boundary 4 along y=-1
     bnd4_nodes = ismember(elmatbnd,bottom_nodes);
-    bnd4 = find(bnd4_nodes(:,1) == 1 & bnd4_nodes(:,2) == 1);
+    bnd4 = find(bnd4_nodes(:,1) == 1 & bnd4_nodes(:,2) == 1);   
     
+    % first calculate vx, variable 'direction' is used to use the correct
+    % functions in other scripts. In this problem the equation for the
+    % (boundary) element vector is different for directions x and y.
     
-    direction = 1;
+    direction = 1;  
     
     for i = 1:length(elmat(:,1)) % for all internal elements
         GenerateElementMatrix; % Selem	
@@ -94,9 +98,7 @@ else
         end;
     end;
 
-% Next the boundary contributions
-
-    
+% Next the boundary contributions 
 
     for j = 1:length(bnd1); % left boundary
         i = bnd1(j);
@@ -130,11 +132,11 @@ else
         end;
         GenerateBoundaryElementVector; % bfelem   
         for ind1 = 1:topologybnd
-            fx(elmatbnd(i,ind1)) = fx(elmatbnd(i,ind1)) - bfelem(ind1);
+            fx(elmatbnd(i,ind1)) = fx(elmatbnd(i,ind1)) - bfelem(ind1);     % MINUS SIGN!! follows from derivation of galerkin equations
         end;
     end;
     
-    direction = 2;
+    direction = 2;      % now calculate vy separately.
     
     Sy 		= sparse(n,n); % stiffness matrix
 
@@ -175,7 +177,7 @@ else
         end;
         GenerateBoundaryElementVector; % bfelem   
         for ind1 = 1:topologybnd
-            fy(elmatbnd(i,ind1)) = fy(elmatbnd(i,ind1)) - bfelem(ind1);
+            fy(elmatbnd(i,ind1)) = fy(elmatbnd(i,ind1)) - bfelem(ind1);     % MINUS SIGN!! follows from derivation of galerkin equations
         end;
     end;
     
