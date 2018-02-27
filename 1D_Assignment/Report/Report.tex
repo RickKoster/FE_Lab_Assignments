@@ -851,9 +851,9 @@ The final step is to determine what happens when $K=0$ and why? When looking at 
 \appendix
 
 \begin{appendices}
-\chapter{1D-case full script}
+\chapter{1D-case}
 
-
+\section{Script}
 \begin{lstlisting}
 clear all
 close all
@@ -923,6 +923,119 @@ hold off
 
 \end{lstlisting}
 
+\section{Functions}
+
+\begin{lstlisting}
+function [ x ] = GenerateMesh(int, N_elem)
+%GenerateMesh Creates a mesh for 1D problems
+%   Detailed explanation goes here
+
+x = linspace(int(1,1),int(1,2),N_elem);
+
+end
+\end{lstlisting}
+
+\begin{lstlisting}
+function [ elmat ] = GenerateTopology( N_elem )
+%GenerateTopology Creates the topology for a 1D problem given mesh 'x'.
+%   Detailed explanation goes here
+
+elmat = zeros(N_elem,2);
+
+for i = 1:N_elem-1
+	elmat(i,1) = i;
+	elmat(i,2) = i + 1;
+end
+
+end
+
+\end{lstlisting}
+
+\begin{lstlisting}
+function [ S ] = AssembleMatrix( N_elem, lambda, D, mesh, elmat)
+%AssembleMatrix Assembles matrix S from element matrix S_ek
+%   Detailed explanation goes here
+
+S = zeros(N_elem,N_elem);
+
+for i = 1:N_elem-1
+	Selem = GenerateElementMatrix(i, elmat, D, lambda, mesh);
+	for j = 1:2
+		for k = 1:2
+			S(elmat(i,j), elmat(i,k)) = S(elmat(i,j), elmat(i,k)) + Selem(j,k);
+		end
+	end
+end
+
+end
+\end{lstlisting}
+\newpage
+\begin{lstlisting}
+function [ Selem ] = GenerateElementMatrix( k, elmat, D, lambda, mesh)
+%GenerateElementMatrix Creates element matrix S_ek
+%   Detailed explanation goes here
+
+Selem = zeros(2,2);
+
+i = elmat(k,1);
+j = elmat(k,2);
+
+x1 = mesh(i);
+x2 = mesh(j);
+
+element_length = abs(x1-x2);
+
+slope = 1/element_length; 
+
+for m = 1:2
+	for n = 1:2
+		if m == n
+			Selem(m,n) = element_length*((-1)^(abs(m-n))*D*slope^2 + (2)*lambda/6);
+			else
+			Selem(m,n) = element_length*((-1)^(abs(m-n))*D*slope^2 + (1)*lambda/6);
+		end
+	end
+
+end
+end
+\end{lstlisting}
+
+
+\begin{lstlisting}
+function [ f ] = AssembleVector( N_elem, mesh, elmat )
+%AssembleVector Assembles vector f from element vector f_ek
+%   Detailed explanation goes here
+
+f = zeros(N_elem,1);
+
+for i = 1:N_elem-1
+	felem = GenerateElementVector(i, elmat, mesh);
+	for j = 1:2
+		f(elmat(i,j)) = f(elmat(i,j)) + felem(j);
+	end
+end
+\end{lstlisting}
+
+\begin{lstlisting}
+function [ felem ] = GenerateElementVector( i, elmat, mesh )
+%GenerateElementVector Creates element vector f_ek
+%   Detailed explanation goes here
+
+felem = [0;0];
+
+k1 = elmat(i,1);
+k2 = elmat(i,2);
+
+x1 = mesh(k1);
+x2 = mesh(k2);
+
+element_length = abs(x1-x2);
+
+felem = (element_length/2*arrayfun(@functionBVP,[x1,x2]))';
+
+end
+\end{lstlisting}
+
 \chapter{2D-case}
 
 
@@ -959,7 +1072,7 @@ topology = 3; topologybnd = 2;
 \end{lstlisting}
 
 
-
+\newpage
 
 \section{Generate element matrix}
 \begin{lstlisting}
@@ -990,7 +1103,7 @@ for index1 = 1:topology
 	end;
 end;
 \end{lstlisting}
-
+\newpage
 \section{Generate element vector}
 \begin{lstlisting}
 
@@ -1058,7 +1171,7 @@ end
 
 
 
-
+\newpage
 
 \section{Generate Boundary element matrix}
 
@@ -1322,7 +1435,7 @@ BuildMatricesandVectors;
 vx = Sx \ fx;
 vy = Sy \ fy;
 \end{lstlisting}
-
+\newpage
 \section{Full script}
 \begin{lstlisting}
 close all
