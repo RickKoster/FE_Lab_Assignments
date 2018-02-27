@@ -401,19 +401,20 @@ The obvious next step after solving a 1 dimensional BVP is to adept the 1D solut
 \end{equation}
 \medskip
 
-Where $ p, k, \mu$ and $v$, respectively denote the 
+Where $ p, k, \mu$ and $\vec{v}$, respectively denote the 
 fluid pressure, permeability of the porous medium, viscosity of water and the fluid flow velocity. In this BVP the effect of gravity will not play a part as the problem is looked at in 2D. An accompanying assumption is incompressibility, so the extraction wells are treated as point sinks. This assumption can be made as the well its diameter is much smaller than the dimensions of the square reservoir. The extraction wells extract at the same rate in each direction, leading to the following boundary conditions (2.2).
 
 
 \begin{equation}
-	\nabla\cdot\vec{v}=-\sum_{p=1}^{n_{well}}Q_p\delta(\phi(\vec{x}-\phi(\vec{x}_p)=0,\quad (x,y) 	\in\Omega 
+	\nabla\cdot\vec{v}=-\sum_{p=1}^{n_{well}}Q_p\delta(\vec{x}-\vec{x}_p)=0,\quad (x,y) 	\in\Omega 
 \end{equation}
 
 Where $Q_p$ denotes the water extraction rate by well k, which is located at $x_p$. Here $x$ equals $(x;y)$, the spatial coordinates.  The convention $\vec{x} = (x; y) $ to represent the spatial coordinates is used. The dirac Delta Distribution is characterized by equation(2.3).
 
 \begin{equation}
 	\begin{cases} 
-		\delta(\vec{x}) = 0,\quad  \vec{x} \neq 0 \\ \int_{\Omega}\delta(\vec{x})d\Omega = 1, \quad $  where $\Omega $  contains the origin.$
+		\delta(\vec{x}) = 0,\quad  \vec{x} \neq 0 \\
+		 \int\limits_{\Omega}\delta(\vec{x})d\Omega = 1, \quad $  where $\Omega $  contains the origin.$
 	\end{cases} 
 \end{equation}
 
@@ -422,11 +423,11 @@ Where $Q_p$ denotes the water extraction rate by well k, which is located at $x_
 For this BVP the following boundary condition is considered: 
 
 \begin{equation}
-	\vec{v}\cdot\vec{n}=K(p-p^H), \, (x,y)\, \in\,  \partial\Omega
+	\vec{v}\cdot\vec{n}=K(p-p^H), \quad (x,y) \in  \partial\Omega
 \end{equation}
 Where $K$ denotes the transfer rate coefficient of the water between the boundary of the domain and its surroundings. The constant $p^H$ represents the hydrostatic pressure. 
 
-The boundary $\partial\Omega$ is divided into four parts described by the side of the square domain $\Omega$. $\partial\Omega_1$ is the part with $x = -1$, $\partial\Omega_2$ is the part with $y = 1$, $\partial\Omega_3$ is the part with $x = 1$, $\partial\Omega_4$ is the part with $y = -1$.
+The boundary $\partial\Omega$ is divided into four parts described by the sides of the square domain $\Omega$. $\partial\Omega_1$ is the part with $x = -1$, $\partial\Omega_2$ is the part with $y = 1$, $\partial\Omega_3$ is the part with $x = 1$, $\partial\Omega_4$ is the part with $y = -1$.
 \newpage
 
 In order to solve this BVP the values needed for all the constants are given in table (2.1).
@@ -444,14 +445,14 @@ In order to solve this BVP the values needed for all the constants are given in 
 		$k$ & $10^{-7}$ & $m^2$ \\
 		$\mu$ & $1.002\cdot 10^{-3}$ & $Pa\cdot s$ \\
 		$K$ & 10 & $m/s$ \\
-		$p^H$ & $10^6$ & Pa \\ [1ex] % [1ex] adds vertical space
+		$p^H$ & $10^6$ & $Pa$ \\ [1ex] % [1ex] adds vertical space
 		\hline %inserts single line
 	\end{tabular}
 	\label{table:nonlin} % is used to refer this table in the text
 \end{table}
 \bigskip
 
-In this BVP six wells are considered, which are located at:
+In this BVP six wells are considered, located at:
 
 
 \begin{equation}
@@ -460,18 +461,18 @@ In this BVP six wells are considered, which are located at:
 	\end{cases} 
 \end{equation}
 
-$ p \in \{1, \dots ,5\}$ and for $p = 6$ we have $ x_6 = 0 $ and $ y_6 = 0 $.
+For $ p \in \{1, \dots ,5\}$ and for $p = 6$ we have $ x_6 = 0 $ and $ y_6 = 0 $.
 
 \section{Boundary value problem 2D}
-The first step to solving these equations using finite elements is to find to find the boundary value problem to solve. This is done by filling in equation(2.1) in both equation 2.2 and the boundary condition(2.4) in order to find the BVP in terms of p:
+The first step to solving these equations using finite elements is to find the boundary value problem to solve. This is done by filling in equation(2.1) in both equation 2.2 and the boundary condition(2.4) in order to find the BVP in terms of p:
 \vspace{5mm}
 
 
 \begin{equation}
 \text{BVP  }
 	\begin{cases}
-		-\frac{k}{\mu}\triangle\vec{p}=-\sum\limits_{p=1}^{n_{\text{well}}}Q_p\delta(\vec{x}-\vec{x}_p)=0,\, \, \quad (x,y) \, \in \, \Omega\\
-		-\frac{k}{\mu}\nabla\vec{p}\cdot\vec{n}=-\frac{k}{\mu}\frac{dp}{dn} =K(p-p^H), \, \quad (x,y)\,  \in  \, \partial\Omega
+		-\frac{k}{\mu}\Delta\vec{p}=-\sum\limits_{p=1}^{n_{\text{well}}}Q_p\delta(\vec{x}-\vec{x}_p)=0,\, \, \quad (x,y) \, \in \, \Omega\\
+		-\frac{k}{\mu}\nabla\vec{p}\cdot\vec{n}=-\frac{k}{\mu}\frac{\partial p}{\partial n} =K(p-p^H), \, \quad (x,y)\,  \in  \, \partial\Omega
 	\end{cases}
 \end{equation}
 
@@ -480,54 +481,55 @@ The first step to solving these equations using finite elements is to find to fi
 The next step is to compute the weak formulation using the previous found BVP(2.6). By multiplying both sides by test function $\phi(x) = \alpha_i + \beta_i x + \gamma_i y$ and integrating both sides over the domain $\Omega$ the weak formulation can be found.
 
 \begin{equation}
-	\int_{\Omega}\phi(\vec{x})\nabla\cdot( -\frac{k}{\mu}\nabla\vec{p}) d\Omega =\int_{\Omega}-\sum_{p=1}^{n_{well}}\phi(\vec{x})  Q_p\delta(\vec{x}-\vec{x}_p)
+	\int\limits_{\Omega}\phi(\vec{x})\nabla\cdot( -\frac{k}{\mu}\nabla\vec{p}) d\Omega =\int\limits_{\Omega}-\sum_{p=1}^{n_{well}}\phi(\vec{x})  Q_p\delta(\vec{x}-\vec{x}_p)d\Omega
 \end{equation}
 
 Using integrating by parts on the left side of equation(2.7) results in:
 \begin{equation}
-	\int_{\Omega}\nabla\cdot \big[\phi(\vec{x})(-\frac{k}{\mu}\nabla\vec{p})] +\frac{k}{\mu}\nabla\phi(\vec{x})\cdot\nabla p d\Omega= -\int_{\Omega}\sum_{p=1}^{n_{well}}\phi(\vec{x}) Q_p\delta(\vec{x}-\vec{x}_p)d\Omega
+	\int\limits_{\Omega}\nabla\cdot \big[\phi(\vec{x})(-\frac{k}{\mu}\nabla\vec{p})] +\frac{k}{\mu}\nabla\phi(\vec{x})\cdot\nabla p d\Omega= -\int\limits_{\Omega}\sum_{p=1}^{n_{well}}\phi(\vec{x}) Q_p\delta(\vec{x}-\vec{x}_p)d\Omega
 \end{equation}
 
-Next is to apply Gauss on the first term of the left side.
+Next is to apply Gauss's Theorem on the first term of the left side.
 \begin{equation}
-	\int_{d\Omega}\vec{n}\cdot(\phi(\vec{x})(-\frac{k}{\mu}\nabla\vec{p}))d\tau+\int_{\Omega}\frac{k}{\mu}\nabla\phi(\vec{x})\cdot\nabla p d\Omega= -\int_{\Omega}\sum_{p=1}^{n_{well}}\phi(\vec{x}) Q_p\delta(\vec{x}-\vec{x}_p)d\Omega
+	\int\limits_{\partial\Omega}\vec{n}\cdot\big[\phi(\vec{x})(-\frac{k}{\mu}\nabla\vec{p})\big]d\tau+\int\limits_{\Omega}\frac{k}{\mu}\nabla\phi(\vec{x})\cdot\nabla p d\Omega= -\int\limits_{\Omega}\sum_{p=1}^{n_{well}}\phi(\vec{x}) Q_p\delta(\vec{x}-\vec{x}_p)d\Omega
 \end{equation}
 
 
 Switching the integral and summation on the right side of equation(2.9) and simplifying terms:
 
 \begin{equation}
-	\int_{d\Omega}(\phi(\vec{x})(-\frac{k}{\mu}\frac{d\vec{p}}{dn}))d\tau+\int_{\Omega}\frac{k}{\mu}\nabla\phi(\vec{x})\cdot\nabla p d\Omega= -\sum_{p=1}^{n_{well}}\int_{\Omega}\phi(\vec{x}) Q_p\delta(\vec{x}-\vec{x}_p)d\Omega
+	\int\limits_{\partial\Omega}(\phi(\vec{x})(-\frac{k}{\mu}\frac{\partial\vec{p}}{\partial n}))d\tau+\int\limits_{\Omega}\frac{k}{\mu}\nabla\phi(\vec{x})\cdot\nabla p d\Omega= -\sum_{p=1}^{n_{well}}\int\limits_{\Omega}\phi(\vec{x}) Q_p\delta(\vec{x}-\vec{x}_p)d\Omega
 \end{equation}
 
 
-The right side of equation(2.10) can be simplied using the boundary conditions (equation(2.6)) and the following property into equation(2.12): 
+Equation(2.10) can be simplified, by using the boundary conditions (equation(2.6)) and the following property, into equation(2.12): 
 
 \begin{equation}
-	\int_{\Omega}\delta(\vec{x})f(\vec{x})d\Omega \, = \, f(0)	
+	\int\limits_{\Omega}\delta(\vec{x})f(\vec{x})d\Omega \, = \, f(0)	
 \end{equation}
 
 
 
 \begin{equation}
-	\int_{\delta\Omega}\phi(\vec{x})K(p-p^H) d\tau+\int_{\Omega}\frac{k}{\mu}\nabla\phi(\vec{x})\cdot\nabla p d\Omega= -\sum_{p=1}^{n_{well}}\phi(\vec{x}_p) Q_p
+	\int\limits_{\partial\Omega}\phi(\vec{x})K(p-p^H) d\tau+\int\limits_{\Omega}\frac{k}{\mu}\nabla\phi(\vec{x})\cdot\nabla p d\Omega= -\sum_{p=1}^{n_{\text{well}}}\phi(\vec{x}_p) Q_p
 \end{equation}	
 
-Rearranging equation(2.12) so that the variable parts are on the left and the constant parts on the right leads to the following WF:
-\vspace{5mm}
+Rearranging equation(2.12) so that the unknowns are on the left and the constant parts on the right leads to the following WF:
+\vspace{1mm}
 
-
-(WF): \begin{equation}
+ \begin{equation}
+ \text{(WF)}
 		\begin{cases} 
-			$find p $\epsilon \sum =\{p$ $ smooth\}$ Such that:$ \\
-			\int_{\delta\Omega}\phi(\vec{x})Kp d\tau+\int_{\Omega}\frac{k}{\mu}\nabla\phi(\vec{x})\cdot\nabla p d\Omega= -\sum_{p=1}^{n_{well}}\phi(\vec{x}_p) Q_p +\int_{\delta\Omega}\phi(\vec{x})Kp^Hd\tau\\ \forall\phi $ $ \epsilon\sum 
+			$Find $p \in \sum =\{p$ $ smooth\}$ Such that:$ \\
+			\int\limits_{\partial\Omega}\phi(\vec{x})Kp d\tau+\int\limits_{\Omega}\frac{k}{\mu}\nabla\phi(\vec{x})\cdot\nabla p d\Omega= -\sum\limits_{p=1}^{n_{well}}\phi(\vec{x}_p) Q_p +\int\limits_{\partial\Omega}\phi(\vec{x})Kp^Hd\tau\\ \forall\phi \in \sum 
 		\end{cases}\  
-	\end{equation}
+\end{equation}
+\vspace{1mm}
 
-To solve the WF the Galerkin equations are applied, where $p$ is replaced by $ \sum_{j=1}^{n}c_j\phi_j $ and  $\phi(x)=\phi_i(x)$.
+To solve the WF the Galerkin equations are applied, where $p$ is replaced by $ \sum\limits_{j=1}^{n}c_j\phi_j $ and  $\phi(x)=\phi_i(x)$.
 
 \begin{equation}
-	\sum_{j=1}^{n}c_i\int_{\partial\Omega}\phi_i K\phi_j d\tau + \int_{\Omega}\frac{k}{\mu}\nabla\phi(x)\cdot\nabla \phi_j d\Omega= -\sum_{p=1}^{n_{well}}\phi(x_p) Q_p +\int_{\partial\Omega}\phi_i Kp^Hd\tau
+	\sum\limits_{j=1}^{n}c_i\int\limits_{\partial\Omega}\phi_i K\phi_j d\tau + \int\limits_{\Omega}\frac{k}{\mu}\nabla\phi(x)\cdot\nabla \phi_j d\Omega= -\sum\limits_{p=1}^{n_{well}}\phi(x_p) Q_p +\int\limits_{\partial\Omega}\phi_i Kp^Hd\tau
 \end{equation}
 
 Equation(2.14) now is of the form $S\vec{c}=\vec{f}$ and, like with the 1D problem,  $\vec{c}$ can be computed. First the element and boundary elements are determined from the Galerkin equations.
@@ -538,11 +540,11 @@ Equation(2.14) now is of the form $S\vec{c}=\vec{f}$ and, like with the 1D probl
 First the galerkin equation is seperated in its element and boundary components. The element matrix $S^{e_k}_{ij}$ and the element vector $f^{e_k}_i$ are given in equations (2.15) and 2.16 respectively. For the element matrix, boundary element matrix and boundary element vector Newton-Côtes theorem and Holand-Bell theorem are applied to simplify the equations into a set of equations that can be used for computing with MATLAB code.
 
 \begin{equation}
-	S^{e_k}_{ij} = \int_{e_k}\frac{k}{\mu}\nabla\phi_i\cdot\nabla \phi_j d\Omega = (\beta_i\beta_j+\gamma_i\gamma_j)\frac{k}{\mu}\frac{\lvert\triangle e_k\rvert}{2}
+	S^{e_k}_{ij} = \int\limits_{e_k}\frac{k}{\mu}\nabla\phi_i\cdot\nabla \phi_j d\Omega = (\beta_i\beta_j+\gamma_i\gamma_j)\frac{k}{\mu}\frac{\lvert\triangle e_k\rvert}{2}
 \end{equation}
 
 \begin{equation}\label{f_i_ek}
-	f^{e_k}_i =  -\sum_{p=1}^{n_{well}}\phi_i(\vec{x}_p) Q_p
+	f^{e_k}_i =  -\sum_{p=1}^{n_{\text{well}}}\phi_i(\vec{x}_p) Q_p
 \end{equation}
 
 
@@ -551,17 +553,19 @@ First the galerkin equation is seperated in its element and boundary components.
 The boundary matrix $S^{be_l}_{ij}$ and boundary vector $f^{be_l}_i$ can be found in the following equations:
 
 \begin{equation}
-	S^{be_l}_{ij} = \int_{be_l} K\phi_i \phi_j dx = K\frac{\lvert be_l\rvert}{6}(1+\delta_{ij})
+	S^{be_l}_{ij} = \int\limits_{be_l} K\phi_i \phi_j dx = K\frac{\lvert be_l\rvert}{6}(1+\delta_{ij})
 \end{equation}
 
 \begin{equation}
-	f^{be_l}_i = Kp^H\int_{be_l}\phi_i dx = K p^H \frac{\lvert be_l\rvert}{2}
+	f^{be_l}_i = Kp^H\int\limits_{be_l}\phi_i dx = K p^H \frac{\lvert be_l\rvert}{2}
 \end{equation}
-Where $\delta_{ij}$ is the Kronicker delta.
+Where $\delta_{ij}$ is the Kronicker delta. It is assumed there are no wells on the boundary.
 
 \section{Wells within an internal element}
 
-To solve the BVP in 2D, one of the aspects that need to be determined is whether each internal element contains a well. This is done by determining whether well with index $p$ and position $x_p$ is contained within element $e_k$ with vertices $x_{k1}$, $x_{k2}$ and $x_{k3}$. This is done according the following criterion:
+To solve the BVP in 2D, one of the aspects that need to be determined is whether each internal element contains a well. So it must be determined whether the well with index $p$ and position $x_p$ is contained within element $e_k$ with vertices $x_{k1}$, $x_{k2}$ and $x_{k3}$. 
+
+This can be done according the following criterion:
 
 \begin{equation}
 |\Delta(\vec{x}_p,\vec{x}_{k2},\vec{x}_{k3})|+|\Delta(\vec{x}_{k1},\vec{x}_p,\vec{x}_{k3})|+|\Delta(\vec{x}_{k1},\vec{x}_{x2},\vec{x}_p):
@@ -573,9 +577,9 @@ To solve the BVP in 2D, one of the aspects that need to be determined is whether
 
 In the criterion $\Delta(\vec{x}_p,\vec{x}_q,\vec{x}_r)$ denotes the triangle with vertices $\vec{x}_p$, $\vec{x}_q$ and $\vec{x}_r$, where $|\Delta(\vec{x}_{k1},\vec{x}_{k2},\vec{x}_{k3})|$ denote its area. The triangular element $k$ is given by $e_k=\Delta(\vec{x}_{k1},\vec{x}_{k2},\vec{x}_{k3})$ with vertices  $\vec{x}_{k1}$, $\vec{x}_{k2}$ and $\vec{x}_{k3}$ and $\vec{e_k}$ includes the boundary of element $e_k$. To solve this BVP a certain tolerance has to be accounted for in the Matlab code. However, while using this method it proved difficult to determine a correct tolerance to ensure every well was contained in a single element.
 
-Therefore, an alternative method was used instead. A check was done whether the linear basis functions $\phi_{k1}$, $\phi_{k2}$ and $\phi_{k3}$ all have values in the interval $ [0,1] $ at position $\vec{x}_p$. If this is true, then the well at $\vec{x}_p$ is within the triangular element $e_k$.
+Therefore, an alternative method was used. A check was done whether the linear basis functions $\phi_{k1}$, $\phi_{k2}$ and $\phi_{k3}$ all have values in the interval $ [0,1] $ at position $\vec{x}_p$. If this is true, then the well at $\vec{x}_p$ is within the triangular element $e_k$.
 
-If it is found that an element does contain a well, we see in equation \eqref{f_i_ek} that $\phi_i(\vec{x_p})$ for $i = \{k1, k2, k3\}$ is found. The following code does this by determining $\alpha_i$, $\beta_i$, and $\gamma_i $ and subsequently filling $\vec{x}_p$ into the found $\phi_i(\vec{x})$.
+If it is found that an element does contain a well, we see in equation \eqref{f_i_ek} that $\phi_i(\vec{x_p})$ for $i = \{k1, k2, k3\}$ must be found. The following code does this by determining $\alpha_i$, $\beta_i$, and $\gamma_i $ and subsequently filling $\vec{x}_p$ into the found $\phi_i(\vec{x})$.
 
 \begin{lstlisting}
 for index1=1:topology
@@ -614,9 +618,9 @@ end
 
 Similar as with the 1D BVP, MATLAB code is written in order to generate a mesh, element matrix, element vector, boundary element matrix and boundary element vector. These codes can be found in appendix B.1 through B.6. The scripts have been written such that they can be used to find both the pressure field and the velocity field(the derivation fort the velocities is found in the next section).
 
-Using the MATLAB codes a nice mesh can be found.
+%Using the MATLAB codes a nice mesh can be found. ???
 
-\begin{figure}[ht!]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=150mm]{meshgrid2D.jpg}
 	\caption{Triangle element mesh over the square reservoir domain $\Omega=(-1;1)\times (-1;1)$. \label{overflow}}
@@ -640,12 +644,12 @@ In order to find $v_x$ and $v_y$ the first step is to rewrite equation(2.20).
 \end{equation}
 
 \begin{equation}
-v_x=-\frac{k}{\mu}\frac{dp}{dx}
+v_x=-\frac{k}{\mu}\frac{\partial p}{\partial x}
 \end{equation}
 
 
 \begin{equation}
-v_y=-\frac{k}{\mu}\frac{dp}{dy}
+v_y=-\frac{k}{\mu}\frac{\partial p}{\partial y}
 \end{equation}
 
 Equation(2.24) shows the relation between $\vec{v}$ and pressure p.
@@ -682,38 +686,38 @@ v_y(y=1)=k(p-p^H)
 %\end{equation}
 %
 %Here $\phi (\vec{x})=\phi_i (\vec{x})$. Filling equations(2.29) and $\phi_i (\vec{x})$ in the exuations for $v_x$ 
-In order to find the weak form, again, the test function $\phi$ is used and integrated over the domain $\Omega$. Here follows the derivation for finding $v_x$, the steps for deriving $v_y$ are similar.
+In order to find the weak form, again, the test function $\phi$ and integration over the domain $\Omega$ is used. Here follows the derivation for finding $v_x$, the steps for deriving $v_y$ are similar.
 
 \begin{equation}
-\int\limits_{\Omega}\phi v_x d\Omega=-\frac{k}{\mu}\int\limits_{\Omega}\phi\frac{dp}{dx}d\Omega
+\int\limits_{\Omega}\phi v_x d\Omega=-\frac{k}{\mu}\int\limits_{\Omega}\phi\frac{\partial p}{\partial x}d\Omega
 \end{equation}
 
 Partial integration is applied on the right side term.
 \begin{equation}
-\int\limits_{\Omega}\phi v_x d\Omega=  -\frac{k}{\mu}\{\int\limits_{\Omega}\frac{d}{dx}(\phi p)-p\frac{d\phi}{x}d\Omega\}
+\int\limits_{\Omega}\phi v_x d\Omega=  -\frac{k}{\mu}\{\int\limits_{\Omega}\frac{\partial }{\partial x}(\phi p)-p\frac{\partial \phi}{\partial x}d\Omega\}
 \end{equation}
 
 Rewriting the integral:
 
 \begin{equation}
- \int\limits_{\Omega}-\frac{k}{\mu}\frac{d\phi p}{dx}dxdy=\int\limits_{-1}^{1}-\frac{k}{\mu}[\phi p]^{1}_{-1}dy
+ \int\limits_{\Omega}-\frac{k}{\mu}\frac{\partial \phi p}{\partial x}dxdy=\int\limits_{-1}^{1}-\frac{k}{\mu}[\phi p]^{1}_{-1}dy
 \end{equation}
 
 The surface integral turns into a set of line integrals along parts of the boundary $\partial\Omega$.
 \begin{equation}
-\int\limits_{\Omega}-\frac{k}{\mu}\frac{d\phi p}{dx}dxdy=  \int\limits_{-1}^{1}-\frac{k}{\mu}(\phi(x=1,y)p(x=1,y))+\frac{k}{\mu}(\phi(x=-1)p(x=-1,y))dy
+\int\limits_{\Omega}-\frac{k}{\mu}\frac{\partial \phi p}{\partial x}dxdy=  \int\limits_{-1}^{1}-\frac{k}{\mu}(\phi(x=1,y)p(x=1,y))+\frac{k}{\mu}(\phi(x=-1)p(x=-1,y))dy
 \end{equation}
 
 Simplifying the previous equations.
 
 \begin{equation}
-\int\limits_{\Omega}-\frac{k}{\mu}\frac{d\phi p}{dx}dxdy =\int\limits_{\partial\Omega_3}-\frac{k}{\mu}\phi pd\tau+\int\limits_{\partial\Omega_1}\frac{k}{\mu}\phi pd\tau
+\int\limits_{\Omega}-\frac{k}{\mu}\frac{\partial \phi p}{\partial x}dxdy =\int\limits_{\partial\Omega_3}-\frac{k}{\mu}\phi pd\tau+\int\limits_{\partial\Omega_1}\frac{k}{\mu}\phi pd\tau
 \end{equation}
 
 Inserting this into equation(2.29) the following equation is found.
 
 \begin{equation}
-	\int\limits_{\Omega}\phi v_x = \frac{k}{\mu}\{\int\limits_{\partial\Omega_3}-\phi pd\tau+\int\limits_{\partial\Omega_1}\phi pd\tau+\int\limits_{\Omega}p\frac{\phi_i}{dx}d\Omega\}
+	\int\limits_{\Omega}\phi v_x = \frac{k}{\mu}\{\int\limits_{\partial\Omega_3}-\phi pd\tau+\int\limits_{\partial\Omega_1}\phi pd\tau+\int\limits_{\Omega}p\frac{\partial \phi}{\partial x}d\Omega\}
 \end{equation}
 
 The boundary conditions is used to rewrite $p$ in the two boundary integrals.
@@ -726,8 +730,8 @@ The boundary conditions is used to rewrite $p$ in the two boundary integrals.
 \begin{equation}
 \text{on}\,
 \begin{cases}
-\partial\Omega_3:\, -v_x=k(p-p^H) \,\rightarrow\, p=-\frac{v_x}{k}+p^H\\
-\partial\Omega_1:\,\,\,\,\, v_x=k(p-p^H) \,\rightarrow\, p=\frac{v_x}{k}+p^H
+\partial\Omega_3:\, -v_x=K(p-p^H) \,\rightarrow\, p=-\frac{v_x}{K}+p^H\\
+\partial\Omega_1:\,\,\,\,\, v_x=K(p-p^H) \,\rightarrow\, p=\frac{v_x}{K}+p^H
 \end{cases}
 \end{equation}
 
@@ -735,25 +739,37 @@ The following weakform is derived:
 
 %Now writing the equation where $v_x$ is filled in so that an equation is found that depends on $p$.
 
-\vspace{2mm}
-Find $v_x \in \Sigma = \{v_x \text{ smooth}\}$, such that
+\vspace{1mm}
+
 \begin{equation}
-	\int_{\Omega}\phi v_x d\Omega + \int_{d\Omega_3}-\frac{k}{\mu}\frac{1}{k}\phi v_xdy + \int_{d\Omega_1}-\frac{k}{\mu}\frac{1}{k}\phi v_x dy 
-	= \int_{d\Omega_3}-\frac{k}{\mu}\phi p^H dy +\int_{d\Omega_1}\frac{k}{\mu}\phi p^H dy + \int_{\Omega}\frac{k}{\mu}p\frac{d\phi}{dx}d\Omega
+\text{WF}
+	\begin{cases}
+	$ Find $v_x \in \Sigma = \{v_x \text{ smooth}\}$, such that$ \\
+		\int\limits_{\Omega}\phi v_x d\Omega + \int\limits_{\partial \Omega_3}-\frac{k}{\mu}\frac{1}{K}\phi v_xd\tau + \int\limits_{\partial \Omega_1}-\frac{k}{\mu}\frac{1}{K}\phi v_x d\tau 
+		= \int\limits_{\partial \Omega_3}-\frac{k}{\mu}\phi p^H d\tau +\int\limits_{\partial \Omega_1}\frac{k}{\mu}\phi p^H d\tau + \int\limits_{\Omega}\frac{k}{\mu}p\frac{\partial \phi}{\partial x}d\Omega \\
+		\forall \phi \in \Sigma
+	\end{cases}
 \end{equation}
-for all $ \phi \in \Sigma$.
+
+\vspace{1mm}
 
 To find the system of equations the following equations are filled in equation(2.35)  
 $\phi(\vec{x})=\phi_i(\vec{x})= \alpha_i+\beta_i x+\gamma_i y$ and  $v_x\approx \sum\limits_{j=1}^{n}c_j\phi_j(\vec{x})$.
 
+\begin{equation}\label{SoQ2}
+	\sum_{j=1}^{n}c_j\{\int\limits_{\Omega}\phi_i\phi_j d\Omega +\int\limits_{\partial\Omega_3}-\frac{k}{\mu}\frac{1}{k}\phi_i\phi_j d\tau + \int\limits_{\partial\Omega_1}-\frac{k}{\mu}\frac{1}{k}\phi_i\phi_j d\tau\} = \\
+	\int\limits_{\partial\Omega_3}-\frac{k}{\mu}\phi_i p^H d\tau +\int\limits_{\partial\Omega_1}\frac{k}{\mu}\phi_i p^H d\tau + \int\limits_{\Omega}\frac{k}{\mu}p\beta_id\Omega 
+\end{equation}
+
+From this system of equations the element matrix and element vector are extracted.
+
 \begin{equation}
-S_{ij}=\sum_{j=1}^{n}c_j
-\{\int\limits_{\Omega}\phi_i\phi_j d\Omega +\int\limits_{\partial\Omega_3}-\frac{k}{\mu}\frac{1}{k}\phi_i\phi_j d\tau + \int\limits_{\partial\Omega_1}-\frac{k}{\mu}\frac{1}{k}\phi_i\phi_j d\tau \}
+S_{ij}=\int\limits_{\Omega}\phi_i\phi_j d\Omega +\int\limits_{\partial\Omega_3}-\frac{k}{\mu}\frac{1}{k}\phi_i\phi_j d\tau + \int\limits_{\partial\Omega_1}-\frac{k}{\mu}\frac{1}{k}\phi_i\phi_j d\tau 
 \end{equation}
 
 \begin{equation}
 f_i = 
-\int\limits_{\partial\Omega_3}-\frac{k}{\mu}\phi_i p^H d\tau +\int\limits_{\partial\Omega_1}\frac{k}{\mu}\phi_i p^H d\tau + \int\limits_{\Omega}\frac{k}{\mu}p\frac{d\phi_i}{dx}d\Omega
+\int\limits_{\partial\Omega_3}-\frac{k}{\mu}\phi_i p^H d\tau +\int\limits_{\partial\Omega_1}\frac{k}{\mu}\phi_i p^H d\tau + \int\limits_{\Omega}\frac{k}{\mu}p\beta_id\Omega
 \end{equation}
 
 Now separating contributions to both $S_{ij}$ and $f_i$ from boundary and internal elements into $S_{ij}^{be_l}$, $S_{ij}^{e_k}$, $f_i^{be_l}$ and $f_i^{e_k}$ such that:
@@ -769,23 +785,23 @@ f_{i} = \sum\limits_{l=1}^{n_{be}} f_{i}^{be_{l}} + \sum\limits_{k=1}^{n_{e}} f_
 Applying Newton-Côtes theorem and Holand-Bell theorem results in the following new expressions for the (boundary) element-matrix and -vector are found.
 
 \begin{equation}
-S^{e_k}_{ij}=\int_{e_k}\phi_i\phi_j = \frac{\lvert\triangle_{ek}\rvert}{24}
+S^{e_k}_{ij}=\int\limits_{e_k}\phi_i\phi_j d\Omega= \frac{\lvert\triangle e_k \rvert}{24}
 \end{equation}
 
 \begin{equation}
-S^{be_l}_{ij}=\int_{be_l}-\frac{k}{\mu}\phi_i\phi_j dy = \frac{k}{\mu}\frac{1}{k}\frac{\lvert be_l\rvert}{6}(1+\delta_{ij})
+S^{be_l}_{ij}=\int\limits_{be_l}-\frac{k}{\mu}\phi_i\phi_j d\tau = \frac{k}{\mu}\frac{1}{k}\frac{\lvert be_l\rvert}{6}(1+\delta_{ij})
 \end{equation}
 
 \begin{equation}
-f^{e_n}_{i} = \int_{e_n}\frac{k}{\mu}p\beta_i d\Omega = \frac{k}{\mu}\beta_i\sum_{m=\in\{k_1,k_2,k_3\}} p(\vec{x}_m) \frac{\lvert \triangle e_n\rvert}{6}
+f^{e_n}_{i} = \int\limits_{e_k}\frac{k}{\mu}p\beta_i d\Omega = \frac{k}{\mu}\beta_i\sum_{m=\in\{k_1,k_2,k_3\}} p(\vec{x}_m) \frac{\lvert \triangle e_k\rvert}{6}
 \end{equation}
 
 \begin{equation}
-f^{be_l}_{i}=\int_{be_l}\pm \frac{k}{\mu}\phi_ip^H dy = \pm \frac{k}{\mu}p^H \frac{\lvert be_l\rvert}{2}
+f^{be_l}_{i}=\int\limits_{be_l}\pm \frac{k}{\mu}\phi_ip^H d\tau = \pm \frac{k}{\mu}p^H \frac{\lvert be_l\rvert}{2}
 \end{equation}
 With '$+$' if $be_{l}$ is on $\partial\Omega_1$ and '$-$' if it is on $\partial\Omega_3$
 
-Since the pressure field $p$ was previously calculated, all the necessary information to calculate and compute $v_x$ (and similarly $v_y$) is now derived. In the following plots the velocities for $K=10m/s$ are shown using a vector plot, contour plot and a 3D surface plot.
+Since the pressure field $p$ was previously calculated, all the necessary information to compute $v_x$ (and similarly $v_y$) is now derived. In the following plots the velocities for $K=10m/s$ are shown using a vector plot, contour plot and a 3D surface plot.
 
 
 
@@ -811,9 +827,9 @@ Since the pressure field $p$ was previously calculated, all the necessary inform
 \end{figure}
 \vfill
 \newpage
-\section{Varrying constant $K$}
+\section{Varying constant $K$}
 
-Now that the velocities have been calculated the last thing to vary is, is the transfer $K$ factor. A few different plots will now follow in which the transfer coefficient $K$ has different values between 0.00001 and 10000. 
+Now that the velocities have been calculated the last thing to vary is, is the factor $K$. A few different plots will now follow in which the transfer coefficient $K$ has different values between 0.00001 and 10000. 
 
 
 
