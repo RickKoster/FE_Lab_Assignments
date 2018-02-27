@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.24)  27 FEB 2018 20:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.24)  27 FEB 2018 22:40
 entering extended mode
 **./Report.tex
 (Report.tex
@@ -900,97 +900,103 @@ Package pdftex.def Info: 3Dv.jpg  used on input line 35.
 {C:/Users/Ruben Termaat/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./3
 Dv.jpg>] [1
 
+] [2
+
+
+] [3
+
 ] (Report.toc)
 \tf@toc=\write3
 \openout3 = `Report.toc'.
 
- [2
+ [4
 
 
 ]
 Chapter 1.
-[3
+[5
 
-] [4]
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 165.
+] [6]
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 174.
 
 
 ("C:\Users\Ruben Termaat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ts1
 pcr.fd"
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
 
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 245--246
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
 
  []
 
-[6]
-<1Df1.jpg, id=42, 562.1pt x 421.575pt>
+[8]
+<1Df1.jpg, id=47, 562.1pt x 421.575pt>
 File: 1Df1.jpg Graphic file (type jpg)
 <use 1Df1.jpg>
-Package pdftex.def Info: 1Df1.jpg  used on input line 332.
+Package pdftex.def Info: 1Df1.jpg  used on input line 341.
 (pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
-<1Dfx.jpg, id=43, 562.1pt x 421.575pt>
+ [9 <./1Df1.jpg>]
+<1Dfx.jpg, id=51, 562.1pt x 421.575pt>
 File: 1Dfx.jpg Graphic file (type jpg)
 <use 1Dfx.jpg>
-Package pdftex.def Info: 1Dfx.jpg  used on input line 342.
+Package pdftex.def Info: 1Dfx.jpg  used on input line 354.
 (pdftex.def)             Requested size: 398.33858pt x 298.75426pt.
- [7 <./1Df1.jpg>] [8 <./1Dfx.jpg>]
-<1Dfsinx.jpg, id=50, 562.1pt x 421.575pt>
+ [10 <./1Dfx.jpg>] [11]
+<1Dfsinx.jpg, id=58, 562.1pt x 421.575pt>
 File: 1Dfsinx.jpg Graphic file (type jpg)
 <use 1Dfsinx.jpg>
-Package pdftex.def Info: 1Dfsinx.jpg  used on input line 388.
+Package pdftex.def Info: 1Dfsinx.jpg  used on input line 400.
 (pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
- [9 <./1Dfsinx.jpg>]
+ [12 <./1Dfsinx.jpg>]
 Chapter 2.
-[10
+[13
 
-] [11] [12]
-<meshgrid2D.jpg, id=64, 562.1pt x 421.575pt>
+] [14] [15]
+<meshgrid2D.jpg, id=72, 562.1pt x 421.575pt>
 File: meshgrid2D.jpg Graphic file (type jpg)
 <use meshgrid2D.jpg>
-Package pdftex.def Info: meshgrid2D.jpg  used on input line 621.
+Package pdftex.def Info: meshgrid2D.jpg  used on input line 635.
 (pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
- [13] [14 <./meshgrid2D.jpg>] [15]
-<2Dvarrows.jpg, id=77, 562.1pt x 421.575pt>
+ [16] [17 <./meshgrid2D.jpg>] [18]
+<2Dvarrows.jpg, id=86, 562.1pt x 421.575pt>
 File: 2Dvarrows.jpg Graphic file (type jpg)
 <use 2Dvarrows.jpg>
-Package pdftex.def Info: 2Dvarrows.jpg  used on input line 794.
+Package pdftex.def Info: 2Dvarrows.jpg  used on input line 808.
 (pdftex.def)             Requested size: 284.52756pt x 213.39221pt.
-<2Dvheat.jpg, id=78, 562.1pt x 421.575pt>
+<2Dvheat.jpg, id=87, 562.1pt x 421.575pt>
 File: 2Dvheat.jpg Graphic file (type jpg)
 <use 2Dvheat.jpg>
-Package pdftex.def Info: 2Dvheat.jpg  used on input line 801.
+Package pdftex.def Info: 2Dvheat.jpg  used on input line 815.
 (pdftex.def)             Requested size: 284.52756pt x 213.39221pt.
 File: 3Dv.jpg Graphic file (type jpg)
 <use 3Dv.jpg>
-Package pdftex.def Info: 3Dv.jpg  used on input line 808.
+Package pdftex.def Info: 3Dv.jpg  used on input line 822.
 (pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
- [16 <./2Dvarrows.jpg> <./2Dvheat.jpg>] [17]
+ [19 <./2Dvarrows.jpg> <./2Dvheat.jpg>] [20]
 Appendix A.
-[18
+[21
 
-] [19]
+] [22]
 Appendix B.
-[20
+[23
 
 ]
-Overfull \hbox (40.10838pt too wide) in paragraph at lines 1031--1032
+Overfull \hbox (40.10838pt too wide) in paragraph at lines 1045--1046
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][]  
  []
 
-[21]
-Overfull \hbox (44.90843pt too wide) in paragraph at lines 1035--1036
+[24]
+Overfull \hbox (44.90843pt too wide) in paragraph at lines 1049--1050
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][]  
  []
 
-[22] [23] [24] [25] [26] [27] (Report.aux)
+[25] [26] [27] [28] [29] [30] (Report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1011,29 +1017,27 @@ ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Ruben
  Termaat\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.p
 k> <C:\Users\Ruben Termaat\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
 \dpi600\ecbx1000.pk> <C:\Users\Ruben Termaat\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Ruben Termaat\AppData\Local\Mi
-KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Ruben Termaa
-t\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2488.pk><C:/U
-sers/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmex10.pfb><C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Ruben Termaat/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Ruben Terma
-at/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><
-C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmmi7.pfb><C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Ruben Termaat/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Ruben Terma
-at/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C
+ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Ruben Termaat\AppData\Local\Mi
+KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk><C:/Users/Ruben Termaat
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
 :/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb><C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Ruben Termaat/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Ruben Term
-aat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-<C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/couri
-er/ucrr8a.pfb>
-Output written on Report.pdf (28 pages, 545375 bytes).
+onts/cm/cmmi10.pfb><C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Ruben Termaat/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Ruben Ter
+maat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+><C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmr10.pfb><C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Ruben Termaat/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Ruben Term
+aat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+><C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmsy5.pfb><C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Ruben Termaat/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Ruben Te
+rmaat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on Report.pdf (31 pages, 547469 bytes).
 PDF statistics:
- 410 PDF objects out of 1000 (max. 8388607)
+ 411 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
