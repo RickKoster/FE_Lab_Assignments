@@ -12,7 +12,7 @@ WI4243Mesh
 Qp = 50;            % [m^2/s]
 k = 10^-7;          % [m^2]
 mu = 1.002*10^-3;   % [Pa*s]
-K = 0;             % [m/s]
+K = 0;              % [m/s]
 pH = 10^6;          % [Pa]
 N_wells = 6;        % number of wells
 

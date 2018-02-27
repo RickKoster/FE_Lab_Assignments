@@ -968,8 +968,8 @@ clear yc
 clear Selem
 
 for index1 = 1:topology
-xc(index1) = x(elmat(i,index1));
-yc(index1) = y(elmat(i,index1));
+	xc(index1) = x(elmat(i,index1));
+	yc(index1) = y(elmat(i,index1));
 end;
 
 Delta = det([1 xc(1) yc(1);1 xc(2) yc(2);1 xc(3) yc(3)]);
@@ -980,29 +980,37 @@ beta  = B_mat(2,1:3);
 gamma = B_mat(3,1:3);
 
 for index1 = 1:topology
-for index2 = 1:topology
-if ~exist('u','var')
-Selem(index1,index2) =
-abs(Delta)/2*(k/mu)*(beta(index1)*beta(index2)+gamma(index1)*gamma(index2));
-else
-Selem(index1,index2) = abs(Delta)/24;
-end
-end;
+	for index2 = 1:topology
+		if ~exist('u','var')
+			Selem(index1,index2) =
+			abs(Delta)/2*(k/mu)*(beta(index1)*beta(index2)+gamma(index1)*gamma(index2));
+		else
+			Selem(index1,index2) = abs(Delta)/24;
+		end
+	end;
 end;
 \end{lstlisting}
 
 \section{Generate element vector}
 \begin{lstlisting}
+
+% Module for element mass matrix for reactive term
+%
+% Output: felem  ====== vector of two components
+%
+% felem(1), felem(2) to be computed in this routine.
+
 clear xc
 clear yc
 clear felem
 
 for index1=1:topology
-xc(index1) = x(elmat(i,index1));
-yc(index1) = y(elmat(i,index1));
+	xc(index1) = x(elmat(i,index1));
+	yc(index1) = y(elmat(i,index1));
 end;
 
 Delta = det([1 xc(1) yc(1);1 xc(2) yc(2);1 xc(3) yc(3)]);
+
 B_mat = [1 xc(1) yc(1);1 xc(2) yc(2);1 xc(3) yc(3)] \  eye(3);
 
 alpha = B_mat(1,1:3);
@@ -1011,84 +1019,48 @@ gamma = B_mat(3,1:3);
 
 felem = zeros(1,topology);
 
-% for N = 1:N_wells
-%     Delta_23 = det([1 xp(N) yp(N);1 xc(2) yc(2);1 xc(3) yc(3)]);
-%     Delta_13 = det([1 xc(1) yc(1);1 xp(N) yp(N);1 xc(3) yc(3)]);
-%     Delta_12 = det([1 xc(1) yc(1);1 xc(2) yc(2);1 xp(N) yp(N)]);
-%     
-%     if Delta + epsilon1*Delta >= abs(Delta_23) + abs(Delta_13) 
-+ abs(Delta_12) || Delta - epsilon1*Delta >= abs(Delta_23)
-+ abs(Delta_13) + abs(Delta_12) ;
+if ~exist('u','var')  % Only if u is already know can the calculation of the velocity begin.
+	for N = 1:N_wells
+		for index3 = 1:topology
+			phi_p(index3) = alpha(index3) + beta(index3)*xp(N) + gamma(index3)*yp(N);
+		end
+
+		if (phi_p(1) <= 1) && (phi_p(1) >= 0) && (phi_p(2) <= 1) && (phi_p(2) >= 0) && (phi_p(3) <= 1) && (phi_p(3) >= 0);
+			for index1 = 1:topology
+				felem(index1) = felem(index1) + -Qp*phi_p(index1); 
+			end
+
 %         N_Test = N_Test + 1;
-%         for index1 = 1:topology
-%             felem(index1) = felem(index1) +
-			-Qp*(1-abs(beta(index1))*abs(xc(index1)-
-			xp(index1))-abs(gamma(index1))*abs(yc(index1)-yp(index1)));
-%             
-%         end
-%         
-%     i
-% % Components of f are zero except for those elements with a well! So no
-% % other contributions!
-% %     else        
-% %         for index1 = 1:topology
-% %         global_index = elmat(N,index1);
-% %         
-% %         
-% %         end
-%     end
-% end
-if ~exist('u','var')
-for N = 1:N_wells
-for index3 = 1:topology
-phi_p(index3) = alpha(index3) + beta(index3)*xp(N) 
-+ gamma(index3)*yp(N);
-end
 
-if (phi_p(1) <= 1) && (phi_p(1) >= 0) && (phi_p(2) <= 1) && (phi_p(2) 
->= 0) && (phi_p(3) <= 1) && (phi_p(3) >= 0);
-for index1 = 1:topology
-phi_p
-felem(index1) = felem(index1) +
--Qp*phi_p(index1); %*(1-abs(beta(index1))*abs(xc(index1)
--xp(index1))-abs(gamma(index1))*abs(yc(index1)-yp(index1))) ;
-felem
-end
-i
-
-N_Test = N_Test + 1;
 % Components of f are zero except for those elements with a well! So no
 % other contributions!
 %     else        
 %         for index1 = 1:topology
-%         global_index = elmat(N,index1);
-%         
-%         
+%         global_index = elmat(N,index1);    
 %         end
-end
-end
+		end
+	end
 else
-switch direction
-case 1 % x direction
-for index1 = 1:topology
-felem(index1) = felem(index1) +
-(k/mu)*(abs(Delta)/6)*beta(index1)*(u(elmat(i,1))+u(elmat(i,2))+u(elmat(i,3)));
+	switch direction
+		case 1 % x direction
+			for index1 = 1:topology
+				felem(index1) = felem(index1) + (k/mu)*(abs(Delta)/6)*beta(index1)*(u(elmat(i,1))+u(elmat(i,2))+u(elmat(i,3)));
+			end
+		case 2 % y direction
+			for index1 = 1:topology
+				felem(index1) = felem(index1) + (k/mu)*(abs(Delta)/6)*gamma(index1)*(u(elmat(i,1))+u(elmat(i,2))+u(elmat(i,3)));
+			end
+	end
 end
 
-case 2 % y direction
-for index1 = 1:topology
-felem(index1) = felem(index1) +
-(k/mu)*(abs(Delta)/6)*gamma(index1)*(u(elmat(i,1))+u(elmat(i,2))+u(elmat(i,3)));
-end
-end
-end
+
 \end{lstlisting}
 
 
 
 
 
-\section{Generate Boundary matrix}
+\section{Generate Boundary element matrix}
 
 \begin{lstlisting}
 clear xc
@@ -1096,19 +1068,19 @@ clear yc
 clear BMelem
 
 for index1=1:topologybnd
-xc(index1) = x(elmatbnd(i,index1));
-yc(index1) = y(elmatbnd(i,index1));
+	xc(index1) = x(elmatbnd(i,index1));
+	yc(index1) = y(elmatbnd(i,index1));
 end;
 
 lek = sqrt((xc(2)-xc(1))^2 + (yc(2)-yc(1))^2);
 
 for index1=1:topologybnd
-if ~exist('u', 'var')
-BMelem(index1,index1) = K*lek/2;  % NC used! not HB!!
-else
+	if ~exist('u', 'var')
+		BMelem(index1,index1) = K*lek/2;  % NC used! not HB!!
+	else
 
-BMelem(index1,index1) = -(k/(mu*K))*lek/6;
-end
+		BMelem(index1,index1) = -(k/(mu*K))*lek/6;
+	end
 end;
 \end{lstlisting}
 
@@ -1122,21 +1094,21 @@ clear yc
 clear bfelem
 
 for index1 = 1:topologybnd
-xc(index1) = x(elmatbnd(i,index1));
-yc(index1) = y(elmatbnd(i,index1));
+	xc(index1) = x(elmatbnd(i,index1));
+	yc(index1) = y(elmatbnd(i,index1));
 end;
 
 lek = sqrt((xc(2)-xc(1))^2+(yc(2)-yc(1))^2);
 
 if ~exist('u','var')
-for index1 = 1:topologybnd
-bfelem(index1) = K*pH*lek/2*u_inf;   %what is u_inf?
-end;
+	for index1 = 1:topologybnd
+		bfelem(index1) = K*pH*lek/2*u_inf;   %what is u_inf?
+	end;
 else
-for index1 = 1:topologybnd
-bfelem(index1) = ((k*pH)/mu)*lek/2*u_inf;   %what is u_inf?
+	for index1 = 1:topologybnd
+		bfelem(index1) = ((k*pH)/mu)*lek/2*u_inf;   %what is u_inf?
 %         bfelem(index1) = -(k/mu)*lek/6*u(elmat(i,ind1));
-end
+	end
 end
 \end{lstlisting}
 
@@ -1152,184 +1124,183 @@ end
 
 if ~exist('u', 'var')  
 
-S 		= sparse(n,n); % stiffness matrix
+	S 		= sparse(n,n); % stiffness matrix
+	f 		= zeros(n,1); % right-hand side vector
 
-f 		= zeros(n,1); % right-hand side vector
+	for i = 1:length(elmat(:,1)) % for all internal elements
+		GenerateElementMatrix; % Selem	
+		for ind1 = 1:topology
+			for ind2 = 1:topology
+				S(elmat(i,ind1),elmat(i,ind2))	= S(elmat(i,ind1),elmat(i,ind2)) + Selem(ind1,ind2);
+			end;
+		end;
 
-for i = 1:length(elmat(:,1)) % for all internal elements
-GenerateElementMatrix; % Selem	
-for ind1 = 1:topology
-for ind2 = 1:topology
-S(elmat(i,ind1),elmat(i,ind2))	= S(elmat(i,ind1),elmat(i,ind2)) + Selem(ind1,ind2);
-end;
-end;
-
-GenerateElementVector; % felem
-for ind1 = 1:topology
-f(elmat(i,ind1)) = f(elmat(i,ind1)) + felem(ind1);
-end;
-end;
-
-% Next the boundary contributions
-
-for i = 1:length(elmatbnd(:,1)); % for all boundary elements extension of mass matrix M and element vector f
-GenerateBoundaryElementMatrix; % BMelem
-for ind1 = 1:topologybnd
-for ind2 = 1:topologybnd
-S(elmatbnd(i,ind1),elmatbnd(i,ind2)) = S(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
-end;
-end;
-GenerateBoundaryElementVector; % bfelem   
-for ind1 = 1:topologybnd
-f(elmatbnd(i,ind1)) = f(elmatbnd(i,ind1)) + bfelem(ind1);
-end;
-end;
-
-else
-
-Sx 		= sparse(n,n); % stiffness matrix
-
-fx 		= zeros(n,1); % right-hand side vector
-
-left_nodes = find(p(1,:) == -1); 
-top_nodes = find(p(2,:) == 1);
-right_nodes = find(p(1,:) == 1);
-bottom_nodes = find(p(2,:) == -1);
-
-bnd1_nodes = ismember(elmatbnd,left_nodes);
-bnd1 = find(bnd1_nodes(:,1) == 1 & bnd1_nodes(:,2) == 1);
-
-bnd2_nodes = ismember(elmatbnd,top_nodes);
-bnd2 = find(bnd2_nodes(:,1) == 1 & bnd2_nodes(:,2) == 1);
-
-bnd3_nodes = ismember(elmatbnd,right_nodes);
-bnd3 = find(bnd3_nodes(:,1) == 1 & bnd3_nodes(:,2) == 1);
-
-bnd4_nodes = ismember(elmatbnd,bottom_nodes);
-bnd4 = find(bnd4_nodes(:,1) == 1 & bnd4_nodes(:,2) == 1);
-
-
-direction = 1;
-
-for i = 1:length(elmat(:,1)) % for all internal elements
-GenerateElementMatrix; % Selem	
-for ind1 = 1:topology
-for ind2 = 1:topology
-if elmat(i,ind1) == elmat(i,ind2)
-Sx(elmat(i,ind1),elmat(i,ind2))	= Sx(elmat(i,ind1),elmat(i,ind2)) + 2*Selem(ind1,ind2);
-else
-Sx(elmat(i,ind1),elmat(i,ind2))	= Sx(elmat(i,ind1),elmat(i,ind2)) + Selem(ind1,ind2);
-end
-end;
-end;
-GenerateElementVector; % felem
-for ind1 = 1:topology
-fx(elmat(i,ind1)) = fx(elmat(i,ind1)) + felem(ind1);
-end;
-end;
+		GenerateElementVector; % felem
+		for ind1 = 1:topology
+			f(elmat(i,ind1)) = f(elmat(i,ind1)) + felem(ind1);
+		end;
+	end;
 
 % Next the boundary contributions
 
+	for i = 1:length(elmatbnd(:,1)); % for all boundary elements extension of mass matrix M and element vector f
+	GenerateBoundaryElementMatrix; % BMelem
+		for ind1 = 1:topologybnd
+			for ind2 = 1:topologybnd
+				S(elmatbnd(i,ind1),elmatbnd(i,ind2)) = S(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
+			end;
+		end;
+		GenerateBoundaryElementVector; % bfelem   
+		for ind1 = 1:topologybnd
+			f(elmatbnd(i,ind1)) = f(elmatbnd(i,ind1)) + bfelem(ind1);
+		end;
+	end;
+
+	else
+
+	Sx 		= sparse(n,n); % stiffness matrix
+
+	fx 		= zeros(n,1); % right-hand side vector
+
+	left_nodes = find(p(1,:) == -1); 
+	top_nodes = find(p(2,:) == 1);
+	right_nodes = find(p(1,:) == 1);
+	bottom_nodes = find(p(2,:) == -1);
+
+	bnd1_nodes = ismember(elmatbnd,left_nodes);
+	bnd1 = find(bnd1_nodes(:,1) == 1 & bnd1_nodes(:,2) == 1);
+
+	bnd2_nodes = ismember(elmatbnd,top_nodes);
+	bnd2 = find(bnd2_nodes(:,1) == 1 & bnd2_nodes(:,2) == 1);
+
+	bnd3_nodes = ismember(elmatbnd,right_nodes);
+	bnd3 = find(bnd3_nodes(:,1) == 1 & bnd3_nodes(:,2) == 1);
+	
+	bnd4_nodes = ismember(elmatbnd,bottom_nodes);
+	bnd4 = find(bnd4_nodes(:,1) == 1 & bnd4_nodes(:,2) == 1);
 
 
-for j = 1:length(bnd1); % left boundary
-i = bnd1(j);
-GenerateBoundaryElementMatrix; % BMelem
-for ind1 = 1:topologybnd
-for ind2 = 1:topologybnd
-if elmatbnd(i,ind1) == elmatbnd(i,ind2)
-Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) + 2*BMelem(ind1,ind2);
-else
-Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
-end;
-end
-end;
-GenerateBoundaryElementVector; % bfelem   
-for ind1 = 1:topologybnd
-fx(elmatbnd(i,ind1)) = fx(elmatbnd(i,ind1)) + bfelem(ind1);
-end;
-end;
+	direction = 1;
 
-for j = 1:length(bnd3); % right boundary
-i = bnd3(j);
-GenerateBoundaryElementMatrix; % BMelem
-for ind1 = 1:topologybnd
-for ind2 = 1:topologybnd
-if elmatbnd(i,ind1) == elmatbnd(i,ind2)
-Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) + 2*BMelem(ind1,ind2);
-else
-Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
-end;
-end
-end;
-GenerateBoundaryElementVector; % bfelem   
-for ind1 = 1:topologybnd
-fx(elmatbnd(i,ind1)) = fx(elmatbnd(i,ind1)) - bfelem(ind1);
-end;
-end;
-
-direction = 2;
-
-Sy 		= sparse(n,n); % stiffness matrix
-
-fy 		= zeros(n,1); % right-hand side vector
-
-for i = 1:length(elmat(:,1)) % for all internal elements
-GenerateElementMatrix; % Selem	
-for ind1 = 1:topology
-for ind2 = 1:topology
-if elmat(i,ind1) == elmat(i,ind2)
-Sy(elmat(i,ind1),elmat(i,ind2))	= Sy(elmat(i,ind1),elmat(i,ind2)) + 2*Selem(ind1,ind2);
-else
-Sy(elmat(i,ind1),elmat(i,ind2))	= Sy(elmat(i,ind1),elmat(i,ind2)) + Selem(ind1,ind2);
-end
-end;
-end;
-GenerateElementVector; % felem
-for ind1 = 1:topology
-fy(elmat(i,ind1)) = fy(elmat(i,ind1)) + felem(ind1);
-end;
-end;
+	for i = 1:length(elmat(:,1)) % for all internal elements
+		GenerateElementMatrix; % Selem	
+		for ind1 = 1:topology
+			for ind2 = 1:topology
+				if elmat(i,ind1) == elmat(i,ind2)
+					Sx(elmat(i,ind1),elmat(i,ind2))	= Sx(elmat(i,ind1),elmat(i,ind2)) + 2*Selem(ind1,ind2);
+				else
+					Sx(elmat(i,ind1),elmat(i,ind2))	= Sx(elmat(i,ind1),elmat(i,ind2)) + Selem(ind1,ind2);
+				end
+			end;
+		end;
+		GenerateElementVector; % felem
+		for ind1 = 1:topology
+			fx(elmat(i,ind1)) = fx(elmat(i,ind1)) + felem(ind1);
+		end;
+	end;
 
 % Next the boundary contributions
 
 
 
-for j = 1:length(bnd2); % left boundary
-i = bnd2(j);
-GenerateBoundaryElementMatrix; % BMelem
-for ind1 = 1:topologybnd
-for ind2 = 1:topologybnd
-if elmatbnd(i,ind1) == elmatbnd(i,ind2)
-Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) + 2*BMelem(ind1,ind2);
-else
-Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
-end;
-end
-end;
-GenerateBoundaryElementVector; % bfelem   
-for ind1 = 1:topologybnd
-fy(elmatbnd(i,ind1)) = fy(elmatbnd(i,ind1)) - bfelem(ind1);
-end;
-end;
+	for j = 1:length(bnd1); % left boundary
+		i = bnd1(j);
+		GenerateBoundaryElementMatrix; % BMelem
+		for ind1 = 1:topologybnd
+			for ind2 = 1:topologybnd
+				if elmatbnd(i,ind1) == elmatbnd(i,ind2)
+					Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) + 2*BMelem(ind1,ind2);
+				else
+					Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
+				end;
+			end
+		end;
+		GenerateBoundaryElementVector; % bfelem   
+		for ind1 = 1:topologybnd
+			fx(elmatbnd(i,ind1)) = fx(elmatbnd(i,ind1)) + bfelem(ind1);
+		end;
+	end;
 
-for j = 1:length(bnd4); % right boundary
-i = bnd4(j);
-GenerateBoundaryElementMatrix; % BMelem
-for ind1 = 1:topologybnd
-for ind2 = 1:topologybnd
-if elmatbnd(i,ind1) == elmatbnd(i,ind2)
-Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) + 2*BMelem(ind1,ind2);
-else
-Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
-end;
-end
-end;
-GenerateBoundaryElementVector; % bfelem   
-for ind1 = 1:topologybnd
-fy(elmatbnd(i,ind1)) = fy(elmatbnd(i,ind1)) + bfelem(ind1);
-end;
-end;
+	for j = 1:length(bnd3); % right boundary
+		i = bnd3(j);
+		GenerateBoundaryElementMatrix; % BMelem
+		for ind1 = 1:topologybnd
+			for ind2 = 1:topologybnd
+				if elmatbnd(i,ind1) == elmatbnd(i,ind2)
+					Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) + 2*BMelem(ind1,ind2);
+				else
+					Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sx(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
+				end;
+			end
+		end;
+		GenerateBoundaryElementVector; % bfelem   
+		for ind1 = 1:topologybnd
+			fx(elmatbnd(i,ind1)) = fx(elmatbnd(i,ind1)) - bfelem(ind1);
+		end;
+	end;
+
+	direction = 2;
+
+	Sy 		= sparse(n,n); % stiffness matrix
+
+	fy 		= zeros(n,1); % right-hand side vector
+
+	for i = 1:length(elmat(:,1)) % for all internal elements
+		GenerateElementMatrix; % Selem	
+		for ind1 = 1:topology
+			for ind2 = 1:topology
+				if elmat(i,ind1) == elmat(i,ind2)
+					Sy(elmat(i,ind1),elmat(i,ind2))	= Sy(elmat(i,ind1),elmat(i,ind2)) + 2*Selem(ind1,ind2);
+				else
+					Sy(elmat(i,ind1),elmat(i,ind2))	= Sy(elmat(i,ind1),elmat(i,ind2)) + Selem(ind1,ind2);
+				end
+			end;
+		end;
+		GenerateElementVector; % felem
+		for ind1 = 1:topology
+			fy(elmat(i,ind1)) = fy(elmat(i,ind1)) + felem(ind1);
+		end;
+	end;
+
+% Next the boundary contributions
+
+
+
+	for j = 1:length(bnd2); % left boundary
+		i = bnd2(j);
+		GenerateBoundaryElementMatrix; % BMelem
+		for ind1 = 1:topologybnd
+			for ind2 = 1:topologybnd
+				if elmatbnd(i,ind1) == elmatbnd(i,ind2)
+					Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) + 2*BMelem(ind1,ind2);
+				else
+					Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
+				end;
+			end
+		end;
+		GenerateBoundaryElementVector; % bfelem   
+		for ind1 = 1:topologybnd
+			fy(elmatbnd(i,ind1)) = fy(elmatbnd(i,ind1)) - bfelem(ind1);
+		end;
+	end;
+
+	for j = 1:length(bnd4); % right boundary
+		i = bnd4(j);
+		GenerateBoundaryElementMatrix; % BMelem
+		for ind1 = 1:topologybnd
+			for ind2 = 1:topologybnd
+				if elmatbnd(i,ind1) == elmatbnd(i,ind2)
+					Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) + 2*BMelem(ind1,ind2);
+				else
+					Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) = Sy(elmatbnd(i,ind1),elmatbnd(i,ind2)) + BMelem(ind1,ind2);
+				end;
+			end
+		end;	
+		GenerateBoundaryElementVector; % bfelem   
+		for ind1 = 1:topologybnd
+			fy(elmatbnd(i,ind1)) = fy(elmatbnd(i,ind1)) + bfelem(ind1);
+		end;
+	end;
 end
 
 \end{lstlisting}
@@ -1390,10 +1361,33 @@ clear i;
 WI4243Comp
 
 %% Post
-WI4243Post
+hold on
 
+figure(2);
+ax.BoxStyle = 'full';
+hold off
+trisurf(elmat,x,y,u)
+xlabel('x'); ylabel('y'); zlabel('Pressure [Pa]');
+title(['\bf\fontsize{16}3D Surface plot  \fontsize{10} K = ' num2str(K,'%10.2e\n') ' [m/s]  \it Minimal pressure = ' num2str(min(u), '%10.2e\n') ' [Pa]']);
+
+lgd = legend();
+% title(lgd,['3D Surface plot, K = ' num2str(K) '\it Minimal pressure = ' num2str(Pressure_minimum)]);
+
+% title( {'Title';'subtitle'} )
+
+figure(3); 
+trisurf(elmat,x,y,u);
+xlabel('x'); ylabel('y');
+title(['\bf\fontsize{16}Contour plot, \fontsize{10} K = ',num2str(K,'%10.2e\n')]);
+view(2); shading interp; colormap jet; colorbar; set(gcf,'renderer','zbuffer')
+h = colorbar; ylabel(h, 'Pressure [Pa]');
+
+
+figure(4); quiver(x,y,vx',vy'); axis([-1 1 -1 1]);
+xlabel('x'); ylabel('y');
+title(['\bf\fontsize{16}Velocity field, \fontsize{10} K = ' num2str(K,'%10.2e\n') ' [m/s]']);
 %% Velocity part
-
+hold off
 
 \end{lstlisting}
 
