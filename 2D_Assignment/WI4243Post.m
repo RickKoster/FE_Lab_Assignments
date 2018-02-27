@@ -24,3 +24,4 @@ xlabel('x'); ylabel('y');
 title(['\bf\fontsize{16}Velocity field, \fontsize{10} K = ' num2str(K,'%10.2e\n') ' [m/s]']);
 
 
+hold off
