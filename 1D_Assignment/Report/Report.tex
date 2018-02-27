@@ -159,7 +159,7 @@ The first step in order to solve the BVP is to write a MATLAB routine that gener
 \end{lstlisting}
 	
 Using the codes to generate a mesh and the elmat, it is easier to use this 1D problem and adapt to a higher dimensional problem. The next step is to write a code that generates a two dimensional array, called the elmat.
-
+\newpage
 \begin{lstlisting}
 	function [ elmat ] = GenerateTopology( N_elem )
 	%GenerateTopology Creates the topology for a 1D problem given mesh 'x'.
@@ -242,7 +242,7 @@ All the previous code will generate a large matrix S, from the element matrices 
 
 \subsection{Element vector MATLAB routine}
 
-The next step In order to solve the equation $S\vec{c}=f$ is to create a code to generate the element vector. This element vector provides information about note $i$ and node $i+1$, which are the vertices of element $e_i$.\\
+The next step In order to solve the equation $S\vec{c}=f$ is to create a code to generate the element vector. This element vector provides information about node $i$ and node $i+1$, which are the vertices of element $e_i$.\\
 
 
 
@@ -310,7 +310,7 @@ Now if the previous matlab codes are run the following happens. First, a mesh an
 
 \section{Main program}
 
-The main program is simple written by assembling the previous created matlab code AssembleMatrix and AssembleVector and deviding the vector f by the matrix S.
+The main program is simply written by assembling the previous created MATLAB code AssembleMatrix and AssembleVector and deviding the vector f by the matrix S.
 \begin{lstlisting}
 	function [ u ] = SolveBVP(  N_elem, int, lambda, D )
 	
@@ -339,7 +339,7 @@ The final step is to combine all the codes in a main code to solve $Su= \vec{f}$
 
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=150mm]{1Dfx.jpg}
+	\includegraphics[width=140mm]{1Dfx.jpg}
 	\caption{showing the calculated u versus x, with N = 100,f(x)=x 		 \label{overflow}}
 \end{figure}
 
@@ -394,7 +394,7 @@ The next step is to see what happens when changing f(x) to $f(x)=sin(20x)$ and t
 \chapter{2D-case}
 
 
-The obvious next step after solving a 1 dimensional BVP is to adept the 1D solutions into code to solve a 2 dimensional BVP. To do this, a real life problem is going to be solved. In 3rd world countries one of the big issues is the supply of fresh water. One way is to do this is to take square reservoirs, which is a porous medium, with several wells where water is extracted from the subsurface. The water pressure is equal to the hydrostatic pressure. As this is not on an infinite domain, mixed boundary conditions are used. These boundary conditions represent a model for the transfer of the water over the boundary to locations far away. To this extent, a square domain is considered with length 2 in meter: $\Omega= (-1; 1) x (-1; 1)$ with boundary $\partial\Omega$. Darcy's law for fluid determines the steady state equilibrium of this BVP, given by equation (2.1):
+The obvious next step after solving a 1 dimensional BVP is to adept the 1D solutions into code to solve a 2 dimensional BVP. To do this, a real life problem is going to be solved. In 3rd world countries one of the big issues is the supply of fresh water. One way is to do this is to take square reservoirs, which is a porous medium, with several wells where water is extracted from the subsurface. The water pressure is equal to the hydrostatic pressure. As this is not on an infinite domain, mixed boundary conditions are used. These boundary conditions represent a model for the transfer of the water over the boundary to locations far away. To this extent, a square domain is considered with length 2 in meter: $\Omega= (-1; 1) \times (-1; 1)$ with boundary $\partial\Omega$. Darcy's law for fluid determines the steady state equilibrium of this BVP, given by equation (2.1):
 
 \begin{equation}
 \vec{v}=-\frac{k}{\mu}\nabla p
@@ -409,7 +409,7 @@ fluid pressure, permeability of the porous medium, viscosity of water and the fl
 	\nabla\cdot\vec{v}=-\sum_{p=1}^{n_{well}}Q_p\delta(\phi(\vec{x}-\phi(\vec{x}_p)=0,\quad (x,y) 	\in\Omega 
 \end{equation}
 
-Where $Q_p$ denotes the water extraction rate by well k, which is located at $x_p$. Here $x$ equals $(x;y)$, the spatial coordinates.  We use the convention $\vec{x} = (x; y) $ to represent the spatial coordinates. The dirac Delta Distribution is characterized by equation(2.3).
+Where $Q_p$ denotes the water extraction rate by well k, which is located at $x_p$. Here $x$ equals $(x;y)$, the spatial coordinates.  The convention $\vec{x} = (x; y) $ to represent the spatial coordinates is used. The dirac Delta Distribution is characterized by equation(2.3).
 
 \begin{equation}
 	\begin{cases} 
@@ -426,7 +426,7 @@ For this BVP the following boundary condition is considered:
 \end{equation}
 Where $K$ denotes the transfer rate coefficient of the water between the boundary of the domain and its surroundings. The constant $p^H$ represents the hydrostatic pressure. 
 
-We also divide the boundary $\partial\Omega$ into four parts described by the side of the square domain $\Omega$. $\partial\Omega_1$ is the part with $x = -1$, $\partial\Omega_2$ is the part with $y = 1$, $\partial\Omega_3$ is the part with $x = 1$, $\partial\Omega_4$ is the part with $y = -1$.
+The boundary $\partial\Omega$ is divided into four parts described by the side of the square domain $\Omega$. $\partial\Omega_1$ is the part with $x = -1$, $\partial\Omega_2$ is the part with $y = 1$, $\partial\Omega_3$ is the part with $x = 1$, $\partial\Omega_4$ is the part with $y = -1$.
 \newpage
 
 In order to solve this BVP the values needed for all the constants are given in table (2.1).
@@ -524,7 +524,7 @@ Rearranging equation(2.12) so that the variable parts are on the left and the co
 		\end{cases}\  
 	\end{equation}
 
-To solve the WF the Galerkin equations are applied, where p is replaced by $ \sum_{j=1}^{n}c_j\phi_j $ and  $\phi(x)=\phi_i(x)$.
+To solve the WF the Galerkin equations are applied, where $p$ is replaced by $ \sum_{j=1}^{n}c_j\phi_j $ and  $\phi(x)=\phi_i(x)$.
 
 \begin{equation}
 	\sum_{j=1}^{n}c_i\int_{\partial\Omega}\phi_i K\phi_j d\tau + \int_{\Omega}\frac{k}{\mu}\nabla\phi(x)\cdot\nabla \phi_j d\Omega= -\sum_{p=1}^{n_{well}}\phi(x_p) Q_p +\int_{\partial\Omega}\phi_i Kp^Hd\tau
@@ -535,7 +535,7 @@ Equation(2.14) now is of the form $S\vec{c}=\vec{f}$ and, like with the 1D probl
 
 \section{Element matrix and element vector}
 
-First the galerkin equation is seperated in its element and boundary components. The element matrix $S^{e_k}_{ij}$ and the element vector $f^{e_k}_i$ are given in equations (2.15) and 2.16 respectively.
+First the galerkin equation is seperated in its element and boundary components. The element matrix $S^{e_k}_{ij}$ and the element vector $f^{e_k}_i$ are given in equations (2.15) and 2.16 respectively. For the element matrix, boundary element matrix and boundary element vector Newton-Côtes theorem and Holand-Bell theorem are applied to simplify the equations into a set of equations that can be used for computing with MATLAB code.
 
 \begin{equation}
 	S^{e_k}_{ij} = \int_{e_k}\frac{k}{\mu}\nabla\phi_i\cdot\nabla \phi_j d\Omega = (\beta_i\beta_j+\gamma_i\gamma_j)\frac{k}{\mu}\frac{\lvert\triangle e_k\rvert}{2}
@@ -573,9 +573,10 @@ To solve the BVP in 2D, one of the aspects that need to be determined is whether
 
 In the criterion $\Delta(\vec{x}_p,\vec{x}_q,\vec{x}_r)$ denotes the triangle with vertices $\vec{x}_p$, $\vec{x}_q$ and $\vec{x}_r$, where $|\Delta(\vec{x}_{k1},\vec{x}_{k2},\vec{x}_{k3})|$ denote its area. The triangular element $k$ is given by $e_k=\Delta(\vec{x}_{k1},\vec{x}_{k2},\vec{x}_{k3})$ with vertices  $\vec{x}_{k1}$, $\vec{x}_{k2}$ and $\vec{x}_{k3}$ and $\vec{e_k}$ includes the boundary of element $e_k$. To solve this BVP a certain tolerance has to be accounted for in the Matlab code. However, while using this method it proved difficult to determine a correct tolerance to ensure every well was contained in a single element.
 
-Therefore, the method hinted at in the assignment was used instead. We check whether the linear basis functions $\phi_{k1}$, $\phi_{k2}$ and $\phi_{k3}$ all have values in the interval $ [0,1] $ at position $\vec{x}_p$. If this is true, then the well at $\vec{x}_p$ is within the triangular element $e_k$.
+Therefore, an alternative method was used instead. A check was done whether the linear basis functions $\phi_{k1}$, $\phi_{k2}$ and $\phi_{k3}$ all have values in the interval $ [0,1] $ at position $\vec{x}_p$. If this is true, then the well at $\vec{x}_p$ is within the triangular element $e_k$.
 
-If we find and element that does contain a well, we see in equation \eqref{f_i_ek} that we must find $\phi_i(\vec{x_p})$ for $i = \{k1, k2, k3\}$. The following code does this by determining $\alpha_i$, $\beta_i$, and $\gamma_i $ and subsequently filling $\vec{x}_p$ into the found $\phi_i(\vec{x})$.
+If it is found that an element does contain a well, we see in equation \eqref{f_i_ek} that $\phi_i(\vec{x_p})$ for $i = \{k1, k2, k3\}$ is found. The following code does this by determining $\alpha_i$, $\beta_i$, and $\gamma_i $ and subsequently filling $\vec{x}_p$ into the found $\phi_i(\vec{x})$.
+
 \begin{lstlisting}
 for index1=1:topology
 	xc(index1) = x(elmat(i,index1));
@@ -611,21 +612,28 @@ end
 
 \section{Generating MATLAB code}
 
-Similar as with the 1D BVP, code is written in order to generate a mesh, element matrix, element vector, boundary element matrix and boundary element vector. These codes can be found in appendix B.1 through B.6. The scripts have been written such that they can be used to find both the pressure field and the velocity field.
+Similar as with the 1D BVP, MATLAB code is written in order to generate a mesh, element matrix, element vector, boundary element matrix and boundary element vector. These codes can be found in appendix B.1 through B.6. The scripts have been written such that they can be used to find both the pressure field and the velocity field(the derivation fort the velocities is found in the next section).
 
+Using the MATLAB codes a nice mesh can be found.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=150mm]{meshgrid2D.jpg}
+	\caption{Triangle element mesh over the square reservoir domain $\Omega=(-1;1)\times (-1;1)$. \label{overflow}}
+\end{figure}
 
 
 
 
 \section{Velocities}
 
-In this part we use Darcy's law to compute the speed in both directions.
+In order to find the velocities in x,y-direction, Darcy's law is used to compute the speed in both directions.
 
 %\begin{equation}
 % M\vec{v_x}=C_x\vec{p},\,\,\, M\vec{v_y}=C_y\vec{p}
 %\end{equation}
 
-In order to find $v_x$ and $v_y$ we first rewrite equation(2.20).
+In order to find $v_x$ and $v_y$ the first step is to rewrite equation(2.20).
 
 \begin{equation}
 \vec{v}=-\frac{k}{\mu}\nabla p
@@ -674,7 +682,7 @@ v_y(y=1)=k(p-p^H)
 %\end{equation}
 %
 %Here $\phi (\vec{x})=\phi_i (\vec{x})$. Filling equations(2.29) and $\phi_i (\vec{x})$ in the exuations for $v_x$ 
-In order to find the weak form we, again, use the test function $\phi$ and integrate over the domain $\Omega$. Here we go through the derivation for $v_x$, the steps for deriving $v_y$ are similar.
+In order to find the weak form, again, the test function $\phi$ is used and integrated over the domain $\Omega$. Here follows the derivation for finding $v_x$, the steps for deriving $v_y$ are similar.
 
 \begin{equation}
 \int\limits_{\Omega}\phi v_x d\Omega=-\frac{k}{\mu}\int\limits_{\Omega}\phi\frac{dp}{dx}d\Omega
@@ -696,19 +704,19 @@ The surface integral turns into a set of line integrals along parts of the bound
 \int\limits_{\Omega}-\frac{k}{\mu}\frac{d\phi p}{dx}dxdy=  \int\limits_{-1}^{1}-\frac{k}{\mu}(\phi(x=1,y)p(x=1,y))+\frac{k}{\mu}(\phi(x=-1)p(x=-1,y))dy
 \end{equation}
 
-Rewriting the equation:
+Simplifying the previous equations.
 
 \begin{equation}
 \int\limits_{\Omega}-\frac{k}{\mu}\frac{d\phi p}{dx}dxdy =\int\limits_{\partial\Omega_3}-\frac{k}{\mu}\phi pd\tau+\int\limits_{\partial\Omega_1}\frac{k}{\mu}\phi pd\tau
 \end{equation}
 
-Inserting this into equation(2.29) we get the following equation.
+Inserting this into equation(2.29) the following equation is found.
 
 \begin{equation}
 	\int\limits_{\Omega}\phi v_x = \frac{k}{\mu}\{\int\limits_{\partial\Omega_3}-\phi pd\tau+\int\limits_{\partial\Omega_1}\phi pd\tau+\int\limits_{\Omega}p\frac{\phi_i}{dx}d\Omega\}
 \end{equation}
 
-We use the boundary conditions to rewrite $p$ in the two boundary integrals.
+The boundary conditions is used to rewrite $p$ in the two boundary integrals.
 
 %\begin{equation}
 %\phi(\vec{x})=\phi_i(\vec{x}) \hspace{1cm}v_x\approx v^{(n)}_x = \sum_{j=1}^{n}c_j\phi_j(\vec{x})
@@ -723,7 +731,8 @@ We use the boundary conditions to rewrite $p$ in the two boundary integrals.
 \end{cases}
 \end{equation}
 
-We find the following weakform.
+The following weakform is derived:
+
 %Now writing the equation where $v_x$ is filled in so that an equation is found that depends on $p$.
 
 \vspace{2mm}
@@ -734,7 +743,7 @@ Find $v_x \in \Sigma = \{v_x \text{ smooth}\}$, such that
 \end{equation}
 for all $ \phi \in \Sigma$.
 
-To find the system of equations we fill in  
+To find the system of equations the following equations are filled in equation(2.35)  
 $\phi(\vec{x})=\phi_i(\vec{x})= \alpha_i+\beta_i x+\gamma_i y$ and  $v_x\approx \sum\limits_{j=1}^{n}c_j\phi_j(\vec{x})$.
 
 \begin{equation}
@@ -747,7 +756,7 @@ f_i =
 \int\limits_{\partial\Omega_3}-\frac{k}{\mu}\phi_i p^H d\tau +\int\limits_{\partial\Omega_1}\frac{k}{\mu}\phi_i p^H d\tau + \int\limits_{\Omega}\frac{k}{\mu}p\frac{d\phi_i}{dx}d\Omega
 \end{equation}
 
-We separate contributions to both $S_{ij}$ and $f_i$ from boundary and internal elements into $S_{ij}^{be_l}$, $S_{ij}^{e_k}$, $f_i^{be_l}$ and $f_i^{e_k}$ such that:
+Now separating contributions to both $S_{ij}$ and $f_i$ from boundary and internal elements into $S_{ij}^{be_l}$, $S_{ij}^{e_k}$, $f_i^{be_l}$ and $f_i^{e_k}$ such that:
 
 \begin{equation}
 	S_{ij} = \sum\limits_{l=1}^{n_{be}} S_{ij}^{be_{l}} + \sum\limits_{k=1}^{n_{e}} S_{ij}^{e_{k}}
@@ -757,7 +766,7 @@ We separate contributions to both $S_{ij}$ and $f_i$ from boundary and internal 
 f_{i} = \sum\limits_{l=1}^{n_{be}} f_{i}^{be_{l}} + \sum\limits_{k=1}^{n_{e}} f_{i}^{e_{k}}
 \end{equation}
 
-Applying Newton-Cotes theorem and Holand-Bell theorem we find new expressions for the (boundary) element-matrix and -vector.
+Applying Newton-Côtes theorem and Holand-Bell theorem results in the following new expressions for the (boundary) element-matrix and -vector are found.
 
 \begin{equation}
 S^{e_k}_{ij}=\int_{e_k}\phi_i\phi_j = \frac{\lvert\triangle_{ek}\rvert}{24}
@@ -776,50 +785,49 @@ f^{be_l}_{i}=\int_{be_l}\pm \frac{k}{\mu}\phi_ip^H dy = \pm \frac{k}{\mu}p^H \fr
 \end{equation}
 With '$+$' if $be_{l}$ is on $\partial\Omega_1$ and '$-$' if it is on $\partial\Omega_3$
 
-Since we have previously calculated the pressure field $p$ we have all the necessary information to calculate $v_x$ (and similarly $v_y$).
+Since the pressure field $p$ was previously calculated, all the necessary information to calculate and compute $v_x$ (and similarly $v_y$) is now derived. In the following plots the velocities for $K=10m/s$ are shown using a vector plot, contour plot and a 3D surface plot.
+
+
 
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=150mm]{meshgrid2D.jpg}
-	\caption{caption
- \label{overflow}}
-\end{figure}
-
-\begin{figure}[ht!]
-	\centering
-	\includegraphics[width=150mm]{2Dvarrows.jpg}
-	\caption{caption
+	\includegraphics[width=100mm]{2Dvarrows.jpg}
+	\caption{Arrow velocity plot, indicating the direction and velocity of the water(longer arrows indicate higher velocity).
 	\label{overflow}}
 \end{figure}
 
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=150mm]{2Dvheat.jpg}
-	\caption{caption
+	\includegraphics[width=100mm]{2Dvheat.jpg}
+	\caption{Contour plot of the velocity in the square reservoir on domain $\Omega=(-1,1)\times(-1,1)$, showing six areas where a drop of about two times the pressure can be observed, compared to the boundary pressure.
 	\label{overflow}}
 \end{figure}
 
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=150mm]{3Dv.jpg}
-	\caption{caption
+	\includegraphics[width=130mm]{3Dv.jpg}
+	\caption{3D surface plot
 	\label{overflow}}
 \end{figure}
+\vfill
+\newpage
+\section{Varrying constant $K$}
 
-\section{Assignment 9}
-
-%Perform various simulations where you let the transfer coeficient K range between 0.00001 and 10000. Show the contour plots, and give the values of the minimal pressure (which is important from an engineering point of view). Explain your results.
-
-
-
+Now that the velocities have been calculated the last thing to vary is, is the transfer $K$ factor. A few different plots will now follow in which the transfer coefficient $K$ has different values between 0.00001 and 10000. 
 
 
-\section{Assignment 10}
 
-What happens if K = 0? Explain the results.
 
-Setting $K=0$ means the transfer coefficient of the water between the boundary and its surroundings is zero.
 
+Show the contour plots, and give the values of the minimal pressure (which is important from an engineering point of view). Explain your results.
+
+
+
+
+
+
+
+The final step is to determine what happens when $K=0$ and why? When looking at our previous plots, when varying $K$ from 0.00001 to 10000 it can be derived that When $K=0$, the transfer coefficient of the water between the boundary of the square reservour and its surroundings is zero. In the following plot the $K$ factor is set to 0:
 
 
 \newpage
