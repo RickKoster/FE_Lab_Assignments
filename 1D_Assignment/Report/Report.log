@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.24)  27 FEB 2018 22:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.24)  27 FEB 2018 23:05
 entering extended mode
 **./Report.tex
 (Report.tex
@@ -959,53 +959,58 @@ Chapter 2.
 <meshgrid2D.jpg, id=72, 562.1pt x 421.575pt>
 File: meshgrid2D.jpg Graphic file (type jpg)
 <use meshgrid2D.jpg>
-Package pdftex.def Info: meshgrid2D.jpg  used on input line 635.
+Package pdftex.def Info: meshgrid2D.jpg  used on input line 639.
 (pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
- [16] [17 <./meshgrid2D.jpg>] [18]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16] [17 <./meshgrid2D.jpg>] [18]
 <2Dvarrows.jpg, id=86, 562.1pt x 421.575pt>
 File: 2Dvarrows.jpg Graphic file (type jpg)
 <use 2Dvarrows.jpg>
-Package pdftex.def Info: 2Dvarrows.jpg  used on input line 808.
+Package pdftex.def Info: 2Dvarrows.jpg  used on input line 824.
 (pdftex.def)             Requested size: 284.52756pt x 213.39221pt.
 <2Dvheat.jpg, id=87, 562.1pt x 421.575pt>
 File: 2Dvheat.jpg Graphic file (type jpg)
 <use 2Dvheat.jpg>
-Package pdftex.def Info: 2Dvheat.jpg  used on input line 815.
+Package pdftex.def Info: 2Dvheat.jpg  used on input line 831.
 (pdftex.def)             Requested size: 284.52756pt x 213.39221pt.
 File: 3Dv.jpg Graphic file (type jpg)
 <use 3Dv.jpg>
-Package pdftex.def Info: 3Dv.jpg  used on input line 822.
+Package pdftex.def Info: 3Dv.jpg  used on input line 838.
 (pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
- [19 <./2Dvarrows.jpg> <./2Dvheat.jpg>] [20]
+ [19 <./2Dvarrows.jpg>] [20 <./2Dvheat.jpg>]
+[21]
 Appendix A.
-[21
+[22
 
-] [22]
+] [23]
 Appendix B.
-[23
+[24
 
 ]
-Overfull \hbox (40.10838pt too wide) in paragraph at lines 1045--1046
+Overfull \hbox (40.10838pt too wide) in paragraph at lines 1061--1062
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][]  
  []
 
-[24]
-Overfull \hbox (44.90843pt too wide) in paragraph at lines 1049--1050
+[25]
+Overfull \hbox (44.90843pt too wide) in paragraph at lines 1065--1066
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][]  
  []
 
-[25] [26] [27] [28] [29] [30] (Report.aux)
+[26] [27] [28] [29] [30] [31] (Report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6263 strings out of 493303
- 84412 string characters out of 3126302
- 262019 words of memory out of 3000000
- 9703 multiletter control sequences out of 15000+200000
+ 6264 strings out of 493303
+ 84418 string characters out of 3126302
+ 262033 words of memory out of 3000000
+ 9704 multiletter control sequences out of 15000+200000
  19078 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,13n,42p,894b,1707s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1035,9 +1040,9 @@ msfonts/cm/cmsy5.pfb><C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Ruben Termaat/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Ruben Te
 rmaat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Report.pdf (31 pages, 547469 bytes).
+Output written on Report.pdf (32 pages, 549656 bytes).
 PDF statistics:
- 411 PDF objects out of 1000 (max. 8388607)
+ 416 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
