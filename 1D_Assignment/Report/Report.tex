@@ -7,6 +7,9 @@
 \usepackage{appendix}
 
 
+\usepackage{caption}
+\usepackage{subcaption}
+
 %front page:
 \usepackage[T1]{fontenc}
 \usepackage{xcolor}
@@ -815,27 +818,27 @@ f^{be_l}_{i}=\int\limits_{be_l}\pm \frac{k}{\mu}\phi_ip^H d\tau = \pm \frac{k}{\
 \end{equation}
 With '$+$' if $be_{l}$ is on $\partial\Omega_1$ and '$-$' if it is on $\partial\Omega_3$
 
-Since the pressure field $p$ was previously calculated, all the necessary information to compute $v_x$ (and similarly $v_y$) is now derived. In the following plots the velocities for $K=10m/s$ are shown using a vector plot, contour plot and a 3D surface plot.
+Since the pressure field $p$ was previously calculated, all the necessary information to compute $v_x$ (and similarly $v_y$) is now derived. In the following plots the velocities for $K=10\,m/s$ are shown using a vector plot, contour plot and a 3D surface plot.
 
 
 
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=100mm]{2Dvarrows.jpg}
+	\includegraphics[width=130mm]{2Dvarrowsk10.jpg}
 	\caption{Arrow velocity plot, indicating the direction and velocity of the water(longer arrows indicate higher velocity).
 	\label{overflow}}
 \end{figure}
 
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=100mm]{2Dvheat.jpg}
+	\includegraphics[width=130mm]{2Dvheatk10.jpg}
 	\caption{Contour plot of the velocity in the square reservoir on domain $\Omega=(-1,1)\times(-1,1)$, showing six areas where a drop of about two times the pressure can be observed, compared to the boundary pressure.
 	\label{overflow}}
 \end{figure}
 
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=130mm]{3Dv.jpg}
+	\includegraphics[width=130mm]{3Dvk10.jpg}
 	\caption{3D surface plot
 	\label{overflow}}
 \end{figure}
@@ -853,6 +856,25 @@ Show the contour plots, and give the values of the minimal pressure (which is im
 
 
 
+
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=8cm]{2Dheatk10000}
+		\caption{A subfigure}
+		\label{fig:sub1}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=8cm]{2Dheatk100}
+		\caption{A subfigure}
+		\label{fig:sub2}
+	\end{subfigure}
+	\caption{A figure with two subfigures}
+	\label{fig:test}
+\end{figure}
 
 
 
