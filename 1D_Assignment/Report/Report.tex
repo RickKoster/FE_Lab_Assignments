@@ -819,8 +819,9 @@ f^{be_l}_{i}=\int\limits_{be_l}\pm \frac{k}{\mu}\phi_ip^H d\tau = \pm \frac{k}{\
 With '$+$' if $be_{l}$ is on $\partial\Omega_1$ and '$-$' if it is on $\partial\Omega_3$
 \vspace{5mm}
 
-Since the pressure field $p$ was previously calculated, all the necessary information to compute $v_x$ (and similarly $v_y$) is now derived. Therefore it is possible to now evaluate our square reservoir. In the following plots the velocities for $K=10\,m/s$ that are computed are shown using a vector plot, contour plot and a 3D surface plot.\\
-In figure 2.2, 2.3 and 2.4 it can be seen that there are 6 spots that stick out. Looking at the velocity field, it can be seen that the velocity is highest around these spots and lowest near the boundaries. The heat contour plot implies that where the velocity is highest, the pressure is lowest in the square reservoir and at the boundary is the highest pressure. 
+Since the pressure field $p$ was previously calculated, all the necessary information to compute $v_x$ (and similarly $v_y$) is now derived. Therefore it is possible to now evaluate our square reservoir. In the following plots the velocities for $K=10\,m/s$ that are computed are shown using a vector plot, contour plot and a 3D surface plot.\par 
+In figure 2.2, 2.3 and 2.4 it can be seen that there are 6 spots that stick out. Looking at the velocity field, it can be seen that the velocity is highest around these spots and lowest near the boundaries. The heat contour plot implies that where the velocity is highest, the pressure is lowest in the square reservoir and at the boundary is the highest pressure. The last figure shows a surface plot
+in accordance to the velocity field and pressure contour plot. Where the pressure difference is highest, one would expect the velocity to be highest. Velocity depends on pressure by the following relation: $\vec{v}= \frac{K}{\mu}$. At the peaks the gradient of p is largest and results in a higher velocity.
 
 
 
@@ -913,11 +914,12 @@ Now that the velocities have been calculated the last thing to vary is, is the f
 	\label{table:nonlin} % is used to refer this table in the text
 \end{table}
 
-The purpose of the wells is to extract water from the subsurface to near the surface. In order to lift the water against gravity there must be sufficient pressure difference between the bottom and top of the well. What has been calculated in this assignment is the pressure at the bottom of the well. With an atmospheric pressure of around 101 $kPa$ in mind the pressure at the bottow of the well must be greater by an amount depending on the depth of the well. 
+The purpose of the wells is to extract water from the subsurface to near the surface. In order to lift the water against gravity there must be sufficient pressure difference between the bottom and top of the well. What has been calculated in this assignment is the pressure at the bottom of the well. With an atmospheric pressure of around 101 $kPa$ in mind, the pressure at the bottow of the well must be higher to counter the atmospheric pressure working on the water. When taking gravity in account, this is also something the pressure within the well has to overcome. 
 
-From the 3D surface plots it is evident that the pressure at the well in the middle, which is closer to more wells, is lower than those around it. It is thus important to know how many and how close together wells can be dug while maintaining a sufficient pressure difference between the bottom and top of the wells.
+From the 3D surface plots on the next page it is evident that the pressure at the well in the middle, which is closer to more wells, is lower than those around it. It is thus important to know how many and how close together wells can be dug while maintaining a sufficient pressure difference between the bottom and top of the wells.
 
-The final step is to determine what happens when $K=0$ and why? When looking at our previous plots, when varying $K$ from 0.00001 to 10000 it can be seen that the pressure drops the lower the value for K is. This would mean that when $K=0$, the transfer coefficient of the water between the boundary of the square reservoir and its surroundings is zero. There will be no flow from the square reservoir into the surrounding through the boundary.
+The final step is to determine what happens when $K=0$ and why? When looking at our previous plots, when varying $K$ from 0.00001 to 10000 it can be seen that the pressure drops the lower the value for K is. This would mean that when $K=0$, the transfer coefficient of the water between the boundary of the square reservoir and its surroundings is zero. There will be no flow from the square reservoir into the surroundings through the wells. For engineering purpose designing a square reservoir
+such that it has a $K$ value that the pressure is high enough to allow water to flow up the wells.
 
 \newpage
 \chapter{Conclusion}

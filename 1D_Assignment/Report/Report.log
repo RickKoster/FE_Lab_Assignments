@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.24)  28 FEB 2018 12:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.24)  28 FEB 2018 12:27
 entering extended mode
 **./Report.tex
 (Report.tex
@@ -1011,79 +1011,79 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <2Dvarrowsk10.jpg, id=86, 562.1pt x 421.575pt>
 File: 2Dvarrowsk10.jpg Graphic file (type jpg)
 <use 2Dvarrowsk10.jpg>
-Package pdftex.def Info: 2Dvarrowsk10.jpg  used on input line 829.
+Package pdftex.def Info: 2Dvarrowsk10.jpg  used on input line 830.
 (pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
 <K10_contour.jpg, id=87, 562.1pt x 421.575pt>
 File: K10_contour.jpg Graphic file (type jpg)
 <use K10_contour.jpg>
-Package pdftex.def Info: K10_contour.jpg  used on input line 836.
+Package pdftex.def Info: K10_contour.jpg  used on input line 837.
 (pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
 <K10_3Dsurface.jpg, id=88, 562.1pt x 421.575pt>
 File: K10_3Dsurface.jpg Graphic file (type jpg)
 <use K10_3Dsurface.jpg>
-Package pdftex.def Info: K10_3Dsurface.jpg  used on input line 843.
+Package pdftex.def Info: K10_3Dsurface.jpg  used on input line 844.
 (pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
  [19 <./2Dvarrowsk10.jpg>] [20 <./K10_contour.jpg> <./K10_3Dsurface.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 852--853
+Underfull \hbox (badness 10000) in paragraph at lines 853--854
 
  []
 
 <K0_00001_contour.jpg, id=95, 562.1pt x 421.575pt>
 File: K0_00001_contour.jpg Graphic file (type jpg)
 <use K0_00001_contour.jpg>
-Package pdftex.def Info: K0_00001_contour.jpg  used on input line 858.
+Package pdftex.def Info: K0_00001_contour.jpg  used on input line 859.
 (pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
 
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 858--859
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 859--860
  [][] 
  []
 
 <K0_001_contour.jpg, id=96, 562.1pt x 421.575pt>
 File: K0_001_contour.jpg Graphic file (type jpg)
 <use K0_001_contour.jpg>
-Package pdftex.def Info: K0_001_contour.jpg  used on input line 864.
+Package pdftex.def Info: K0_001_contour.jpg  used on input line 865.
 (pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
 
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 864--865
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 865--866
  [][] 
  []
 
 <K0_1_contour.jpg, id=97, 562.1pt x 421.575pt>
 File: K0_1_contour.jpg Graphic file (type jpg)
 <use K0_1_contour.jpg>
-Package pdftex.def Info: K0_1_contour.jpg  used on input line 870.
+Package pdftex.def Info: K0_1_contour.jpg  used on input line 871.
 (pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
 
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 869--871
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 870--872
  [] 
  []
 
 File: K10_contour.jpg Graphic file (type jpg)
 <use K10_contour.jpg>
-Package pdftex.def Info: K10_contour.jpg  used on input line 876.
+Package pdftex.def Info: K10_contour.jpg  used on input line 877.
 (pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
 
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 876--877
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 877--878
  [][] 
  []
 
 <K1000_contour.jpg, id=98, 562.1pt x 421.575pt>
 File: K1000_contour.jpg Graphic file (type jpg)
 <use K1000_contour.jpg>
-Package pdftex.def Info: K1000_contour.jpg  used on input line 882.
+Package pdftex.def Info: K1000_contour.jpg  used on input line 883.
 (pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
 
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 881--883
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 882--884
  [] 
  []
 
 <K10000_contour.jpg, id=99, 562.1pt x 421.575pt>
 File: K10000_contour.jpg Graphic file (type jpg)
 <use K10000_contour.jpg>
-Package pdftex.def Info: K10000_contour.jpg  used on input line 888.
+Package pdftex.def Info: K10000_contour.jpg  used on input line 889.
 (pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
 
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 888--889
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 889--890
  [][] 
  []
 
@@ -1101,13 +1101,13 @@ Appendix B.
 [27
 
 ] [28]
-Overfull \hbox (40.10838pt too wide) in paragraph at lines 1238--1239
+Overfull \hbox (40.10838pt too wide) in paragraph at lines 1239--1240
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][]  
  []
 
 
-Overfull \hbox (44.90843pt too wide) in paragraph at lines 1242--1243
+Overfull \hbox (44.90843pt too wide) in paragraph at lines 1243--1244
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][]  
  []
@@ -1155,7 +1155,7 @@ C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmsy7.pfb><C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Ruben Termaat/AppData/Local/Pr
 ograms/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Report.pdf (35 pages, 744742 bytes).
+Output written on Report.pdf (35 pages, 745087 bytes).
 PDF statistics:
  452 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
