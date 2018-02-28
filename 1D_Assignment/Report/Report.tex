@@ -921,6 +921,11 @@ The final step is to determine what happens when $K=0$ and why? When looking at 
 
 \newpage
 \chapter{Conclusion}
+
+This report was written in order to better understand and demonstrate the application of finite elements in combination with MATLAB. This was shown by considering two boundary value problems: a 1Dcase and a 2D-case. In the 1D-case a general BVP with boundary conditions were used to show how to solve this BVP. From the 1D-case it was derived that depending on how many N and the chosen function $f(x) = function$ can greatly change the outcome of your solution. More elements(higher $N$) will result in a smoother curve. The function $f(x) = function$ was changed from $f(x) = 1$ to $f(x) = x$ to $f(x) = sin(x)$. The graphs showed the solution curves became increasingly smoother.\par 
+In the 2D-case a real life problem was presented. The 2D BVP solved was an underground square reservoir with six wells through which water is extracted from the subsurface. Applying finite elements to solve this BVP and then adapting the MATLAB code used in the 1D-case it was possible to create velocity field plots and heat contour and 3D surface contour plots of the pressure $P$. From these plots it was derived that at the wells a decrease of pressure and increase of velocity is observed. The height of the pressure and velocity depends on the $K$ factor, the transfer rate coeficient by which the water flows from the reservoir to its surroundings. From the heat contour plots it was concluded that the pressure the overall pressure increases as the $K$ factor is increased. When the $K$ factor is too low, a heat contour plot is observed that could indicate that the pressure is too low at the wells for water to flow through the wells and instead will dissipate in the reservoir. At $K = 0$ it is expected that the pressure is equal everywhere in the reservoir and no transfer flow is possible. From an engineering point it is thus necessary that the $K$ factor is above a certain treshold that allows water to flow through the well, with high enough pressure to counteract the gravity.
+
+
 \appendix
 
 \begin{appendices}

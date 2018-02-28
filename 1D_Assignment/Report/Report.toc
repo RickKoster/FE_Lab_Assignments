@@ -10,26 +10,26 @@
 \contentsline {subsection}{\numberline {1.4.4}Element vector MATLAB routine}{8}
 \contentsline {subsection}{\numberline {1.4.5}Computing S and f}{8}
 \contentsline {section}{\numberline {1.5}Main program}{9}
-\contentsline {section}{\numberline {1.6}Solution for u}{9}
-\contentsline {section}{\numberline {1.7}Experiment}{10}
-\contentsline {chapter}{\numberline {2}2D-case}{12}
-\contentsline {section}{\numberline {2.1}Boundary value problem 2D}{13}
-\contentsline {section}{\numberline {2.2}Element matrix and element vector}{14}
-\contentsline {section}{\numberline {2.3}Boundary matrix and boundary vector}{14}
-\contentsline {section}{\numberline {2.4}Wells within an internal element}{14}
-\contentsline {section}{\numberline {2.5}Generating MATLAB code}{15}
-\contentsline {section}{\numberline {2.6}Velocities}{15}
-\contentsline {section}{\numberline {2.7}Varying constant $K$}{20}
-\contentsline {chapter}{\numberline {3}Conclusion}{22}
-\contentsline {chapter}{\numberline {A}1D-case}{23}
-\contentsline {section}{\numberline {A.1}Script}{23}
-\contentsline {section}{\numberline {A.2}Functions}{24}
-\contentsline {chapter}{\numberline {B}2D-case}{26}
-\contentsline {section}{\numberline {B.1}Generate mesh}{26}
-\contentsline {section}{\numberline {B.2}Generate element matrix}{27}
-\contentsline {section}{\numberline {B.3}Generate element vector}{28}
-\contentsline {section}{\numberline {B.4}Generate Boundary element matrix}{29}
-\contentsline {section}{\numberline {B.5}Generate boundary element vector:}{29}
-\contentsline {section}{\numberline {B.6}Buildmatrices and vectors}{29}
-\contentsline {section}{\numberline {B.7}Compute u and $v_x$/$v_y$}{32}
-\contentsline {section}{\numberline {B.8}Full script}{33}
+\contentsline {section}{\numberline {1.6}Solution for u}{10}
+\contentsline {section}{\numberline {1.7}Experiment}{11}
+\contentsline {chapter}{\numberline {2}2D-case}{13}
+\contentsline {section}{\numberline {2.1}Boundary value problem 2D}{14}
+\contentsline {section}{\numberline {2.2}Element matrix and element vector}{15}
+\contentsline {section}{\numberline {2.3}Boundary matrix and boundary vector}{15}
+\contentsline {section}{\numberline {2.4}Wells within an internal element}{15}
+\contentsline {section}{\numberline {2.5}Generating MATLAB code}{16}
+\contentsline {section}{\numberline {2.6}Velocities}{16}
+\contentsline {section}{\numberline {2.7}Varying constant $K$}{21}
+\contentsline {chapter}{\numberline {3}Conclusion}{23}
+\contentsline {chapter}{\numberline {A}1D-case}{24}
+\contentsline {section}{\numberline {A.1}Script}{24}
+\contentsline {section}{\numberline {A.2}Functions}{25}
+\contentsline {chapter}{\numberline {B}2D-case}{27}
+\contentsline {section}{\numberline {B.1}Generate mesh}{27}
+\contentsline {section}{\numberline {B.2}Generate element matrix}{28}
+\contentsline {section}{\numberline {B.3}Generate element vector}{29}
+\contentsline {section}{\numberline {B.4}Generate Boundary element matrix}{30}
+\contentsline {section}{\numberline {B.5}Generate boundary element vector:}{30}
+\contentsline {section}{\numberline {B.6}Buildmatrices and vectors}{30}
+\contentsline {section}{\numberline {B.7}Compute u and $v_x$/$v_y$}{33}
+\contentsline {section}{\numberline {B.8}Full script}{34}
