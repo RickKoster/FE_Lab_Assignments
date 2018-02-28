@@ -9,10 +9,10 @@ WI4243Mesh
 
 %% Parameters
 
-Qp = 50;            % [m^2/s]
+Qp = .5;            % [m^2/s]
 k = 10^-7;          % [m^2]
 mu = 1.002*10^-3;   % [Pa*s]
-K = 10;          % [m/s]
+K = .00001;          % [m/s]
 pH = 10^6;          % [Pa]
 N_wells = 6;        % number of wells
 
@@ -33,7 +33,7 @@ clear i;
 WI4243Comp
 
 %% Post
-%WI4243Post
+WI4243Post
 
 %% 
 

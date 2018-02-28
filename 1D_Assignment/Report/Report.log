@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.21)  28 FEB 2018 13:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.21)  28 FEB 2018 15:13
 entering extended mode
 **./Report.tex
 (Report.tex
@@ -745,13 +745,13 @@ LaTeX Warning: Label `overflow' multiply defined.
 LaTeX Warning: Label `overflow' multiply defined.
 
 
-LaTeX Warning: Label `overflow' multiply defined.
-
-
-LaTeX Warning: Label `overflow' multiply defined.
-
-
 LaTeX Warning: Label `table:nonlin' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
 
 
 LaTeX Warning: Label `fig:sub3' multiply defined.
@@ -764,6 +764,21 @@ LaTeX Warning: Label `fig:sub4' multiply defined.
 
 
 LaTeX Warning: Label `sub@fig:sub4' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
 
 )
 \openout1 = `Report.aux'.
@@ -952,146 +967,172 @@ Package pdftex.def Info: 1Df1.jpg  used on input line 369.
 <1Dfx.jpg, id=52, 562.1pt x 421.575pt>
 File: 1Dfx.jpg Graphic file (type jpg)
 <use 1Dfx.jpg>
-Package pdftex.def Info: 1Dfx.jpg  used on input line 382.
+Package pdftex.def Info: 1Dfx.jpg  used on input line 381.
 (pdftex.def)             Requested size: 398.33858pt x 298.75426pt.
- [10 <./1Dfx.jpg>] [11]
-<1Dfsinx.jpg, id=59, 562.1pt x 421.575pt>
+<1Dfsinx.jpg, id=53, 562.1pt x 421.575pt>
 File: 1Dfsinx.jpg Graphic file (type jpg)
 <use 1Dfsinx.jpg>
-Package pdftex.def Info: 1Dfsinx.jpg  used on input line 428.
+Package pdftex.def Info: 1Dfsinx.jpg  used on input line 391.
 (pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
- [12 <./1Dfsinx.jpg>]
+ [10 <./1Dfx.jpg>] [11 <./1Dfsinx.jpg>]
 Chapter 2.
-[13
+[12
 
-] [14] [15]
-<finest_mesh.jpg, id=73, 562.1pt x 421.575pt>
+] [13] [14] [15]
+<finest_mesh.jpg, id=75, 562.1pt x 421.575pt>
 File: finest_mesh.jpg Graphic file (type jpg)
 <use finest_mesh.jpg>
-Package pdftex.def Info: finest_mesh.jpg  used on input line 667.
+Package pdftex.def Info: finest_mesh.jpg  used on input line 630.
 (pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
+ [16 <./finest_mesh.jpg>] [17]
+<K10_velocity.jpg, id=82, 562.1pt x 421.575pt>
+File: K10_velocity.jpg Graphic file (type jpg)
+<use K10_velocity.jpg>
+Package pdftex.def Info: K10_velocity.jpg  used on input line 817.
+(pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
+<K10_contour.jpg, id=83, 562.1pt x 421.575pt>
+File: K10_contour.jpg Graphic file (type jpg)
+<use K10_contour.jpg>
+Package pdftex.def Info: K10_contour.jpg  used on input line 824.
+(pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
+<K10_3Dsurface.jpg, id=84, 562.1pt x 421.575pt>
+File: K10_3Dsurface.jpg Graphic file (type jpg)
+<use K10_3Dsurface.jpg>
+Package pdftex.def Info: K10_3Dsurface.jpg  used on input line 831.
+(pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
+ [18]
+Underfull \hbox (badness 10000) in paragraph at lines 840--841
 
+ []
+
+<K0_00001_contour.jpg, id=89, 562.1pt x 421.575pt>
+File: K0_00001_contour.jpg Graphic file (type jpg)
+<use K0_00001_contour.jpg>
+Package pdftex.def Info: K0_00001_contour.jpg  used on input line 846.
+(pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
+
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 846--847
+ [][] 
+ []
+
+<K0_001_contour.jpg, id=90, 562.1pt x 421.575pt>
+File: K0_001_contour.jpg Graphic file (type jpg)
+<use K0_001_contour.jpg>
+Package pdftex.def Info: K0_001_contour.jpg  used on input line 852.
+(pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
+
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 852--853
+ [][] 
+ []
+
+<K0_1_contour.jpg, id=91, 562.1pt x 421.575pt>
+File: K0_1_contour.jpg Graphic file (type jpg)
+<use K0_1_contour.jpg>
+Package pdftex.def Info: K0_1_contour.jpg  used on input line 858.
+(pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
+
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 857--859
+ [] 
+ []
+
+File: K10_contour.jpg Graphic file (type jpg)
+<use K10_contour.jpg>
+Package pdftex.def Info: K10_contour.jpg  used on input line 864.
+(pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
+
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 864--865
+ [][] 
+ []
+
+<K1000_contour.jpg, id=92, 562.1pt x 421.575pt>
+File: K1000_contour.jpg Graphic file (type jpg)
+<use K1000_contour.jpg>
+Package pdftex.def Info: K1000_contour.jpg  used on input line 870.
+(pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
+
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 869--871
+ [] 
+ []
+
+<K10000_contour.jpg, id=93, 562.1pt x 421.575pt>
+File: K10000_contour.jpg Graphic file (type jpg)
+<use K10000_contour.jpg>
+Package pdftex.def Info: K10000_contour.jpg  used on input line 876.
+(pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
+
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 876--877
+ [][] 
+ []
+
+[19 <./K10_velocity.jpg>] [20 <./K10_contour.jpg> <./K10_3Dsurface.jpg>]
+[21 <./K0_00001_contour.jpg> <./K0_001_contour.jpg> <./K0_1_contour.jpg> <./K10
+00_contour.jpg> <./K10000_contour.jpg>] [22]
+<K0_00001_3Dsurface.jpg, id=110, 562.1pt x 438.63875pt>
+File: K0_00001_3Dsurface.jpg Graphic file (type jpg)
+<use K0_00001_3Dsurface.jpg>
+Package pdftex.def Info: K0_00001_3Dsurface.jpg  used on input line 918.
+(pdftex.def)             Requested size: 227.62204pt x 177.62762pt.
+
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 918--919
+ [][] 
+ []
+
+<K0_001_3Dsurface.jpg, id=111, 562.1pt x 421.575pt>
+File: K0_001_3Dsurface.jpg Graphic file (type jpg)
+<use K0_001_3Dsurface.jpg>
+Package pdftex.def Info: K0_001_3Dsurface.jpg  used on input line 924.
+(pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
+
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 924--925
+ [][] 
+ []
+
+<Qp0_5_K0_00001.jpg, id=112, 562.1pt x 421.575pt>
+File: Qp0_5_K0_00001.jpg Graphic file (type jpg)
+<use Qp0_5_K0_00001.jpg>
+Package pdftex.def Info: Qp0_5_K0_00001.jpg  used on input line 934.
+(pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16] [17 <./finest_mesh.jpg>] [18]
-<2Dvarrowsk10.jpg, id=86, 562.1pt x 421.575pt>
-File: 2Dvarrowsk10.jpg Graphic file (type jpg)
-<use 2Dvarrowsk10.jpg>
-Package pdftex.def Info: 2Dvarrowsk10.jpg  used on input line 854.
-(pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
-<K10_contour.jpg, id=87, 562.1pt x 421.575pt>
-File: K10_contour.jpg Graphic file (type jpg)
-<use K10_contour.jpg>
-Package pdftex.def Info: K10_contour.jpg  used on input line 861.
-(pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
-<K10_3Dsurface.jpg, id=88, 562.1pt x 421.575pt>
-File: K10_3Dsurface.jpg Graphic file (type jpg)
-<use K10_3Dsurface.jpg>
-Package pdftex.def Info: K10_3Dsurface.jpg  used on input line 868.
-(pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
- [19 <./2Dvarrowsk10.jpg>] [20 <./K10_contour.jpg> <./K10_3Dsurface.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 877--878
-
- []
-
-<K0_00001_contour.jpg, id=95, 562.1pt x 421.575pt>
-File: K0_00001_contour.jpg Graphic file (type jpg)
-<use K0_00001_contour.jpg>
-Package pdftex.def Info: K0_00001_contour.jpg  used on input line 883.
-(pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
-
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 883--884
- [][] 
- []
-
-<K0_001_contour.jpg, id=96, 562.1pt x 421.575pt>
-File: K0_001_contour.jpg Graphic file (type jpg)
-<use K0_001_contour.jpg>
-Package pdftex.def Info: K0_001_contour.jpg  used on input line 889.
-(pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
-
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 889--890
- [][] 
- []
-
-<K0_1_contour.jpg, id=97, 562.1pt x 421.575pt>
-File: K0_1_contour.jpg Graphic file (type jpg)
-<use K0_1_contour.jpg>
-Package pdftex.def Info: K0_1_contour.jpg  used on input line 895.
-(pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
-
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 894--896
- [] 
- []
-
-File: K10_contour.jpg Graphic file (type jpg)
-<use K10_contour.jpg>
-Package pdftex.def Info: K10_contour.jpg  used on input line 901.
-(pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
-
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 901--902
- [][] 
- []
-
-<K1000_contour.jpg, id=98, 562.1pt x 421.575pt>
-File: K1000_contour.jpg Graphic file (type jpg)
-<use K1000_contour.jpg>
-Package pdftex.def Info: K1000_contour.jpg  used on input line 907.
-(pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
-
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 906--908
- [] 
- []
-
-<K10000_contour.jpg, id=99, 562.1pt x 421.575pt>
-File: K10000_contour.jpg Graphic file (type jpg)
-<use K10000_contour.jpg>
-Package pdftex.def Info: K10000_contour.jpg  used on input line 913.
-(pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
-
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 913--914
- [][] 
- []
-
-[21] [22 <./K0_00001_contour.jpg> <./K0_001_contour.jpg> <./K0_1_contour.jpg> <
-./K1000_contour.jpg> <./K10000_contour.jpg>]
+[23 <./K0_00001_3Dsurface.jpg> <./K0_001_3Dsurface.jpg>] [24 <./Qp0_5_K0_00001.
+jpg>]
 Chapter 3.
-[23
+[25
 
 ]
 Appendix A.
-[24
+[26
 
-] [25] [26]
+] [27] [28]
 Appendix B.
-[27
+[29
 
-] [28]
-Overfull \hbox (40.10838pt too wide) in paragraph at lines 1263--1264
+] [30]
+Overfull \hbox (40.10838pt too wide) in paragraph at lines 1255--1256
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][]  
  []
 
 
-Overfull \hbox (44.90843pt too wide) in paragraph at lines 1267--1268
+Overfull \hbox (44.90843pt too wide) in paragraph at lines 1259--1260
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][]  
  []
 
-[29] [30] [31] [32] [33] [34] (Report.aux)
+[31] [32] [33] [34] [35] [36] (Report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7384 strings out of 493622
- 103464 string characters out of 3135547
- 262241 words of memory out of 3000000
- 10651 multiletter control sequences out of 15000+200000
+ 7400 strings out of 493622
+ 103829 string characters out of 3135547
+ 262278 words of memory out of 3000000
+ 10664 multiletter control sequences out of 15000+200000
  20980 words of font info for 51 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 41i,13n,42p,1311b,1707s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,13n,42p,1130b,1707s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\rick\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
 crm0900.pk>{C:/Users/rick/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/bas
 e/8r.enc} <C:\Users\rick\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\d
@@ -1119,9 +1160,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/rick/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/rick/AppDat
 a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/
 rick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Report.pdf (35 pages, 745633 bytes).
+Output written on Report.pdf (37 pages, 866672 bytes).
 PDF statistics:
- 452 PDF objects out of 1000 (max. 8388607)
+ 463 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
