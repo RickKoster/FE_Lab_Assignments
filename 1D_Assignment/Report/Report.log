@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.24)  28 FEB 2018 10:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.24)  28 FEB 2018 11:23
 entering extended mode
 **./Report.tex
 (Report.tex
@@ -1055,17 +1055,16 @@ Overfull \hbox (23.78787pt too wide) in paragraph at lines 868--870
  [] 
  []
 
-<2Dvheat.jpg, id=98, 562.1pt x 421.575pt>
-File: 2Dvheat.jpg Graphic file (type jpg)
-<use 2Dvheat.jpg>
-Package pdftex.def Info: 2Dvheat.jpg  used on input line 875.
+File: 2Dvheatk10.jpg Graphic file (type jpg)
+<use 2Dvheatk10.jpg>
+Package pdftex.def Info: 2Dvheatk10.jpg  used on input line 875.
 (pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
 
 Overfull \hbox (23.78787pt too wide) in paragraph at lines 875--876
  [][] 
  []
 
-<2Dheatk100.jpg, id=99, 562.1pt x 421.575pt>
+<2Dheatk100.jpg, id=98, 562.1pt x 421.575pt>
 File: 2Dheatk100.jpg Graphic file (type jpg)
 <use 2Dheatk100.jpg>
 Package pdftex.def Info: 2Dheatk100.jpg  used on input line 881.
@@ -1075,7 +1074,7 @@ Overfull \hbox (23.78787pt too wide) in paragraph at lines 880--882
  [] 
  []
 
-<2Dheatk10000.jpg, id=100, 562.1pt x 421.575pt>
+<2Dheatk10000.jpg, id=99, 562.1pt x 421.575pt>
 File: 2Dheatk10000.jpg Graphic file (type jpg)
 <use 2Dheatk10000.jpg>
 Package pdftex.def Info: 2Dheatk10000.jpg  used on input line 887.
@@ -1085,8 +1084,8 @@ Overfull \hbox (23.78787pt too wide) in paragraph at lines 887--888
  [][] 
  []
 
-[21] [22 <./2Dheatk00001.jpg> <./2Dheatk001.jpg> <./2Dheatk1.jpg> <./2Dvheat.jp
-g> <./2Dheatk100.jpg> <./2Dheatk10000.jpg>]
+[21] [22 <./2Dheatk00001.jpg> <./2Dheatk001.jpg> <./2Dheatk1.jpg> <./2Dheatk100
+.jpg> <./2Dheatk10000.jpg>]
 Chapter 3.
 [23
 
@@ -1099,13 +1098,13 @@ Appendix B.
 [27
 
 ] [28]
-Overfull \hbox (40.10838pt too wide) in paragraph at lines 1209--1210
+Overfull \hbox (40.10838pt too wide) in paragraph at lines 1226--1227
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][]  
  []
 
 
-Overfull \hbox (44.90843pt too wide) in paragraph at lines 1213--1214
+Overfull \hbox (44.90843pt too wide) in paragraph at lines 1230--1231
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][]  
  []
@@ -1116,13 +1115,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7427 strings out of 493303
- 105560 string characters out of 3126302
- 264869 words of memory out of 3000000
- 10848 multiletter control sequences out of 15000+200000
+ 7422 strings out of 493303
+ 105486 string characters out of 3126302
+ 263869 words of memory out of 3000000
+ 10844 multiletter control sequences out of 15000+200000
  20980 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,42p,1059b,1709s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,13n,42p,1312b,1707s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Ruben Termaat\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
 \dpi600\ecrm0900.pk>{C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/f
 onts/enc/dvips/base/8r.enc} <C:\Users\Ruben Termaat\AppData\Local\MiKTeX\2.9\fo
@@ -1153,9 +1152,9 @@ C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmsy7.pfb><C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Ruben Termaat/AppData/Local/Pr
 ograms/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Report.pdf (35 pages, 766999 bytes).
+Output written on Report.pdf (35 pages, 747339 bytes).
 PDF statistics:
  458 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
