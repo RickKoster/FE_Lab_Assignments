@@ -3,12 +3,12 @@
 \contentsline {section}{\numberline {1.1}Boundary value problem 1D}{5}
 \contentsline {section}{\numberline {1.2}Element matrix}{6}
 \contentsline {section}{\numberline {1.3}Element vector}{6}
-\contentsline {section}{\numberline {1.4}Boundary value problem 1D MATLAB routine}{6}
-\contentsline {subsection}{\numberline {1.4.1}mesh and elmat code}{6}
+\contentsline {section}{\numberline {1.4}Boundary value problem 1D MATLAB routine}{7}
+\contentsline {subsection}{\numberline {1.4.1}mesh and elmat code}{7}
 \contentsline {subsection}{\numberline {1.4.2}Element matrix}{7}
 \contentsline {subsection}{\numberline {1.4.3}Assemble matrix S}{7}
 \contentsline {subsection}{\numberline {1.4.4}Element vector MATLAB routine}{8}
-\contentsline {subsection}{\numberline {1.4.5}Computing S and f}{8}
+\contentsline {subsection}{\numberline {1.4.5}Computing S and f}{9}
 \contentsline {section}{\numberline {1.5}Main program}{9}
 \contentsline {section}{\numberline {1.6}Solution for u}{10}
 \contentsline {section}{\numberline {1.7}Experiment}{11}

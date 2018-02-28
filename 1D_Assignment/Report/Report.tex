@@ -62,12 +62,12 @@ On the 1D interval of $x = [0,1]  $, we consider a steady-state convection-diffu
 
 \begin{equation}
 \begin{cases} 
--D\triangle u + \lambda u = f(x),\\ -D\frac{du}{dx}(0) = 0 ,\\ -D\frac{du}{dx}(1) = 0
+-D\frac{\partial^2 u}{\partial x^2} + \lambda u = f(x),\\ -D\frac{du}{dx}(0) = 0 ,\\ -D\frac{du}{dx}(1) = 0
 \end{cases} 
 \end{equation}
 \bigskip
 
-In this report $\triangle$ denotes the laplacian operator. The function f(x) is a given funtion, where D and $\lambda$ are positive real constants. In order to solve this boundary value problem (BVP), first the interval is divided in n-1 elements(n = positive integer). This results in the domain being divided in elements: $e_i = [x_i, x_{i-1}]$ where $i={1,2,..,n}$. 
+The function f(x) is a given funtion, where D and $\lambda$ are positive real constants. In order to solve this boundary value problem (BVP), first the interval is divided in n-1 elements(n = positive integer). This results in the domain being divided in elements: $e_i = [x_i, x_{i-1}]$ where $i={1,2,..,n}$. 
 
 In order to solve this BVP, the solutions for the given equations will first be calculated and then computed using MATLAB codes.
 
@@ -75,11 +75,11 @@ In order to solve this BVP, the solutions for the given equations will first be 
 \section{Boundary value problem 1D}
 \vspace{5mm}
 
-In order to find the Weakform of the given equations(1.1), both sides are multiplied by a test function  $\phi(x)$ and then integrate both sides over the domain $\Omega$. In the equations  $\phi(x)$ is written as $\phi$
+In order to find the Weakform of the given equations(1.1), both sides are multiplied by a test function  $\phi(x) = \alpha_i + \beta_i x $ and then integrate both sides over the domain $\Omega$. In the equations  $\phi(x)$ is written as $\phi$
 
 
 \begin{equation}
-	 \int_{\Omega} \phi(-D\triangle u + \lambda u )d\Omega = \int_{\Omega} \phi f(x) d\Omega 
+	 \int\limits_{\Omega} \phi(-D\frac{\partial^2 u}{\partial x^2} + \lambda u )d\Omega = \int\limits_{\Omega} \phi f(x) d\Omega 
 \end{equation}	
 \smallskip
 
@@ -87,24 +87,25 @@ Now by rewriting and then using partial integration the following equation can b
 
 
 \begin{equation}
-	\int_{\Omega} (\nabla\cdot(-D\phi\cdot\nabla u) + D\nabla\phi\nabla u +\phi \lambda u) d\Omega = \int_{\Omega} \phi f(x) d\Omega 
+	\int\limits_{\Omega} (\frac{\partial}{\partial x} (-D\phi\frac{\partial u}{\partial x}) + D\frac{\partial \phi}{\partial x} \frac{\partial u}{\partial x} +\phi \lambda u) d\Omega = \int\limits_{\Omega} \phi f(x) d\Omega 
 \end{equation}
 \smallskip
 
-Applying Gauss on the first term on the left side of equation(1.3):
+ The first term on the left side of equation(1.3) can be rewritten:
 
 
 \begin{equation}
-	\int_{\Omega}  \vec{n}\cdot(-D\phi \nabla u) d\tau + \int_{\Omega}  (D\nabla\phi\cdot\nabla u +\phi\lambda u )d\Omega = \int_{\Omega} \phi f(x) d\Omega 
+	\big[-\phi D \frac{\partial u}{\partial x}\big]_{0}^{1}  + \int\limits_{\Omega}  (D\frac{\partial \phi}{\partial x}\frac{\partial u}{\partial x} +\phi\lambda u )d\Omega = \int\limits_{\Omega} \phi f(x) d\Omega 
 \end{equation}
 \smallskip
 
-Using the boundary conditions from equations(1.1) the boundary integral equals to 0 and then the following weak formulation(WF) is found: \vspace{5mm}
+Using the boundary conditions from equations(1.1) the first term equals to 0 and then the following weak formulation(WF) is found: \vspace{5mm}
 
 
-(WF): \begin{equation}
+\begin{equation}
+\text{(WF)}
 \begin{cases} 
-	$find u $\epsilon \sum =\{u$ $ smooth\}$ Such that:$ \\ \int_{\Omega}  (D\nabla\phi\cdot\nabla u +\phi\lambda u )d\Omega = \int_{\Omega} \phi f(x) d\Omega \\ \forall\phi $ $ \in\sum 
+	$Find u $\in \sum =\{u$ $ smooth\}$ Such that:$ \\ \int\limits_{\Omega}  (D\frac{\partial \phi}{\partial x}\frac{\partial u}{\partial x} +\phi\lambda u )d\Omega = \int\limits_{\Omega} \phi f(x) d\Omega \\ \forall\phi $ $ \in\sum 
 \end{cases}\  
 \end{equation}
 
@@ -112,41 +113,65 @@ Using the boundary conditions from equations(1.1) the boundary integral equals t
 The next step is to substitute the Galerkin equations into the found diferential equation, where u is replaced by $ \sum_{j=1}^{n}c_i\phi_j $ and  $\phi(x)=\phi_i(x)$ with $i = [1,..,n]$. Filling this in equation (1.5) the following equation is found:
 
 \begin{equation}
-	\sum_{j=1}^{n}c_i\int_{0}^{1} (D\nabla\phi_i\cdot\nabla\phi_j +\lambda\phi_i\phi_j )d\Omega = \int_{0}^{1} \phi_i f(x) d\Omega
+	\sum\limits_{j=1}^{n}c_i\int\limits_{0}^{1} (D\frac{\partial \phi_i}{\partial x}\frac{\partial \phi_j}{\partial x} +\lambda\phi_i\phi_j )d\Omega = \int\limits_{0}^{1} \phi_i f(x) d\Omega
 \end{equation}
 \medskip
 
-Which is of the form of $ S\vec{c} = \vec{f} $
+Which is of the form of $ S\vec{c} = \vec{f} $ with
+
+\begin{equation}
+S_{ij} =	\int_{0}^{1} (D\frac{\partial \phi_i}{\partial x}\frac{\partial \phi_j}{\partial x} +\lambda\phi_i\phi_j )d\Omega
+\end{equation}
+
+and 
+
+\begin{equation}
+f_i = \int\limits_{0}^{1} \phi_i f(x) d\Omega
+\end{equation}
+Now an expression for the element matrix $ S_{ij}^{e_k}$ and the element vector $ f_{i}^{e_k} $ can be found.
 
 \section{Element matrix}\label{Element_matrix}
-Now the found Galerkin equations can be used to compute $ S_{ij}$  the element matrix, over a generic line element $ e_i$.
+The matrix $S$ is written as a summation of element matrix as follows:
 
 \begin{equation}
-S\vec{c}=	\sum_{j=1}^{n}c_i\int_{0}^{1} (D\nabla\phi_i\cdot\nabla\phi_j +\lambda\phi_i\phi_j )d\Omega
-\end{equation}
-
-\begin{equation}
-S_{ij} =\sum_{l=1}^{n-1} S^{e_k}_{ij} 
+S_{ij} =\sum\limits_{k=1}^{n-1} S^{e_k}_{ij} 
 \end{equation}
 \medskip
 
-Now to solve S we solve the following equation, over the internal line element.
+Where $S_{ij}^{e_k}$ is given by:
+\begin{equation}
+S^{e_k}_{ij} = -D\int\limits_{e_k}\frac{\partial \phi_i}{\partial x}\frac{\partial \phi_j}{\partial x} +\lambda\phi_i\phi_j d\Omega
+\end{equation}
+
+Using Newton-Côtes this expression can be simplified and made suitable for computation in MATLAB. 
 
 \begin{equation}
-S^{e_k}_{ij} = -D\int_{e_k}\nabla\phi_i\cdot\nabla\phi_j d\Omega+\lambda\int_{e_k}\phi_i\phi_j dx
+S^{e_k}_{ij} = \lvert x_k-x_{k-1} \lvert (D\beta_i \beta_j +\frac{\lambda}{6})
 \end{equation}
+
 
 
 \section{Element vector}\label{Element_vector}
-Again the found Galerkin Equations(1.6) are used in order to compute the element vector $f_i$ over a generic line-element.
+The vector $f$ is written as a summation of element vectors as follows:
 
 \begin{equation}
-f^{e_k}_i = \int_{e_k}\phi_i f dx
+f_{i} =\sum\limits_{k=1}^{n-1} f^{e_k}_{i} 
 \end{equation}
 
 \begin{equation}
-	f^{e_k}_i =\frac{\lvert x_k-x_{k-1}\lvert}{(1+1+0)!}f(\vec{x}) =\frac{\lvert x_k-x_{k-1}\lvert}{2}
-	\begin{bmatrix} f^{e_n}_{k-1}\\ f^{e_n}_{k}
+f^{e_k}_i = \int\limits_{e_k}\phi_i f(x) dx
+\end{equation}
+
+Again, simplified using Newton-côtes and the following approximation an expression for the element vector is found that can be used in MATLAB.
+
+\begin{equation}
+f(x) \approx \sum\limits_{j=1}^{n} f(x_j)\phi_j(x)
+\end{equation}
+
+
+\begin{equation}
+	f^{e_k}_i =\frac{\lvert x_k-x_{k-1}\lvert}{2}
+	\begin{bmatrix} f(x_{k})\\ f(x_{k+1})
 	\end{bmatrix}
 \end{equation}
 
@@ -171,7 +196,7 @@ The first step in order to solve the BVP is to write a MATLAB routine that gener
 \end{lstlisting}
 	
 Using the codes to generate a mesh and the elmat, it is easier to use this 1D problem and adapt to a higher dimensional problem. The next step is to write a code that generates a two dimensional array, called the elmat.
-\newpage
+
 \begin{lstlisting}
 	function [ elmat ] = GenerateTopology( N_elem )
 	%GenerateTopology Creates the topology for a 1D problem given mesh 'x'.
@@ -849,9 +874,9 @@ In figure 2.2, 2.3 and 2.4 it can be seen that there are 6 spots that stick out.
 \newpage
 \section{Varying constant $K$}
 
-Now that the velocities have been calculated the last thing to vary is, is the factor $K$, the transfer rate coefficient of the water between the boundary of the domain and its surroundings. A few different plots will now follow in which the transfer coefficient $K$ has different values between 0.00001 and 10000.\\
+Now that the velocities have been calculated the last thing to vary is, is the factor $K$, the transfer rate coefficient of the water between the boundary of the domain and its surroundings. Figure (2.5) shows contour plots for transfer coefficient $K$ values between 0.00001 and 10000 $[m/s]$.\\
 
-\begin{figure}
+\begin{figure}\label{Contourplots}
 	\centering
 	\begin{subfigure}{.45\textwidth}
 		\centering
