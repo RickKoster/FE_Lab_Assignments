@@ -639,7 +639,7 @@ Similar as with the 1D BVP, MATLAB code is written in order to generate a mesh, 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=150mm]{meshgrid2D.jpg}
+	\includegraphics[width=150mm]{finest_mesh.jpg}
 	\caption{Triangle element mesh over the square reservoir domain $\Omega=(-1;1)\times (-1;1)$. \label{overflow}}
 \end{figure}
 
@@ -833,14 +833,14 @@ In figure 2.2, 2.3 and 2.4 it can be seen that there are 6 spots that stick out.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=130mm]{2Dvheatk10.jpg}
+	\includegraphics[width=130mm]{K10_contour.jpg}
 	\caption{Contour plot of the velocity in the square reservoir on domain $\Omega=(-1,1)\times(-1,1)$, showing six areas where a drop of about two times the pressure can be observed, compared to the boundary pressure.
 	\label{overflow}}
 \end{figure}
 
 \begin{figure}
 	\centering
-	\includegraphics[width=130mm]{3Dvk10.jpg}
+	\includegraphics[width=130mm]{K10_3Dsurface.jpg}
 	\caption{3D surface plot for $K=10$. The lowest peaks indicate where the pressure is at a minimum in the square water reservoir.
 	\label{overflow}}
 \end{figure}
@@ -855,49 +855,69 @@ Now that the velocities have been calculated the last thing to vary is, is the f
 	\centering
 	\begin{subfigure}{.45\textwidth}
 		\centering
-		\includegraphics[width=8cm]{2Dheatk00001.jpg}
+		\includegraphics[width=8cm]{K0_00001_contour.jpg}
 		\caption{$K=0.0001$}
 		\label{fig:sub1}
 	\end{subfigure}%
 	\begin{subfigure}{.45\textwidth}
 		\centering
-		\includegraphics[width=8cm]{2Dheatk001.jpg}
+		\includegraphics[width=8cm]{K0_001_contour.jpg}
 		\caption{$K=0.001$}
 		\label{fig:sub2}
 	\end{subfigure}
 	\begin{subfigure}{.45\textwidth}
 	\centering\
-	\includegraphics[width=8cm]{2Dheatk1.jpg}
-	\caption{A subfigure}
+	\includegraphics[width=8cm]{K0_1_contour.jpg}
+	\caption{$K=1$}
 	\label{fig:sub3}
 	\end{subfigure}%
 	\begin{subfigure}{.45\textwidth}
 	\centering
-	\includegraphics[width=8cm]{2Dvheat.jpg}
+	\includegraphics[width=8cm]{K10_contour.jpg}
 	\caption{$K=10$}
 	\label{fig:sub4}
 \end{subfigure}
 	\begin{subfigure}{.45\textwidth}
 	\centering\
-	\includegraphics[width=8cm]{2Dheatk100.jpg}
+	\includegraphics[width=8cm]{K1000_contour.jpg}
 	\caption{$K=100$}
 	\label{fig:sub3}
 \end{subfigure}%
 \begin{subfigure}{.45\textwidth}
 	\centering
-	\includegraphics[width=8cm]{2Dheatk10000.jpg}
+	\includegraphics[width=8cm]{K10000_contour.jpg}
 	\caption{$K=1000$}
 	\label{fig:sub4}
 \end{subfigure}
-	\caption{A figure with two subfigures}
+	\caption{Contour plots for different values for K}
 	\label{fig:test}
 \end{figure}
 
 
+\begin{table}[h]
+	\caption{Pressure minima and velocity maxima for different values of K} % title of Table
+	\centering % used for centering table
+	\begin{tabular}{c c c} % centered columns (3 columns)
+		\hline\hline %inserts double horizontal lines
+		K $[m/s]$ & Pressure minimum $[Pa]$ & Maximum speed $[m/s]$\\ [0.5ex] % inserts table
+		%heading
+		\hline % inserts single horizontal line
+		0.00001 & $-3.40 \cdot 10^6$ & 616.9\\ % inserting body of the table
+		0.001 & $3.49 \cdot 10^5$ & 616.0\\
+		0.1& $3.94 \cdot 10^5$ & 615.9\\
+		10 & $3.95 \cdot 10^{5}$ & 615.9\\
+		1000 & $3.95  \cdot 10^5$ & 615.9\\
+		10000 & $3.95 \cdot 10^5$ & 615.9\\ [1ex] % [1ex] adds vertical space
+		\hline %inserts single line
+	\end{tabular}
+	\label{table:nonlin} % is used to refer this table in the text
+\end{table}
 
+The purpose of the wells is to extract water from the subsurface to near the surface. In order to lift the water against gravity there must be sufficient pressure difference between the bottom and top of the well. What has been calculated in this assignment is the pressure at the bottom of the well. With an atmospheric pressure of around 101 $kPa$ in mind the pressure at the bottow of the well must be greater by an amount depending on the depth of the well. 
 
-The final step is to determine what happens when $K=0$ and why? When looking at our previous plots, when varying $K$ from 0.00001 to 10000 it can be derived that the pressure drops the lower the value for K is. This would mean that when $K=0$, the transfer coefficient of the water between the boundary of the square reservoir and its surroundings is zero. There will be no flow from the square reservoir into the surrounding through the boundary. For filtration purpose designing a square reservoir such that it has a K value and therefore no flow, is an unwanted feature. 
+From the 3D surface plots it is evident that the pressure at the well in the middle, which is closer to more wells, is lower than those around it. It is thus important to know how many and how close together wells can be dug while maintaining a sufficient pressure difference between the bottom and top of the wells.
 
+The final step is to determine what happens when $K=0$ and why? When looking at our previous plots, when varying $K$ from 0.00001 to 10000 it can be seen that the pressure drops the lower the value for K is. This would mean that when $K=0$, the transfer coefficient of the water between the boundary of the square reservoir and its surroundings is zero. There will be no flow from the square reservoir into the surrounding through the boundary.
 
 \newpage
 \chapter{Conclusion}
