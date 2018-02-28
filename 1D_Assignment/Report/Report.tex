@@ -817,8 +817,10 @@ f^{e_n}_{i} = \int\limits_{e_k}\frac{k}{\mu}p\beta_i d\Omega = \frac{k}{\mu}\bet
 f^{be_l}_{i}=\int\limits_{be_l}\pm \frac{k}{\mu}\phi_ip^H d\tau = \pm \frac{k}{\mu}p^H \frac{\lvert be_l\rvert}{2}
 \end{equation}
 With '$+$' if $be_{l}$ is on $\partial\Omega_1$ and '$-$' if it is on $\partial\Omega_3$
+\vspace{5mm}
 
-Since the pressure field $p$ was previously calculated, all the necessary information to compute $v_x$ (and similarly $v_y$) is now derived. In the following plots the velocities for $K=10\,m/s$ are shown using a vector plot, contour plot and a 3D surface plot.
+Since the pressure field $p$ was previously calculated, all the necessary information to compute $v_x$ (and similarly $v_y$) is now derived. Therefore it is possible to now evaluate our square reservoir. In the following plots the velocities for $K=10\,m/s$ that are computed are shown using a vector plot, contour plot and a 3D surface plot.\\
+In figure 2.2, 2.3 and 2.4 it can be seen that there are 6 spots that stick out. Looking at the velocity field, it can be seen that the velocity is highest around these spots and lowest near the boundaries. The heat contour plot implies that where the velocity is highest, the pressure is lowest in the square reservoir and at the boundary is the highest pressure. 
 
 
 
@@ -829,49 +831,64 @@ Since the pressure field $p$ was previously calculated, all the necessary inform
 	\label{overflow}}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}
 	\centering
 	\includegraphics[width=130mm]{2Dvheatk10.jpg}
 	\caption{Contour plot of the velocity in the square reservoir on domain $\Omega=(-1,1)\times(-1,1)$, showing six areas where a drop of about two times the pressure can be observed, compared to the boundary pressure.
 	\label{overflow}}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}
 	\centering
 	\includegraphics[width=130mm]{3Dvk10.jpg}
-	\caption{3D surface plot
+	\caption{3D surface plot for $K=10$. The lowest peaks indicate where the pressure is at a minimum in the square water reservoir.
 	\label{overflow}}
 \end{figure}
-\vfill
+
+
 \newpage
 \section{Varying constant $K$}
 
-Now that the velocities have been calculated the last thing to vary is, is the factor $K$. A few different plots will now follow in which the transfer coefficient $K$ has different values between 0.00001 and 10000. 
-
-
-
-
-
-Show the contour plots, and give the values of the minimal pressure (which is important from an engineering point of view). Explain your results.
-
-
-
-
+Now that the velocities have been calculated the last thing to vary is, is the factor $K$, the transfer rate coefficient of the water between the boundary of the domain and its surroundings. A few different plots will now follow in which the transfer coefficient $K$ has different values between 0.00001 and 10000.\\
 
 \begin{figure}
 	\centering
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}{.45\textwidth}
 		\centering
-		\includegraphics[width=8cm]{2Dheatk10000}
-		\caption{A subfigure}
+		\includegraphics[width=8cm]{2Dheatk00001.jpg}
+		\caption{$K=0.0001$}
 		\label{fig:sub1}
 	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}{.45\textwidth}
 		\centering
-		\includegraphics[width=8cm]{2Dheatk100}
-		\caption{A subfigure}
+		\includegraphics[width=8cm]{2Dheatk001.jpg}
+		\caption{$K=0.001$}
 		\label{fig:sub2}
 	\end{subfigure}
+	\begin{subfigure}{.45\textwidth}
+	\centering\
+	\includegraphics[width=8cm]{2Dheatk1.jpg}
+	\caption{A subfigure}
+	\label{fig:sub3}
+	\end{subfigure}%
+	\begin{subfigure}{.45\textwidth}
+	\centering
+	\includegraphics[width=8cm]{2Dvheat.jpg}
+	\caption{$K=10$}
+	\label{fig:sub4}
+\end{subfigure}
+	\begin{subfigure}{.45\textwidth}
+	\centering\
+	\includegraphics[width=8cm]{2Dheatk100.jpg}
+	\caption{$K=100$}
+	\label{fig:sub3}
+\end{subfigure}%
+\begin{subfigure}{.45\textwidth}
+	\centering
+	\includegraphics[width=8cm]{2Dheatk10000.jpg}
+	\caption{$K=1000$}
+	\label{fig:sub4}
+\end{subfigure}
 	\caption{A figure with two subfigures}
 	\label{fig:test}
 \end{figure}
@@ -879,11 +896,11 @@ Show the contour plots, and give the values of the minimal pressure (which is im
 
 
 
-The final step is to determine what happens when $K=0$ and why? When looking at our previous plots, when varying $K$ from 0.00001 to 10000 it can be derived that When $K=0$, the transfer coefficient of the water between the boundary of the square reservour and its surroundings is zero. In the following plot the $K$ factor is set to 0:
+The final step is to determine what happens when $K=0$ and why? When looking at our previous plots, when varying $K$ from 0.00001 to 10000 it can be derived that the pressure drops the lower the value for K is. This would mean that when $K=0$, the transfer coefficient of the water between the boundary of the square reservoir and its surroundings is zero. There will be no flow from the square reservoir into the surrounding through the boundary. For filtration purpose designing a square reservoir such that it has a K value and therefore no flow, is an unwanted feature. 
 
 
 \newpage
-
+\chapter{Conclusion}
 \appendix
 
 \begin{appendices}
