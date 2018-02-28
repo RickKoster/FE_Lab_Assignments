@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.24)  28 FEB 2018 11:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.24)  28 FEB 2018 11:58
 entering extended mode
 **./Report.tex
 (Report.tex
@@ -978,138 +978,137 @@ File: 1Df1.jpg Graphic file (type jpg)
 <use 1Df1.jpg>
 Package pdftex.def Info: 1Df1.jpg  used on input line 344.
 (pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
- [9 <./1Df1.jpg>]
-<1Dfx.jpg, id=51, 562.1pt x 421.575pt>
+<1Dfx.jpg, id=48, 562.1pt x 421.575pt>
 File: 1Dfx.jpg Graphic file (type jpg)
 <use 1Dfx.jpg>
-Package pdftex.def Info: 1Dfx.jpg  used on input line 357.
-(pdftex.def)             Requested size: 398.33858pt x 298.75426pt.
- [10 <./1Dfx.jpg>] [11]
-<1Dfsinx.jpg, id=58, 562.1pt x 421.575pt>
+Package pdftex.def Info: 1Dfx.jpg  used on input line 356.
+(pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
+ [9 <./1Df1.jpg>] [10 <./1Dfx.jpg>]
+<1Dfsinx.jpg, id=55, 562.1pt x 421.575pt>
 File: 1Dfsinx.jpg Graphic file (type jpg)
 <use 1Dfsinx.jpg>
-Package pdftex.def Info: 1Dfsinx.jpg  used on input line 403.
+Package pdftex.def Info: 1Dfsinx.jpg  used on input line 397.
 (pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
- [12 <./1Dfsinx.jpg>]
+ [11 <./1Dfsinx.jpg>]
 Chapter 2.
-[13
+[12
 
-] [14] [15]
-<meshgrid2D.jpg, id=72, 562.1pt x 421.575pt>
+] [13] [14]
+<meshgrid2D.jpg, id=69, 562.1pt x 421.575pt>
 File: meshgrid2D.jpg Graphic file (type jpg)
 <use meshgrid2D.jpg>
-Package pdftex.def Info: meshgrid2D.jpg  used on input line 642.
+Package pdftex.def Info: meshgrid2D.jpg  used on input line 635.
 (pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16] [17 <./meshgrid2D.jpg>] [18]
-<2Dvarrowsk10.jpg, id=86, 562.1pt x 421.575pt>
+[15] [16 <./meshgrid2D.jpg>] [17]
+<2Dvarrowsk10.jpg, id=82, 562.1pt x 421.575pt>
 File: 2Dvarrowsk10.jpg Graphic file (type jpg)
 <use 2Dvarrowsk10.jpg>
-Package pdftex.def Info: 2Dvarrowsk10.jpg  used on input line 828.
+Package pdftex.def Info: 2Dvarrowsk10.jpg  used on input line 819.
 (pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
-<2Dvheatk10.jpg, id=87, 562.1pt x 421.575pt>
+<2Dvheatk10.jpg, id=83, 562.1pt x 421.575pt>
 File: 2Dvheatk10.jpg Graphic file (type jpg)
 <use 2Dvheatk10.jpg>
-Package pdftex.def Info: 2Dvheatk10.jpg  used on input line 835.
+Package pdftex.def Info: 2Dvheatk10.jpg  used on input line 826.
 (pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
-<3Dvk10.jpg, id=88, 562.1pt x 421.575pt>
+<3Dvk10.jpg, id=84, 562.1pt x 421.575pt>
 File: 3Dvk10.jpg Graphic file (type jpg)
 <use 3Dvk10.jpg>
-Package pdftex.def Info: 3Dvk10.jpg  used on input line 842.
+Package pdftex.def Info: 3Dvk10.jpg  used on input line 833.
 (pdftex.def)             Requested size: 369.88582pt x 277.41052pt.
- [19 <./2Dvarrowsk10.jpg>] [20 <./2Dvheatk10.jpg> <./3Dvk10.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 851--852
+ [18 <./2Dvarrowsk10.jpg>] [19 <./2Dvheatk10.jpg> <./3Dvk10.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 842--843
 
  []
 
-<2Dheatk00001.jpg, id=95, 562.1pt x 421.575pt>
+<2Dheatk00001.jpg, id=92, 562.1pt x 421.575pt>
 File: 2Dheatk00001.jpg Graphic file (type jpg)
 <use 2Dheatk00001.jpg>
-Package pdftex.def Info: 2Dheatk00001.jpg  used on input line 857.
+Package pdftex.def Info: 2Dheatk00001.jpg  used on input line 848.
 (pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
 
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 857--858
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 848--849
  [][] 
  []
 
-<2Dheatk001.jpg, id=96, 562.1pt x 421.575pt>
+<2Dheatk001.jpg, id=93, 562.1pt x 421.575pt>
 File: 2Dheatk001.jpg Graphic file (type jpg)
 <use 2Dheatk001.jpg>
-Package pdftex.def Info: 2Dheatk001.jpg  used on input line 863.
+Package pdftex.def Info: 2Dheatk001.jpg  used on input line 854.
 (pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
 
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 863--864
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 854--855
  [][] 
  []
 
-<2Dheatk1.jpg, id=97, 562.1pt x 421.575pt>
+<2Dheatk1.jpg, id=94, 562.1pt x 421.575pt>
 File: 2Dheatk1.jpg Graphic file (type jpg)
 <use 2Dheatk1.jpg>
-Package pdftex.def Info: 2Dheatk1.jpg  used on input line 869.
+Package pdftex.def Info: 2Dheatk1.jpg  used on input line 860.
 (pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
 
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 868--870
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 859--861
  [] 
  []
 
 File: 2Dvheatk10.jpg Graphic file (type jpg)
 <use 2Dvheatk10.jpg>
-Package pdftex.def Info: 2Dvheatk10.jpg  used on input line 875.
+Package pdftex.def Info: 2Dvheatk10.jpg  used on input line 866.
 (pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
 
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 875--876
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 866--867
  [][] 
  []
 
-<2Dheatk100.jpg, id=98, 562.1pt x 421.575pt>
+<2Dheatk100.jpg, id=95, 562.1pt x 421.575pt>
 File: 2Dheatk100.jpg Graphic file (type jpg)
 <use 2Dheatk100.jpg>
-Package pdftex.def Info: 2Dheatk100.jpg  used on input line 881.
+Package pdftex.def Info: 2Dheatk100.jpg  used on input line 872.
 (pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
 
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 880--882
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 871--873
  [] 
  []
 
-<2Dheatk10000.jpg, id=99, 562.1pt x 421.575pt>
+<2Dheatk10000.jpg, id=96, 562.1pt x 421.575pt>
 File: 2Dheatk10000.jpg Graphic file (type jpg)
 <use 2Dheatk10000.jpg>
-Package pdftex.def Info: 2Dheatk10000.jpg  used on input line 887.
+Package pdftex.def Info: 2Dheatk10000.jpg  used on input line 878.
 (pdftex.def)             Requested size: 227.62204pt x 170.71764pt.
 
-Overfull \hbox (23.78787pt too wide) in paragraph at lines 887--888
+Overfull \hbox (23.78787pt too wide) in paragraph at lines 878--879
  [][] 
  []
 
-[21] [22 <./2Dheatk00001.jpg> <./2Dheatk001.jpg> <./2Dheatk1.jpg> <./2Dheatk100
+[20] [21 <./2Dheatk00001.jpg> <./2Dheatk001.jpg> <./2Dheatk1.jpg> <./2Dheatk100
 .jpg> <./2Dheatk10000.jpg>]
 Chapter 3.
-[23
+[22
 
 ]
 Appendix A.
-[24
+[23
 
-] [25] [26]
+] [24] [25]
 Appendix B.
-[27
+[26
 
-] [28]
-Overfull \hbox (40.10838pt too wide) in paragraph at lines 1226--1227
+] [27]
+Overfull \hbox (40.10838pt too wide) in paragraph at lines 1217--1218
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][]  
  []
 
 
-Overfull \hbox (44.90843pt too wide) in paragraph at lines 1230--1231
+Overfull \hbox (44.90843pt too wide) in paragraph at lines 1221--1222
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][]  
  []
 
-[29] [30] [31] [32] [33] [34] (Report.aux)
+[28] [29] [30] [31] [32] [33] (Report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1117,7 +1116,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  7422 strings out of 493303
  105486 string characters out of 3126302
- 263869 words of memory out of 3000000
+ 264869 words of memory out of 3000000
  10844 multiletter control sequences out of 15000+200000
  20980 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1152,9 +1151,9 @@ C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmsy7.pfb><C:/Users/Ruben Termaat/AppData/Local/Programs/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Ruben Termaat/AppData/Local/Pr
 ograms/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Report.pdf (35 pages, 747339 bytes).
+Output written on Report.pdf (34 pages, 747317 bytes).
 PDF statistics:
- 458 PDF objects out of 1000 (max. 8388607)
+ 454 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

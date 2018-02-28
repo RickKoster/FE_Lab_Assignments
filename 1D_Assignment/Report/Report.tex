@@ -322,7 +322,7 @@ Now if the previous MATLAB codes are run the following happens. First, a mesh an
 
 \section{Main program}
 
-The main program is simply written by assembling the previous created MATLAB code AssembleMatrix and AssembleVector and deviding the vector f by the matrix S.
+The main program is written by assembling the previous created MATLAB code, AssembleMatrix and AssembleVector, and deviding the vector $\vec{v}$ by the matrix S.
 \begin{lstlisting}
 	function [ u ] = SolveBVP(  N_elem, int, lambda, D )
 	
@@ -337,16 +337,15 @@ The main program is simply written by assembling the previous created MATLAB cod
 	
 	
 \end{lstlisting}
-The result of running this MATLAB code is shown in figure(1.1).
+The result of running this MATLAB code is shown in figure(1.1). The graph shows the solution for the BVP when taking 
 
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=150mm]{1Df1.jpg}
-	\caption{showing the calculated u versus x, with N = 100,f(x)=1 \label{overflow}}
+	\caption{showing the calculated solution of u versus x, with N = 100,f(x)=1 \label{overflow}}
 \end{figure}
-\newpage
 
-Figure 1.1 shows the solution for $u=\vec{f}/S$ for $N=100$ and $f(x)=1$. The domain is divided by equal spaced elements(follows from $f(x)=1$). Even though it is not a very stable or smooth curve, the solution does meet the requirement for the boundary condition where $du/dx=0$ at $x=0$ and $x=1$.
+Figure 1.1 shows the solution for $u=\vec{f}/S$ for $N=100$ and $f(x)=1$. The domain is divided by equal spaced elements(follows from $f(x)=1$). Even though it is not a very stable or smooth curve, the solution does meet the requirement for the boundary condition where $du/dx=0$ at $x=0$ and $x=1$. The solution follows the line f(x)=1, as tbe values of u all are $\approx1$, however the curve seems rough due to fast changes in $du/dx$. One would expect the curve to be smoother indicating a stable solution for u.  
 
 \section{Solution for u}
 The final step is to combine all the codes in a main code to solve $Su= \vec{f}$. This code can be found in Appendix A. Previously the S matrix and f vector were computed for $n = 100$. Now $u$ will be calculated for $f(x)=1$, $D=1$, $\lambda = 1$ and $N = 100$. The result of this is plotted in figure(1.2). 
@@ -354,16 +353,15 @@ The final step is to combine all the codes in a main code to solve $Su= \vec{f}$
 
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=140mm]{1Dfx.jpg}
+	\includegraphics[width=130mm]{1Dfx.jpg}
 	\caption{showing the calculated u versus x, with $N = 100$, $f(x)=x$		 \label{overflow}}
 \end{figure}
 
-Figure(1.2) shows the solution of $u=\frac{\vec{f}}{S}$ for $N=100$ elements. In this case f(x)=x is used as function to divide the elements. Compared to the case where f(x)=1 it can be seen that now a smoother curve is found. The solution found meets the requirement for the boundary condition where $du/dx=0$ at $x=0$ and $x=1$.
+Figure(1.2) shows the solution of $u=\frac{\vec{f}}{S}$ for $N=100$ elements. In this case f(x)=x is used as function to divide the elements. Compared to the case where f(x)=1 it can be seen that now a smoother curve is found. The solution curve meets the requirement for the boundary condition where $du/dx=0$ at $x=0$ and $x=1$.
 
-\vfill
 \section{Experiment}
 
-The next step is to see what happens when changing f(x) to $f(x)=sin(20x)$ and to see the difference for several values for N ($n=10,20,30,40,80,160)$.
+The next step is to see what happens when changing f(x) to $f(x)=sin(20x)$ and to see the difference for several values for N ($n=10,20,30,40,80,160)$. The following MATLAB code shows how to change function$[f]$.
 
 \vspace{5mm}
 \begin{lstlisting}
@@ -375,18 +373,14 @@ The next step is to see what happens when changing f(x) to $f(x)=sin(20x)$ and t
 	
 	figure 
 	hold on
-	
 	for N_elem = [10 20 40 80 100 160]
 	mesh = GenerateMesh(int,N_elem);
 	elmat = GenerateTopology(N_elem);
 	S = AssembleMatrix( N_elem, lambda, D, mesh, elmat);
 	f = AssembleVector( N_elem, mesh, elmat);
-	
-	x = linspace(int(1),int(2),N_elem);
-	
-	u = S\f;
+		x = linspace(int(1),int(2),N_elem);
+		u = S\f;
 	plot(x,u);
-	
 	legend('N=100')
 	title('Solution for u')
 	xlabel('x')
@@ -633,17 +627,14 @@ end
 
 \section{Generating MATLAB code}
 
-Similar as with the 1D BVP, MATLAB code is written in order to generate a mesh, element matrix, element vector, boundary element matrix and boundary element vector. These codes can be found in appendix B.1 through B.6. The scripts have been written such that they can be used to find both the pressure field and the velocity field(the derivation fort the velocities is found in the next section).
-
-%Using the MATLAB codes a nice mesh can be found. ???
+Similar as with the 1D BVP, MATLAB code is written in order to generate a mesh, element matrix, element vector, boundary element matrix and boundary element vector. These codes can be found in appendix B.1 through B.6. The scripts have been written such that they can be used to find both the pressure field and the velocity field(the derivation fort the velocities is found in the next section).\par
+In figure 2.1 the mesh that is created for the BVP is shown. The square domain is considered with length 2 in meter: $\Omega= (-1; 1) \times (-1; 1)$ with boundary $\partial\Omega$ is divided in many triangular elemnts that can be solved applying the theory of finite elements. 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=150mm]{meshgrid2D.jpg}
 	\caption{Triangle element mesh over the square reservoir domain $\Omega=(-1;1)\times (-1;1)$. \label{overflow}}
 \end{figure}
-
-
 
 
 \section{Velocities}
